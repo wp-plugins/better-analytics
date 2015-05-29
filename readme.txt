@@ -1,7 +1,7 @@
 === Better Analytics ===
 Contributors: digitalpoint
 Tags: analytics, google analytics, statistics, tracking, reports, charts, api, stats, google, digitalpoint
-Donate link: https://marketplace.digitalpoint.com/better-analytics.3354/item
+Donate link: https://marketplace.digitalpoint.com/better-analytics.3354/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin
 Requires at least: 3.8
 Tested up to: 4.2.2
 License: GPLv2
@@ -11,20 +11,6 @@ Adds Google Universal Analytics code to your site.  Ability to track basically e
 
 == Description ==
 The Better Analytics plugin allows you to easily add Google Universal Analytics code to your website.
-
-> <strong>Better Analytics Pro</strong><br>
-> If you would like additional advanced functions, we offer a Pro version.
->
-> * Additional ad networks for ad click tracking
-> * More options for site issue monitoring
-> * More heatmap metrics
-> * More charting dimensions
-> * eCommerce tracking (coming soon)
-> * Option for server-side tracking of users (or bots)
-> * Faster API calls (uses a custom system for parallel requests)
-> * Priority support
->
-> [Pro license available here](https://marketplace.digitalpoint.com/better-analytics-pro.3355/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin)
 
 <strong>Basic Tracking Features (each can be enabled/disabled):</strong>
 
@@ -82,6 +68,20 @@ The Better Analytics plugin allows you to easily add Google Universal Analytics 
 
 * Popular Posts
 
+> <strong>Better Analytics Pro</strong><br>
+> If you would like additional advanced functions, we offer a Pro version.
+>
+> * Additional ad networks for ad click tracking
+> * More options for site issue monitoring
+> * More heatmap metrics
+> * More charting dimensions
+> * eCommerce tracking (coming soon)
+> * Option for server-side tracking of users (or bots)
+> * Faster API calls (uses a custom system for parallel requests)
+> * Priority support
+>
+> [Pro license available here](https://marketplace.digitalpoint.com/better-analytics-pro.3355/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin)
+
 == Installation ==
 1. Upload `better-analytics` folder to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in the WordPress admin area.
@@ -93,10 +93,10 @@ The Better Analytics plugin allows you to easily add Google Universal Analytics 
 No, this plugin is for Google Universal Analytics.  You can upgrade any old non-Universal property to support both legacy and Universal under your [Google Analytics Property Settings](https://www.google.com/analytics/web/?#management/Settings/).
 
 = Can You Add [insert feature here]? =
-If it's possible and it makes sense, then yes.  The best way to put in a request would be to create a thread in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/).
+If it's possible and it makes sense, then yes.  The best way to put in a request would be to create a thread in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).
 
 = I speak a language that isn't supported by this plugin, can I help translate it? =
-Yes.  Unfortunately we don't speak every language in the world, so if you would like to contribute a translation, please contact us in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/).
+Yes.  Unfortunately we don't speak every language in the world, so if you would like to contribute a translation, please contact us in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).
 
 == Screenshots ==
 
