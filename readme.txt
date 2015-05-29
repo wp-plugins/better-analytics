@@ -10,7 +10,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Adds Google Universal Analytics code to your site.  Ability to track basically everything.
 
 == Description ==
-The Better Analytics plugin allows you to easily add Google Universal Analytics code to your website.
+The Better Analytics plugin allows you to easily add Google Universal Analytics code to your website and gives you the power to track virtually everything.  Includes heatmaps, reports, charts, events and site issue tracking in your WordPress admin area.
 
 <strong>Basic Tracking Features (each can be enabled/disabled):</strong>
 
