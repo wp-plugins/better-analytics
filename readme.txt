@@ -14,6 +14,7 @@ The Better Analytics plugin allows you to easily add Google Universal Analytics 
 
 > <strong>Better Analytics Pro</strong><br>
 > If you would like additional advanced functions, we offer a Pro version.
+>
 > * Additional ad networks for ad click tracking
 > * More options for site issue monitoring
 > * More heatmap metrics
@@ -22,9 +23,11 @@ The Better Analytics plugin allows you to easily add Google Universal Analytics 
 > * Option for server-side tracking of users (or bots)
 > * Faster API calls (uses a custom system for parallel requests)
 > * Priority support
+>
 > [Pro license available here](https://marketplace.digitalpoint.com/better-analytics-pro.3355/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin)
 
-Basic Tracking Features (each can be enabled/disabled):
+<strong>Basic Tracking Features (each can be enabled/disabled):</strong>
+
 * Link Attribution
 * User-ID/Session Unification
 * User Engagement
@@ -42,27 +45,31 @@ Basic Tracking Features (each can be enabled/disabled):
 * Page Not Found (404)
 * AJAX Requests
 
-Dimension Tracking:
+<strong>Dimension Tracking:</strong>
+
 * Categories
 * Author
 * Tags
 * User
 
-Social Button Engagement Tracking:
+<strong>Social Button Engagement Tracking:</strong>
+
 * Facebook
 * Twitter
 * Google+
 * Pinterest
 * LinkedIn
 
-Reporting Features:
+<strong>Reporting Features:</strong>
+
 * Dashboard Charts (realtime or historical)
 * Weekly Heatmaps
 * Historical Area Percent Charts
 * Events
 * Issue Monitoring
 
-Advanced Features:
+<strong>Advanced Features:</strong>
+
 * Suppress Tracking By User Role
 * View Reports By User Role
 * Adjust Location Of Analytics Code
@@ -71,7 +78,8 @@ Advanced Features:
 * Insert Your Own Custom JavaScript
 * Debugging Mode
 
-Widgets Included:
+<strong>Widgets Included:</strong>
+
 * Popular Posts
 
 == Installation ==
