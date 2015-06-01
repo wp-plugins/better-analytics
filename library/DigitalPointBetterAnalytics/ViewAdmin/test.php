@@ -134,7 +134,7 @@
 			<td class="description">
 				<?php
 					/* translators: %1$s = <strong>, %2$s = </strong>, %3$s = current setting in Google Analytics account */
-					printf(__('Found in Google Analytics account under %1$sProperty Settings%2$s (currently set to <b>%3$s</b>).', 'better-analytics'), '<strong>', '</strong>', ($checks['industryVertical'] ? $checks['industryVertical'] : 'UNSPECIFIED'));
+					printf(__('Found in Google Analytics account under %1$sProperty Settings%2$s (currently set to %1$s%3$s%2$s).', 'better-analytics'), '<strong>', '</strong>', ($checks['industryVertical'] ? $checks['industryVertical'] : 'UNSPECIFIED'));
 				?>
 			</td>
 		</tr>
