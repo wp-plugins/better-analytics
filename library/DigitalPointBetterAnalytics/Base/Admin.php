@@ -83,7 +83,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 	public function admin_menu()
 	{
 		$hook = add_management_page( __('Test Analytics Setup', 'better-analytics'), __('Test Analytics Setup', 'better-analytics'), 'manage_options', 'better-analytics_test', array($this, 'display_test_page') );
-		$hook = add_management_page( __('OAuth2 Endpoint', 'better-analytics'), __('Oauth2 Endpoint', 'better-analytics'), 'manage_options', 'better-analytics_auth', array($this, 'api_authentication') );
+		$hook = add_management_page( __('OAuth2 Endpoint', 'better-analytics'), __('OAuth2 Endpoint', 'better-analytics'), 'manage_options', 'better-analytics_auth', array($this, 'api_authentication') );
 
 
 		if ($this->canViewReports())
