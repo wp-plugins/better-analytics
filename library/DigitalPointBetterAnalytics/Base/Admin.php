@@ -123,12 +123,29 @@ class DigitalPointBetterAnalytics_Base_Admin
 				(DigitalPointBetterAnalytics_Base_Pro::$installed ?
 					(@$betterAnalyticsInternal['v'] ?
 						(@$betterAnalyticsInternal['l'] != DigitalPointBetterAnalytics_Base_Pro::$version ?
-							sprintf('<a href="%1$s" target="_blank">%2$s</a><br />%3$s %4$s<br />%5$s %6$s', esc_url(BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_plugins&utm_medium=wordpress&utm_campaign=plugin'), __('Pro version not up to date.', 'better-analytics'), __('Installed:', 'better-analytics'), DigitalPointBetterAnalytics_Base_Pro::$version, __('Latest:', 'better-analytics'), @$betterAnalyticsInternal['l']) :
-							sprintf('<a href="%1$s" target="_blank">%2$s</a> (%3$s)', esc_url(BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_plugins&utm_medium=wordpress&utm_campaign=plugin'), __('Pro version installed', 'better-analytics'), @$betterAnalyticsInternal['l'])
+							sprintf('<a href="%1$s" target="_blank">%2$s</a><br />%3$s %4$s<br />%5$s %6$s',
+								esc_url(BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_plugins&utm_medium=wordpress&utm_campaign=plugin'),
+								__('Pro version not up to date.', 'better-analytics'),
+								__('Installed:', 'better-analytics'),
+								DigitalPointBetterAnalytics_Base_Pro::$version,
+								__('Latest:', 'better-analytics'),
+								@$betterAnalyticsInternal['l']
+							) :
+							sprintf('<a href="%1$s" target="_blank">%2$s</a> (%3$s)',
+								esc_url(BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_plugins&utm_medium=wordpress&utm_campaign=plugin'),
+								__('Pro version installed', 'better-analytics'),
+								@$betterAnalyticsInternal['l']
+							)
 						) :
-						sprintf(__('Pro version installed, but not active.  Did you %1$sverify ownership of your domain%2$s?', 'better-analytics'), '<a href="' . esc_url('https://forums.digitalpoint.com/marketplace/domain-verification#utm_source=admin_plugins&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">', '</a>')
+						sprintf(__('Pro version installed, but not active.  Did you %1$sverify ownership of your domain%2$s?', 'better-analytics'),
+							'<a href="' . esc_url('https://forums.digitalpoint.com/marketplace/domain-verification#utm_source=admin_plugins&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">',
+							'</a>'
+						)
 					) :
-					sprintf('<a href="%1$s" target="_blank">%2$s</a>', __('Pro version not installed.', 'better-analytics'), esc_url(BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_plugins&utm_medium=wordpress&utm_campaign=plugin'))
+					sprintf('<a href="%1$s" target="_blank">%2$s</a>',
+						esc_url(BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_plugins&utm_medium=wordpress&utm_campaign=plugin'),
+						__('Pro version not installed.', 'better-analytics')
+					)
 				) .
 				'</p>';
 		}
