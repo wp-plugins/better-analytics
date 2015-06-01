@@ -92,7 +92,13 @@ class DigitalPointBetterAnalytics_ControllerAdmin_Analytics
 			{
 				if (array_search($_POST['metric'], array('ga:users', 'ga:sessions', 'ga:hits', 'ga:organicSearches')) === false)
 				{
-					wp_send_json(array('error' => sprintf(__('Not all metrics are available for unlicensed copies of the Better Analytics plugin.<br /><br />You can license a copy <a href="%s" target="_blank">over here</a>.<br /><br />If this is a valid license, make sure the purchaser of the add-on has verified ownership of this domain <a href="https://forums.digitalpoint.com/marketplace/domain-verification#utm_source=admin_reports_ajax&utm_medium=wordpress&utm_campaign=plugin" target="_blank">over here</a>.', 'better-analytics'), BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_reports_ajax&utm_medium=wordpress&utm_campaign=plugin')));
+
+					wp_send_json(array('error' => sprintf(__('Not all metrics are available for unlicensed copies of the Better Analytics plugin.%1$s%2$sYou can license a copy over here.%3$s%1$sIf this is a valid license, make sure the purchaser of the add-on has verified ownership of this domain %4$sover here%3$s.', 'better-analytics'),
+						'<br /><br />',
+						'<a href="' . esc_url(BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_reports_ajax&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">',
+						'</a>',
+						'<a href="' . esc_url('https://forums.digitalpoint.com/marketplace/domain-verification#utm_source=admin_reports_ajax&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">'
+					)));
 				}
 			}
 			$heatmapData = DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getWeeklyHeatmap($_POST['end'], $_POST['weeks'], $_POST['metric'], $_POST['segment']);
@@ -149,7 +155,13 @@ class DigitalPointBetterAnalytics_ControllerAdmin_Analytics
 			{
 				if (array_search($_POST['dimension'], array('browser', 'operatingSystem', 'source', 'medium')) === false)
 				{
-					wp_send_json(array('error' => sprintf(__('Not all dimensions are available for unlicensed copies of the Better Analytics plugin.<br /><br />You can license a copy <a href="%s" target="_blank">over here</a>.<br /><br />If this is a valid license, make sure the purchaser of the add-on has verified ownership of this domain <a href="https://forums.digitalpoint.com/marketplace/domain-verification#utm_source=admin_reports_ajax&utm_medium=wordpress&utm_campaign=plugin" target="_blank">over here</a>.', 'better-analytics'), BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_reports_ajax&utm_medium=wordpress&utm_campaign=plugin')));
+
+					wp_send_json(array('error' => sprintf(__('Not all dimensions are available for unlicensed copies of the Better Analytics plugin.%1$s%2$sYou can license a copy over here.%3$s%1$sIf this is a valid license, make sure the purchaser of the add-on has verified ownership of this domain %4$sover here%3$s.', 'better-analytics'),
+						'<br /><br />',
+						'<a href="' . esc_url(BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_reports_ajax&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">',
+						'</a>',
+						'<a href="' . esc_url('https://forums.digitalpoint.com/marketplace/domain-verification#utm_source=admin_reports_ajax&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">'
+					)));
 				}
 			}
 
@@ -300,7 +312,7 @@ class DigitalPointBetterAnalytics_ControllerAdmin_Analytics
 				wp_send_json(array(
 					'chart_data' => $resultsOutput,
 					'chart_type' => $_POST['chart_type'],
-					'title' =>sprintf(__('History for %s', 'better-analytics'), $title)
+					'title' =>sprintf('%1$s %2$s', __('History for', 'better-analytics'), esc_html__($title))
 				));
 			}
 
@@ -436,7 +448,12 @@ class DigitalPointBetterAnalytics_ControllerAdmin_Analytics
 
 		if (!get_option('ba_tokens') || !@$betterAnalyticsOptions['api']['profile'])
 		{
-			$this->_responseException(sprintf(__('No Linked Google Analytics Account.  You can link one in the <a href="%s">Better Analytics API settings</a>.', 'better-analytics'), menu_page_url('better-analytics', false) . '#top#api'));
+			$this->_responseException(sprintf('%1$s <a href="%2$s">%3$s</a>',
+				__('No Linked Google Analytics Account.', 'better-analytics'),
+				menu_page_url('better-analytics', false) . '#top#api',
+				__('You can link one in the Better Analytics API settings.', 'better-analytics')
+			));
+
 			return false;
 		}
 		return true;

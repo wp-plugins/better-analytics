@@ -13,10 +13,10 @@ echo '<h2>' . __('Reports & Charts', 'better-analytics') . '</h2>';
 
 
 <h3 class="nav-tab-wrapper">
-	<a class="nav-tab" href="<?php menu_page_url('better-analytics_heatmaps'); ?>"><?php _e( 'Weekly Heatmaps', 'better-analytics' ); ?></a>
-	<a class="nav-tab nav-tab-active" href="<?php menu_page_url('better-analytics_areacharts'); ?>"><?php _e( 'Charts', 'better-analytics' ); ?></a>
-	<a class="nav-tab" href="<?php menu_page_url('better-analytics_events'); ?>"><?php _e( 'Events', 'better-analytics' ); ?></a>
-	<a class="nav-tab" href="<?php menu_page_url('better-analytics_monitor'); ?>"><?php _e( 'Issue Monitoring', 'better-analytics' ); ?></a>
+	<a class="nav-tab" href="<?php menu_page_url('better-analytics_heatmaps'); ?>"><?php esc_html_e( 'Weekly Heat Maps', 'better-analytics' ); ?></a>
+	<a class="nav-tab nav-tab-active" href="<?php menu_page_url('better-analytics_areacharts'); ?>"><?php esc_html_e( 'Charts', 'better-analytics' ); ?></a>
+	<a class="nav-tab" href="<?php menu_page_url('better-analytics_events'); ?>"><?php esc_html_e( 'Events', 'better-analytics' ); ?></a>
+	<a class="nav-tab" href="<?php menu_page_url('better-analytics_monitor'); ?>"><?php esc_html_e( 'Issue Monitoring', 'better-analytics' ); ?></a>
 </h3>
 
 <div id="chart_loading" class="dashicons dashicons-update"></div>

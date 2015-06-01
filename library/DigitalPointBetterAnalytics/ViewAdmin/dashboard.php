@@ -10,7 +10,10 @@ DigitalPointBetterAnalytics_Helper_Api::check();
 
 if (!get_option('ba_tokens') || !$betterAnalyticsOptions['api']['profile'])
 {
-	echo sprintf(__('<a href="%s">Set up API access</a> to utilize Better Analytics charts.', 'better-analytics'), menu_page_url('better-analytics', false) . '#top#api');
+	printf(__('%1$sSet up API access%2$s to utilize Better Analytics charts.', 'better-analytics'),
+		'<a href="' . esc_url(menu_page_url('better-analytics', false) . '#top#api') . '">',
+		'</a>'
+	);
 }
 else
 {
@@ -74,8 +77,6 @@ else
 	}
 	echo '</select>
 </div>';
-
-	//$realTime = get_transient('ba_realtime');
 
 	echo '<label style="white-space: nowrap;"><input type="checkbox" id="ba_realtime"' . ($betterAnalyticsDashboardPick['realtime'] ? ' checked="checked"' : '') . '> ' . __('Realtime', 'better-analytics') . '</label>';
 

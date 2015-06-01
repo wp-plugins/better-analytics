@@ -100,7 +100,15 @@ class DigitalPointBetterAnalytics_Base_Public
 	{
 		if (version_compare($GLOBALS['wp_version'], BETTER_ANALYTICS_MINIMUM_WP_VERSION, '<' ))
 		{
-			$message = '<strong>' . sprintf(esc_html__( 'Better Analytics %s requires WordPress %s or higher.' , 'better-analytics'), BETTER_ANALYTICS_VERSION, BETTER_ANALYTICS_MINIMUM_WP_VERSION ).'</strong><br />' . sprintf(__('Please <a href="%1$s" target="_blank">upgrade WordPress</a> to a current version.', 'better-analytics'), 'https://codex.wordpress.org/Upgrading_WordPress');
+			$message = sprintf(__('%1$sBetter Analytics %4$s requires WordPress %5$s or higher.%2$s%3$sPlease %6$supgrade WordPress%7$s to a current version.', 'better-analytics'),
+				'<strong>',
+				'</strong>',
+				'<br />',
+				BETTER_ANALYTICS_VERSION,
+				BETTER_ANALYTICS_MINIMUM_WP_VERSION,
+				'<a href="' . esc_url('https://codex.wordpress.org/Upgrading_WordPress') .  '" target="_blank">',
+				'</a>'
+			);
 
 			self::_bailOnActivation($message);
 		}

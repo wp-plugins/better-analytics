@@ -9,10 +9,10 @@
 ?>
 
 <h3 class="nav-tab-wrapper">
-	<a class="nav-tab nav-tab-active" href="<?php menu_page_url('better-analytics_heatmaps'); ?>"><?php _e( 'Weekly Heatmaps', 'better-analytics' ); ?></a>
-	<a class="nav-tab" href="<?php menu_page_url('better-analytics_areacharts'); ?>"><?php _e( 'Charts', 'better-analytics' ); ?></a>
-	<a class="nav-tab" href="<?php menu_page_url('better-analytics_events'); ?>"><?php _e( 'Events', 'better-analytics' ); ?></a>
-	<a class="nav-tab" href="<?php menu_page_url('better-analytics_monitor'); ?>"><?php _e( 'Issue Monitoring', 'better-analytics' ); ?></a>
+	<a class="nav-tab nav-tab-active" href="<?php menu_page_url('better-analytics_heatmaps'); ?>"><?php esc_html_e( 'Weekly Heat Maps', 'better-analytics' ); ?></a>
+	<a class="nav-tab" href="<?php menu_page_url('better-analytics_areacharts'); ?>"><?php esc_html_e( 'Charts', 'better-analytics' ); ?></a>
+	<a class="nav-tab" href="<?php menu_page_url('better-analytics_events'); ?>"><?php esc_html_e( 'Events', 'better-analytics' ); ?></a>
+	<a class="nav-tab" href="<?php menu_page_url('better-analytics_monitor'); ?>"><?php esc_html_e( 'Issue Monitoring', 'better-analytics' ); ?></a>
 </h3>
 
 <div id="chart_loading" class="dashicons dashicons-update"></div>
@@ -20,13 +20,41 @@
 <div id="Heatmap" class="table">
 	<div class="row">
 		<div class="cell"></div>
-		<div class="cell"><?php _e('Sun<span class="responsiveHide">day</span>', 'better-analytics'); ?></div>
-		<div class="cell"><?php _e('Mon<span class="responsiveHide">day</span>', 'better-analytics'); ?></div>
-		<div class="cell"><?php _e('Tue<span class="responsiveHide">sday</span>', 'better-analytics'); ?></div>
-		<div class="cell"><?php _e('Wed<span class="responsiveHide">nesday</span>', 'better-analytics'); ?></div>
-		<div class="cell"><?php _e('Thu<span class="responsiveHide">rsday</span>', 'better-analytics'); ?></div>
-		<div class="cell"><?php _e('Fri<span class="responsiveHide">day</span>', 'better-analytics'); ?></div>
-		<div class="cell"><?php _e('Sat<span class="responsiveHide">urday</span>', 'better-analytics'); ?></div>
+
+		<div class="cell"><?php
+				/* translators: Sunday (day of the week), with everything between %s hidden on smaller screens (responsive) */
+				printf(__('Sun%sday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+			?></div>
+
+		<div class="cell"><?php
+			/* translators: Monday (day of the week), with everything between %s hidden on smaller screens (responsive) */
+			printf(__('Mon%sday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+			?></div>
+
+		<div class="cell"><?php
+			/* translators: Tuesday (day of the week), with everything between %s hidden on smaller screens (responsive) */
+			printf(__('Tue%ssday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+			?></div>
+
+		<div class="cell"><?php
+			/* translators: Wednesday (day of the week), with everything between %s hidden on smaller screens (responsive) */
+			printf(__('Wed%snesday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+			?></div>
+
+		<div class="cell"><?php
+			/* translators: Thursday (day of the week), with everything between %s hidden on smaller screens (responsive) */
+			printf(__('Thu%srsday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+			?></div>
+
+		<div class="cell"><?php
+			/* translators: Friday (day of the week), with everything between %s hidden on smaller screens (responsive) */
+			printf(__('Fri%sday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+			?></div>
+
+		<div class="cell"><?php
+			/* translators: Saturday (day of the week), with everything between %s hidden on smaller screens (responsive) */
+			printf(__('Sat%surday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+			?></div>
 	</div>
 	<?php
 		foreach ($heatmap_data as $hour_key => $hour_data)

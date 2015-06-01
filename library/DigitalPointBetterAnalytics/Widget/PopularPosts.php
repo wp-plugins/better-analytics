@@ -43,15 +43,15 @@ class DigitalPointBetterAnalytics_Widget_PopularPosts extends WP_Widget {
 
 		if (!get_option('ba_tokens') || !$betterAnalyticsOptions['api']['profile'])
 		{
-			echo '<p>' . sprintf(__('No Linked Google Analytics Account (API access required for this widget).  You can link one in the <a href="%s">Better Analytics API settings</a>.', 'better-analytics'), menu_page_url('better-analytics', false) . '#top#api') . '</p>';
+			echo '<p>' . sprintf(__('No Linked Google Analytics Account (API access required for this widget).  You can link one in the %1$sBetter Analytics API settings%2$s.', 'better-analytics'), '<a href="' . esc_url(menu_page_url('better-analytics', false) . '#top#api') . '">', '</a>') . '</p>';
 		}
 
 		?>
 
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
 
-		<p><label for="<?php echo $this->get_field_id('number'); ?>"><?php _e( 'Number of URLs to show:', 'better-analytics' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id('number'); ?>"><?php esc_html_e( 'Number of URLs to show:', 'better-analytics' ); ?></label>
 			<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
 
 	<?php

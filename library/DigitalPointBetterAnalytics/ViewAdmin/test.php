@@ -37,7 +37,7 @@
 		<tr><td colspan="3"><h3><?php esc_html_e( 'Things That Can Be Automatically Checked' , 'better-analytics');?></h3></td></tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', menu_page_url('better-analytics', false) . '#top#general', __('Web Property ID Defined', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#general', __('Web Property ID Defined', 'better-analytics'));?></th>
 				<?php
 					echo ($betterAnalyticsOptions['property_id'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
@@ -46,7 +46,7 @@
 
 		<tr valign="top">
 
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', 'https://php.net/manual/en/curl.installation.php', __('cURL Installed', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://php.net/manual/en/curl.installation.php', __('cURL Installed', 'better-analytics'));?></th>
 
 				<?php
 					echo (function_exists('curl_multi_init') ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
@@ -61,7 +61,7 @@
 		/*
 		?>
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', menu_page_url('better-analytics', false) . '#top#api', __('API Project Credentials', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#api', __('API Project Credentials', 'better-analytics'));?></th>
 				<?php
 					echo ($betterAnalyticsOptions['api']['client_id'] && $betterAnalyticsOptions['api']['client_secret'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
@@ -72,14 +72,14 @@
 		?>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', menu_page_url('better-analytics', false) . '#top#api', __('Google Analytics Account Linked', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#api', __('Google Analytics Account Linked', 'better-analytics'));?></th>
 				<?php
 					echo (get_option('ba_tokens') ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 		</tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', menu_page_url('better-analytics', false) . '#top#api', __('Analytics Profile Selected', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#api', __('Analytics Profile Selected', 'better-analytics'));?></th>
 				<?php
 					echo ($betterAnalyticsOptions['api']['profile'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
@@ -87,88 +87,116 @@
 
 		<tr valign="top">
 
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Site Search Setup', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Site Search Setup', 'better-analytics'));?></th>
 				<?php
 					echo ($checks['siteSearchSetup'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
-				<?php _e('Found in Google Analytics account under <b>View Settings -&gt; Query Parameter</b> (should be set to "<b>s</b>").', 'better-analytics');?>
+				<?php
+					/* translators: %1$s = <strong>, %2$s = </strong> */
+					printf(__('Found in Google Analytics account under %1$sView Settings -> Query Parameter%2$s (should be set to "%1$ss%2$s").', 'better-analytics'), '<strong>', '</strong>');
+				?>
 			</td>
 		</tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Ecommerce Tracking Enabled', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Ecommerce Tracking Enabled', 'better-analytics'));?></th>
 				<?php
 					echo ($checks['ecommerceTracking'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
-				<?php _e('Found in Google Analytics account under <b>Ecommerce Settings</b>.', 'better-analytics');?>
+
+				<?php
+					/* translators: %1$s = <strong>, %2$s = </strong> */
+					printf(__('Found in Google Analytics account under %1$sEcommerce Settings%2$s.', 'better-analytics'), '<strong>', '</strong>');
+				?>
 			</td>
 		</tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Enhanced Ecommerce Tracking Enabled', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Enhanced Ecommerce Tracking Enabled', 'better-analytics'));?></th>
 				<?php
 					echo ($checks['enhancedEcommerceTracking'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
-				<?php _e('Found in Google Analytics account under <b>Ecommerce Settings</b>.', 'better-analytics');?>
+				<?php
+					/* translators: %1$s = <strong>, %2$s = </strong> */
+					printf(__('Found in Google Analytics account under %1$sEcommerce Settings%2$s.', 'better-analytics'), '<strong>', '</strong>');
+				?>
 			</td>
 		</tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Industry Vertical Set', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Industry Vertical Set', 'better-analytics'));?></th>
 				<?php
 					echo ($checks['industryVertical'] && $checks['industryVertical'] != 'UNSPECIFIED' ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
-				<?php echo sprintf(__('Found in Google Analytics account under <b>Property Settings</b> (currently set to <b>%s</b>).', 'better-analytics'), ($checks['industryVertical'] ? $checks['industryVertical'] : 'UNSPECIFIED'));?>
+				<?php
+					/* translators: %1$s = <strong>, %2$s = </strong>, %3$s = current setting in Google Analytics account */
+					printf(__('Found in Google Analytics account under %1$sProperty Settings%2$s (currently set to <b>%3$s</b>).', 'better-analytics'), '<strong>', '</strong>', ($checks['industryVertical'] ? $checks['industryVertical'] : 'UNSPECIFIED'));
+				?>
 			</td>
 		</tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Custom Dimension For Category Tracking', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Custom Dimension For Category Tracking', 'better-analytics'));?></th>
 				<?php
 					echo ($checks['dimensions']['Categories'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
-				<?php _e('Found in Google Analytics account under <b>Custom Definitions -&gt; Custom Dimensions</b> (should be named "<b>Categories</b>" and scoped for "<b>Hit</b>").', 'better-analytics');?>
+				<?php
+					/* translators: %1$s = <strong>, %2$s = </strong> ... %3$s can't be translated - leave */
+					printf(__('Found in Google Analytics account under %1$sCustom Definitions -> Custom Dimensions%2$s (should be named "%1$s%3$s%2$s" and scoped for "%1$sHit%2$s").', 'better-analytics'), '<strong>', '</strong>', 'Categories');
+				?>
 			</td>
 		</tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Custom Dimension For Author Tracking', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Custom Dimension For Author Tracking', 'better-analytics'));?></th>
 				<?php
 					echo ($checks['dimensions']['Author'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
+
 			<td class="description">
-				<?php _e('Found in Google Analytics account under <b>Custom Definitions -&gt; Custom Dimensions</b> (should be named "<b>Author</b>" and scoped for "<b>Hit</b>").', 'better-analytics');?>
+
+				<?php
+					/* translators: %1$s = <strong>, %2$s = </strong> ... %3$s can't be translated - leave */
+					printf(__('Found in Google Analytics account under %1$sCustom Definitions -> Custom Dimensions%2$s (should be named "%1$s%3$s%2$s" and scoped for "%1$sHit%2$s").', 'better-analytics'), '<strong>', '</strong>', 'Author');
+				?>
 			</td>
 		</tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Custom Dimension For Tag Tracking', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Custom Dimension For Tag Tracking', 'better-analytics'));?></th>
 				<?php
 					echo ($checks['dimensions']['Tags'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
-				<?php _e('Found in Google Analytics account under <b>Custom Definitions -&gt; Custom Dimensions</b> (should be named "<b>Tags</b>" and scoped for "<b>Hit</b>").', 'better-analytics');?>
+				<?php
+					/* translators: %1$s = <strong>, %2$s = </strong> ... %3$s can't be translated - leave */
+					printf(__('Found in Google Analytics account under %1$sCustom Definitions -> Custom Dimensions%2$s (should be named "%1$s%3$s%2$s" and scoped for "%1$sHit%2$s").', 'better-analytics'), '<strong>', '</strong>', 'Tags');
+				?>
 			</td>
 		</tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Custom Dimension For User Tracking', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Custom Dimension For User Tracking', 'better-analytics'));?></th>
 				<?php
 					echo ($checks['dimensions']['User'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
-				<?php _e('Found in Google Analytics account under <b>Custom Definitions -&gt; Custom Dimensions</b> (should be named "<b>User</b>" and scoped for "<b>Hit</b>").', 'better-analytics');?>
+
+				<?php
+					/* translators: %1$s = <strong>, %2$s = </strong> ... %3$s can't be translated - leave */
+					printf(__('Found in Google Analytics account under %1$sCustom Definitions -> Custom Dimensions%2$s (should be named "%1$s%3$s%2$s" and scoped for "%1$sHit%2$s").', 'better-analytics'), '<strong>', '</strong>', 'User');
+				?>
 			</td>
 		</tr>
 
 		<tr valign="top">
 
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', __('Category Tracking Dimension Index Set', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', __('Category Tracking Dimension Index Set', 'better-analytics'));?></th>
 				<?php
 					echo ($betterAnalyticsOptions['dimension']['category'] > 0 && @$checks['dimensions']['Categories']['index'] == $betterAnalyticsOptions['dimension']['category'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
@@ -177,7 +205,7 @@
 
 		<tr valign="top">
 
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', __('Author Tracking Dimension Index Set', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', __('Author Tracking Dimension Index Set', 'better-analytics'));?></th>
 				<?php
 					echo ($betterAnalyticsOptions['dimension']['author'] > 0 && @$checks['dimensions']['Author']['index'] == $betterAnalyticsOptions['dimension']['author'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
@@ -185,7 +213,7 @@
 		</tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', __('Tag Tracking Dimension Index Set', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', __('Tag Tracking Dimension Index Set', 'better-analytics'));?></th>
 				<?php
 					echo ($betterAnalyticsOptions['dimension']['tag'] > 0 && @$checks['dimensions']['Tags']['index'] == $betterAnalyticsOptions['dimension']['tag'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
@@ -193,7 +221,7 @@
 		</tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', __('Registered User Tracking Dimension Index Set', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', __('Registered User Tracking Dimension Index Set', 'better-analytics'));?></th>
 				<?php
 					echo ($betterAnalyticsOptions['dimension']['user'] > 0 && @$checks['dimensions']['User']['index'] == $betterAnalyticsOptions['dimension']['user'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
@@ -201,31 +229,62 @@
 		</tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_test&utm_medium=wordpress&utm_campaign=plugin', __('Better Analytics Pro License', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_test&utm_medium=wordpress&utm_campaign=plugin', __('Better Analytics Pro License', 'better-analytics'));?></th>
 			<?php
 				echo ($checks['licensed'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 			?>
-			<td class="description"><?php printf(__('A few extra advanced features are available when you license the Better Analytics Pro plugin.  Please don\'t steal, a crazy amount of work went into this.  Some of the extra features:
+			<td class="description">
+				<?php _e('A few extra advanced features are available when you license the Better Analytics Pro plugin.  Please don\'t steal, a crazy amount of work went into this.  Some of the extra features:', 'better-analytics'); ?>
 				<ul>
-					<li>More metrics available for <a href="%s" target="_blank">Heatmaps</a></li>
-					<li>More dimensions available for <a href="%s" target="_blank">Charts</a></li>
-					<li>More <a href="%s" target="_blank">advertising platform click tracking</a></li>
-					<li>More <a href="%s" target="_blank">issue monitoring options</a></li>
-					<li><a href="%s" target="_blank">eCommerce tracking</a></li>
-					<li>Ability to do <a href="%s" target="_blank">server-side tracking of users</a></li>
-					<li>Faster API calls (utilizes a multi-threaded mechanism)</li>
-					<li><a href="%s" target="_blank">Priority support</a></li>
-					<li>A Warm & Fuzzy Feeling knowing you are helping to continue future development</li>
-				</ul>', 'better-analaytics'),
-					menu_page_url('better-analytics_heatmaps', false),
-					menu_page_url('better-analytics_areacharts', false),
-					menu_page_url('better-analytics', false) . '#top#advertising',
-					menu_page_url('better-analytics', false) . '#top#monitor',
-					menu_page_url('better-analytics', false) . '#top#ecommerce',
-					menu_page_url('better-analytics', false) . '#top#advanced',
-					BETTER_ANALYTICS_SUPPORT_URL
-				) ?>
-				</td>
+					<li>
+						<?php
+							printf(__('More metrics available for %1$sHeat Maps%2$s', 'better_analytics'), '<a href="' . esc_url(menu_page_url('better-analytics_heatmaps', false)) . '" target="_blank">', '</a>');
+						?>
+					</li>
+					<li>
+						<?php
+							printf(__('More dimensions available for %1$sCharts%2$s', 'better_analytics'), '<a href="' . esc_url(menu_page_url('better-analytics_areacharts', false)) . '" target="_blank">', '</a>');
+						?>
+					</li>
+					<li>
+						<?php
+							printf(__('More %1$sadvertising platform click tracking%2$s', 'better_analytics'), '<a href="' . esc_url(menu_page_url('better-analytics', false) . '#top#advertising') . '" target="_blank">', '</a>');
+						?>
+					</li>
+					<li>
+						<?php
+							printf(__('More %1$sissue monitoring options%2$s', 'better_analytics'), '<a href="' . esc_url(menu_page_url('better-analytics', false) . '#top#monitor') . '" target="_blank">', '</a>');
+						?>
+					</li>
+					<li>
+						<?php
+							printf(__('%1$seCommerce tracking%2$s', 'better_analytics'), '<a href="' . esc_url(menu_page_url('better-analytics', false) . '#top#ecommerce') . '" target="_blank">', '</a>');
+						?>
+					</li>
+					<li>
+						<?php
+							printf(__('Ability to do %1$sserver-side tracking of users%2$s', 'better_analytics'), '<a href="' . esc_url(menu_page_url('better-analytics', false) . '#top#advanced') . '" target="_blank">', '</a>');
+						?>
+					</li>
+					<li>
+						<?php
+							_e('Faster API calls (utilizes a multi-threaded mechanism)', 'better_analytics');
+						?>
+					</li>
+					<li>
+						<?php
+							printf(__('%1$sPriority support%2$s', 'better_analytics'), '<a href="' . esc_url(BETTER_ANALYTICS_SUPPORT_URL . '#utm_source=admin_test&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">', '</a>');
+						?>
+					</li>
+					<li>
+						<?php
+							_e('A Warm & Fuzzy Feeling knowing you are helping to continue future development', 'better_analytics');
+						?>
+					</li>
+
+
+				</ul>
+			</td>
 		</tr>
 
 
@@ -235,18 +294,18 @@
 		<tr><td colspan="3"><h3><?php esc_html_e( 'Things That Need To Be Checked Manually' , 'better-analytics');?></h3></td></tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('User-ID Tracking', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('User-ID Tracking', 'better-analytics'));?></th>
 			<td class="good">&nbsp;</td>
 			<td class="description">
-				<?php _e('Found in Google Analytics account under <b>Tracking Info -&gt; User-ID</b>.', 'better-analytics');?>
+				<?php printf(__('Found in Google Analytics account under %1$sTracking Info -> User-ID%2$s.', 'better-analytics'), '<strong>', '</strong>');?>
 			</td>
 		</tr>
 
 		<tr valign="top">
-			<th scope="row"><?php printf('<a href="%s" target="_blank">%s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Demographic and Interest Reports', 'better-analytics'));?></th>
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', __('Demographic and Interest Reports', 'better-analytics'));?></th>
 			<td class="good">&nbsp;</td>
 			<td class="description">
-				<?php _e('Found in Google Analytics account under <b>Property Settings</b>.', 'better-analytics');?>
+				<?php printf(__('Found in Google Analytics account under %1$sProperty Settings%1$s.', 'better-analytics'), '<strong>', '</strong>');?>
 			</td>
 		</tr>
 
