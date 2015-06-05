@@ -8,8 +8,8 @@ class DigitalPointBetterAnalytics_Widget_PopularPosts extends WP_Widget {
 	{
 		parent::__construct(
 			'better-analytics_popular_widget',
-			__( 'Better Analytics' , 'better-analytics'),
-			array( 'description' => __( 'Display the most popular content right now.' , 'better-analytics') )
+			esc_html__( 'Better Analytics' , 'better-analytics'),
+			array( 'description' => esc_html__( 'Display the most popular content right now.' , 'better-analytics') )
 		);
 
 		if ( is_active_widget( false, false, $this->id_base ) ) {
@@ -43,7 +43,7 @@ class DigitalPointBetterAnalytics_Widget_PopularPosts extends WP_Widget {
 
 		if (!get_option('ba_tokens') || !$betterAnalyticsOptions['api']['profile'])
 		{
-			echo '<p>' . sprintf(__('No Linked Google Analytics Account (API access required for this widget).  You can link one in the %1$sBetter Analytics API settings%2$s.', 'better-analytics'), '<a href="' . esc_url(menu_page_url('better-analytics', false) . '#top#api') . '">', '</a>') . '</p>';
+			echo '<p>' . sprintf(esc_html__('No Linked Google Analytics Account (API access required for this widget).  You can link one in the %1$sBetter Analytics API settings%2$s.', 'better-analytics'), '<a href="' . esc_url(menu_page_url('better-analytics', false) . '#top#api') . '">', '</a>') . '</p>';
 		}
 
 		?>

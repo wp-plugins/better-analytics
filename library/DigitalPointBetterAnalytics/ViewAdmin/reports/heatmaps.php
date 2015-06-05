@@ -5,7 +5,7 @@
 	wp_enqueue_script('better_analytics_admin_js', BETTER_ANALYTICS_PLUGIN_URL . 'assets/digitalpoint/js/admin.js', array(), BETTER_ANALYTICS_VERSION );
 	wp_enqueue_style('better_analytics_admin_css', BETTER_ANALYTICS_PLUGIN_URL . 'assets/digitalpoint/css/admin.css', array(), BETTER_ANALYTICS_VERSION);
 
-	echo '<h2>' . __('Reports & Charts', 'better-analytics') . '</h2>';
+	echo '<h2>' . esc_html__('Reports & Charts', 'better-analytics') . '</h2>';
 ?>
 
 <h3 class="nav-tab-wrapper">
@@ -23,37 +23,37 @@
 
 		<div class="cell"><?php
 				/* translators: Sunday (day of the week), with everything between %s hidden on smaller screens (responsive) */
-				printf(__('Sun%sday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+				printf(esc_html__('Sun%sday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
 			?></div>
 
 		<div class="cell"><?php
 			/* translators: Monday (day of the week), with everything between %s hidden on smaller screens (responsive) */
-			printf(__('Mon%sday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+			printf(esc_html__('Mon%sday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
 			?></div>
 
 		<div class="cell"><?php
 			/* translators: Tuesday (day of the week), with everything between %s hidden on smaller screens (responsive) */
-			printf(__('Tue%ssday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+			printf(esc_html__('Tue%ssday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
 			?></div>
 
 		<div class="cell"><?php
 			/* translators: Wednesday (day of the week), with everything between %s hidden on smaller screens (responsive) */
-			printf(__('Wed%snesday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+			printf(esc_html__('Wed%snesday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
 			?></div>
 
 		<div class="cell"><?php
 			/* translators: Thursday (day of the week), with everything between %s hidden on smaller screens (responsive) */
-			printf(__('Thu%srsday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+			printf(esc_html__('Thu%srsday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
 			?></div>
 
 		<div class="cell"><?php
 			/* translators: Friday (day of the week), with everything between %s hidden on smaller screens (responsive) */
-			printf(__('Fri%sday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+			printf(esc_html__('Fri%sday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
 			?></div>
 
 		<div class="cell"><?php
 			/* translators: Saturday (day of the week), with everything between %s hidden on smaller screens (responsive) */
-			printf(__('Sat%surday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
+			printf(esc_html__('Sat%surday%s', 'better-analytics'), '<span class="responsiveHide">', '</span>');
 			?></div>
 	</div>
 	<?php
@@ -73,7 +73,7 @@
 	<table id="parameters" class="form-table">
 		<?php
 		echo '<tr valign="top">
-						<th scope="row">' . __('Metric', 'better-analytics') . '</th>
+						<th scope="row">' . esc_html__('Metric', 'better-analytics') . '</th>
 						<td>';
 
 		echo '<select id="ba_metric" name="metric" class="chosen-charts">';
@@ -96,7 +96,7 @@
 
 
 		echo '<tr valign="top">
-						<th scope="row">' . __('Segment', 'better-analytics') . '</th>
+						<th scope="row">' . esc_html__('Segment', 'better-analytics') . '</th>
 						<td>';
 
 		echo '<select id="ba_segment" name="segment" class="chosen-charts">';
@@ -121,9 +121,8 @@
 		<tr>
 			<th></th>
 			<td>
-				<input type="number" name="weeks" id="ba_weeks" size="5" min="1" max="1000" step="1" value="4" /> &nbsp; <?php _e('Weeks Of Data, Ending', 'better-analytics') ?> &nbsp;
-				<input type="number" name="end" id="ba_end" size="5" min="0" max="10000" step="1" value="1" /> &nbsp; <?php _e('Days Ago', 'better-analytics') ?>
-
+				<input type="number" name="weeks" id="ba_weeks" size="5" min="1" max="1000" step="1" value="4" /> &nbsp; <?php esc_html_e('Weeks Of Data, Ending', 'better-analytics') ?> &nbsp;
+				<input type="number" name="end" id="ba_end" size="5" min="0" max="10000" step="1" value="1" /> &nbsp; <?php esc_html_e('Days Ago', 'better-analytics') ?>
 			</td>
 		</tr>
 

@@ -32,7 +32,7 @@ define('BETTER_ANALYTICS_SUPPORT_URL', 'https://forums.digitalpoint.com/forums/b
 define('BETTER_ANALYTICS_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('BETTER_ANALYTICS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
-load_plugin_textdomain('better-analytics');
+load_plugin_textdomain('better-analytics', false, dirname(plugin_basename(__FILE__)) . '/languages');
 
 require_once(BETTER_ANALYTICS_PLUGIN_DIR . '/library/DigitalPointBetterAnalytics/Base/Public.php');
 
@@ -50,7 +50,6 @@ register_uninstall_hook(__FILE__, array('DigitalPointBetterAnalytics_Install', '
 DigitalPointBetterAnalytics_Base_Public::getInstance();
 
 add_action( 'widgets_init', array('DigitalPointBetterAnalytics_Widget_PopularPosts', 'register_widget'));
-
 
 if (is_admin())
 {

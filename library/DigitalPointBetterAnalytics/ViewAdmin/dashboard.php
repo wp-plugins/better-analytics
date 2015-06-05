@@ -10,7 +10,7 @@ DigitalPointBetterAnalytics_Helper_Api::check();
 
 if (!get_option('ba_tokens') || !$betterAnalyticsOptions['api']['profile'])
 {
-	printf(__('%1$sSet up API access%2$s to utilize Better Analytics charts.', 'better-analytics'),
+	printf(esc_html__('%1$sSet up API access%2$s to utilize Better Analytics charts.', 'better-analytics'),
 		'<a href="' . esc_url(menu_page_url('better-analytics', false) . '#top#api') . '">',
 		'</a>'
 	);
@@ -46,7 +46,7 @@ else
 	echo '</select>';
 
 
-	echo ' &nbsp; ' . __('by', 'better-analytics') . ' &nbsp; ';
+	echo ' &nbsp; ' . esc_html__('by', 'better-analytics') . ' &nbsp; ';
 
 	echo '<select data-placeholder="Pick chart" id="ba_dimension" class="chosen-select"' . ($betterAnalyticsDashboardPick['realtime'] ? ' disabled="disabled"' : '') . '>';
 	foreach ($dimensions as $key => $name)
@@ -56,17 +56,17 @@ else
 	echo '</select>';
 
 
-	echo ' &nbsp; ' . __('for last', 'better-analytics') . ' &nbsp; ';
+	echo ' &nbsp; ' . esc_html__('for last', 'better-analytics') . ' &nbsp; ';
 
 
 	$chartDays = array(
-		'7' => __('7 Days', 'better-analytics'),
-		'14' => __('14 Days', 'better-analytics'),
-		'30' => __('1 Month', 'better-analytics'),
-		'90' => __('3 Months', 'better-analytics'),
-		'365' => __('1 Year', 'better-analytics'),
-		'1825' => __('5 Years', 'better-analytics'),
-		'3650' => __('10 Years', 'better-analytics'),
+		'7' => esc_html__('7 Days', 'better-analytics'),
+		'14' => esc_html__('14 Days', 'better-analytics'),
+		'30' => esc_html__('1 Month', 'better-analytics'),
+		'90' => esc_html__('3 Months', 'better-analytics'),
+		'365' => esc_html__('1 Year', 'better-analytics'),
+		'1825' => esc_html__('5 Years', 'better-analytics'),
+		'3650' => esc_html__('10 Years', 'better-analytics'),
 	);
 
 
@@ -78,12 +78,12 @@ else
 	echo '</select>
 </div>';
 
-	echo '<label style="white-space: nowrap;"><input type="checkbox" id="ba_realtime"' . ($betterAnalyticsDashboardPick['realtime'] ? ' checked="checked"' : '') . '> ' . __('Realtime', 'better-analytics') . '</label>';
+	echo '<label style="white-space: nowrap;"><input type="checkbox" id="ba_realtime"' . ($betterAnalyticsDashboardPick['realtime'] ? ' checked="checked"' : '') . '> ' . esc_html__('Realtime', 'better-analytics') . '</label>';
 
 	echo '<div id="ba_chart"></div>';
 
 	echo '<div id="ba_realtime_charts">
-			<div id="ba_rt_users"><span class="number" data-number="0"></span><div class="label">' . __('active users', 'better-analytics') . '</div></div><div id="ba_rt_map"></div>
+			<div id="ba_rt_users"><span class="number" data-number="0"></span><div class="label">' . esc_html__('active users', 'better-analytics') . '</div></div><div id="ba_rt_map"></div>
 			<div id="ba_rt_medium"></div><div id="ba_rt_device"></div>
 			<div id="ba_rt_keywords"></div><div id="ba_rt_referral_path"></div>
 			<div id="ba_rt_page_path"></div>

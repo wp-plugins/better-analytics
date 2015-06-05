@@ -82,26 +82,26 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 	public function admin_menu()
 	{
-		$hook = add_management_page( __('Test Analytics Setup', 'better-analytics'), __('Test Analytics Setup', 'better-analytics'), 'manage_options', 'better-analytics_test', array($this, 'display_test_page') );
-		$hook = add_management_page( __('OAuth2 Endpoint', 'better-analytics'), __('OAuth2 Endpoint', 'better-analytics'), 'manage_options', 'better-analytics_auth', array($this, 'api_authentication') );
+		$hook = add_management_page( esc_html__('Test Analytics Setup', 'better-analytics'), esc_html__('Test Analytics Setup', 'better-analytics'), 'manage_options', 'better-analytics_test', array($this, 'display_test_page') );
+		$hook = add_management_page( esc_html__('OAuth2 Endpoint', 'better-analytics'), esc_html__('OAuth2 Endpoint', 'better-analytics'), 'manage_options', 'better-analytics_auth', array($this, 'api_authentication') );
 
 
 		if ($this->canViewReports())
 		{
-			$hook = add_menu_page(__('Analytics', 'better-analytics'), __('Analytics', 'better-analytics'), 'read', 'better-analytics_heatmaps', null, 'dashicons-chart-line', 3.1975123 );
-			$hook = add_submenu_page( 'better-analytics_heatmaps', __('Heat Maps', 'better-analytics'), __('Reports', 'better-analytics'), 'read', 'better-analytics_heatmaps', array($this, 'display_page') );
+			$hook = add_menu_page(esc_html__('Analytics', 'better-analytics'), esc_html__('Analytics', 'better-analytics'), 'read', 'better-analytics_heatmaps', null, 'dashicons-chart-line', 3.1975123 );
+			$hook = add_submenu_page( 'better-analytics_heatmaps', esc_html__('Heat Maps', 'better-analytics'), esc_html__('Reports', 'better-analytics'), 'read', 'better-analytics_heatmaps', array($this, 'display_page') );
 
-			$hook = add_submenu_page( 'better-analytics_heatmaps', __('Charts', 'better-analytics'), __('Charts', 'better-analytics'), 'read', 'better-analytics_areacharts', array($this, 'display_page') );
-			$hook = add_submenu_page( 'better-analytics_heatmaps', __('Issue Monitor', 'better-analytics'), __('Issue Monitor', 'better-analytics'), 'read', 'better-analytics_monitor', array($this, 'display_page') );
-			$hook = add_submenu_page( 'better-analytics_heatmaps', __('Events', 'better-analytics'), __('Events', 'better-analytics'), 'read', 'better-analytics_events', array($this, 'display_page') );
+			$hook = add_submenu_page( 'better-analytics_heatmaps', esc_html__('Charts', 'better-analytics'), esc_html__('Charts', 'better-analytics'), 'read', 'better-analytics_areacharts', array($this, 'display_page') );
+			$hook = add_submenu_page( 'better-analytics_heatmaps', esc_html__('Issue Monitor', 'better-analytics'), esc_html__('Issue Monitor', 'better-analytics'), 'read', 'better-analytics_monitor', array($this, 'display_page') );
+			$hook = add_submenu_page( 'better-analytics_heatmaps', esc_html__('Events', 'better-analytics'), esc_html__('Events', 'better-analytics'), 'read', 'better-analytics_events', array($this, 'display_page') );
 		}
 
 
-		$hook = add_submenu_page( 'better-analytics_heatmaps', __('Settings', 'better-analytics'), __('Settings', 'better-analytics'), 'manage_options', 'options-general.php' . '?page=better-analytics' );
-		$hook = add_submenu_page( 'better-analytics_heatmaps', __('Test Setup', 'better-analytics'), __('Test Setup', 'better-analytics'), 'manage_options', 'tools.php' . '?page=better-analytics_test' );
+		$hook = add_submenu_page( 'better-analytics_heatmaps', esc_html__('Settings', 'better-analytics'), esc_html__('Settings', 'better-analytics'), 'manage_options', 'options-general.php' . '?page=better-analytics' );
+		$hook = add_submenu_page( 'better-analytics_heatmaps', esc_html__('Test Setup', 'better-analytics'), esc_html__('Test Setup', 'better-analytics'), 'manage_options', 'tools.php' . '?page=better-analytics_test' );
 
 
-		$hook = add_options_page( __('Better Analytics', 'better-analytics'), __('Better Analytics', 'better-analytics'), 'manage_options', 'better-analytics', array($this, 'display_configuration_page'));
+		$hook = add_options_page( esc_html__('Better Analytics', 'better-analytics'), esc_html__('Better Analytics', 'better-analytics'), 'manage_options', 'better-analytics', array($this, 'display_configuration_page'));
 		add_action( "load-$hook", array($this, 'admin_help'));
 	}
 
@@ -125,26 +125,26 @@ class DigitalPointBetterAnalytics_Base_Admin
 						(@$betterAnalyticsInternal['l'] != DigitalPointBetterAnalytics_Base_Pro::$version ?
 							sprintf('<a href="%1$s" target="_blank">%2$s</a><br />%3$s %4$s<br />%5$s %6$s',
 								esc_url(BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_plugins&utm_medium=wordpress&utm_campaign=plugin'),
-								__('Pro version not up to date.', 'better-analytics'),
-								__('Installed:', 'better-analytics'),
+								esc_html__('Pro version not up to date.', 'better-analytics'),
+								esc_html__('Installed:', 'better-analytics'),
 								DigitalPointBetterAnalytics_Base_Pro::$version,
-								__('Latest:', 'better-analytics'),
+								esc_html__('Latest:', 'better-analytics'),
 								@$betterAnalyticsInternal['l']
 							) :
 							sprintf('<a href="%1$s" target="_blank">%2$s</a> (%3$s)',
 								esc_url(BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_plugins&utm_medium=wordpress&utm_campaign=plugin'),
-								__('Pro version installed', 'better-analytics'),
+								esc_html__('Pro version installed', 'better-analytics'),
 								@$betterAnalyticsInternal['l']
 							)
 						) :
-						sprintf(__('Pro version installed, but not active.  Did you %1$sverify ownership of your domain%2$s?', 'better-analytics'),
+						sprintf(esc_html__('Pro version installed, but not active.  Did you %1$sverify ownership of your domain%2$s?', 'better-analytics'),
 							'<a href="' . esc_url('https://forums.digitalpoint.com/marketplace/domain-verification#utm_source=admin_plugins&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">',
 							'</a>'
 						)
 					) :
 					sprintf('<a href="%1$s" target="_blank">%2$s</a>',
 						esc_url(BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_plugins&utm_medium=wordpress&utm_campaign=plugin'),
-						__('Pro version not installed.', 'better-analytics')
+						esc_html__('Pro version not installed.', 'better-analytics')
 					)
 				) .
 				'</p>';
@@ -188,7 +188,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 		{
 			wp_add_dashboard_widget(
 				'better-analytics',
-				__('Better Analytics', 'better-analytics'),
+				esc_html__('Better Analytics', 'better-analytics'),
 				array($this, 'dashboard_display')
 			);
 		}
@@ -212,12 +212,12 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 	public function not_configured()
 	{
-		$this->_displayError(sprintf('%1$s<p><a href="%2$s" class="button button-primary">%3$s</a></p>', __('Google Analytics Web Property ID not selected.', 'better-analytics'), esc_url(menu_page_url('better-analytics', false)), __('Settings', 'better-analytics')));
+		$this->_displayError(sprintf('%1$s<p><a href="%2$s" class="button button-primary">%3$s</a></p>', esc_html__('Google Analytics Web Property ID not selected.', 'better-analytics'), esc_url(menu_page_url('better-analytics', false)), esc_html__('Settings', 'better-analytics')));
 	}
 
 	public function last_error()
 	{
-		$this->_displayError(sprintf('<strong>%1$s</strong><br /><br />%2$s', __('Last Analytics Error:'), get_transient('ba_last_error')));
+		$this->_displayError(sprintf('<strong>%1$s</strong><br /><br />%2$s', esc_html__('Last Analytics Error:'), get_transient('ba_last_error')));
 	}
 
 	protected function _displayError($error)
@@ -252,7 +252,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 			}
 			else
 			{
-				echo sprintf('%1$s %2$s', __('Invalid method:', 'better-analytics'), $method);
+				echo sprintf('%1$s %2$s', esc_html__('Invalid method:', 'better-analytics'), $method);
 			}
 		}
 	}
@@ -277,13 +277,13 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 			if (!empty($response->error) && !empty($response->error_description))
 			{
-				echo sprintf('%1$s<br /><br /><b>%2$s</b>: %3$s', __('Invalid Google API Code:', 'better-analytics'), $response->error, $response->error_description);
+				echo sprintf('%1$s<br /><br /><b>%2$s</b>: %3$s', esc_html__('Invalid Google API Code:', 'better-analytics'), $response->error, $response->error_description);
 				return;
 			}
 
 			if (empty($response->expires_in))
 			{
-				echo sprintf('%1$s:<br /><br />%2$s', __('Unknown Google API Error:', 'better-analytics'), nl2br(var_export($response, true)));
+				echo sprintf('%1$s:<br /><br />%2$s', esc_html__('Unknown Google API Error:', 'better-analytics'), nl2br(var_export($response, true)));
 				return;
 			}
 
@@ -318,7 +318,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 			$current_screen->add_help_tab(
 				array(
 					'id'		=> 'overview',
-					'title'		=> __( 'Overview' , 'better-analytics'),
+					'title'		=> esc_html__( 'Overview' , 'better-analytics'),
 					'content'	=>
 						'<p><strong>' . esc_html__( 'Better Analytics' , 'better-analytics') . '</strong></p>' .
 						'<p>' . esc_html__( 'At the most basic level, it will automatically add Google Analytics Universal code to your website.  It gives you the flexibility to track virtually everything about your site.  From page views to YouTube video engagement (and everything in between).' , 'better-analytics') . '</p>',
@@ -328,7 +328,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 			$current_screen->add_help_tab(
 				array(
 					'id'		=> 'pro',
-					'title'		=> __( 'Pro' , 'better-analytics'),
+					'title'		=> esc_html__( 'Pro' , 'better-analytics'),
 					'content'	=>
 						'<p><strong>' . esc_html__( 'Pro Version' , 'better-analytics') . '</strong></p>' .
 						'<p>' . esc_html__( 'There is a Pro version of this plugin that gives you a few added features.  More metrics/dimensions, more tracking options, etc.' , 'better-analytics') . '</p>' .
@@ -355,7 +355,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 		if (isset($currentScreen->id) && strpos($currentScreen->id, 'better-analytics') !== false)
 		{
-			$_type = array(__('colossal', 'better-analytics'), __('elephantine', 'better-analytics'), __('glorious', 'better-analytics'), __('grand', 'better-analytics'), __('huge', 'better-analytics'), __('mighty', 'better-analytics'), sprintf('<span class="tooltip" title="%1$s">%2$s</span>', __('WTF?', 'better-analytics'), __('sexy', 'better-analytics')));
+			$_type = array(esc_html__('colossal', 'better-analytics'), esc_html__('elephantine', 'better-analytics'), esc_html__('glorious', 'better-analytics'), esc_html__('grand', 'better-analytics'), esc_html__('huge', 'better-analytics'), esc_html__('mighty', 'better-analytics'), sprintf('<span class="tooltip" title="%1$s">%2$s</span>', esc_html__('WTF?', 'better-analytics'), esc_html__('sexy', 'better-analytics')));
 			$_type = $_type[array_rand($_type)];
 			if (strpos($_type, '"tooltip"') !== false)
 			{
@@ -363,8 +363,8 @@ class DigitalPointBetterAnalytics_Base_Admin
 				wp_enqueue_style('tooltipster_css', esc_url(BETTER_ANALYTICS_PLUGIN_URL . 'assets/tooltipster/css/tooltipster.css'), array(), BETTER_ANALYTICS_VERSION);
 			}
 
-			$footerText = sprintf(__('If you like %1$s, please leave us a %2$s rating. A %3$s thank you in advance!', 'better-analytics'),
-				'<strong>' . __('Better Analytics', 'better-analytics') . '</strong>',
+			$footerText = sprintf(esc_html__('If you like %1$s, please leave us a %2$s rating. A %3$s thank you in advance!', 'better-analytics'),
+				'<strong>' . esc_html__('Better Analytics', 'better-analytics') . '</strong>',
 				'<a href="https://wordpress.org/support/view/plugin-reviews/better-analytics?filter=5#postform" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a>',
 				$_type
 			);
@@ -376,7 +376,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 	{
 		if ($file == plugin_basename(BETTER_ANALYTICS_PLUGIN_DIR . '/better-analytics.php'))
 		{
-			$links['support'] = '<a href="' . esc_url(BETTER_ANALYTICS_SUPPORT_URL ) . '" title="' . esc_attr( __( 'Visit Support Forum', 'better-analytics' ) ) . '">' . __( 'Support', 'better-analytics' ) . '</a>';
+			$links['support'] = '<a href="' . esc_url(BETTER_ANALYTICS_SUPPORT_URL ) . '" title="' . esc_attr( esc_html__( 'Visit Support Forum', 'better-analytics' ) ) . '">' . esc_html__( 'Support', 'better-analytics' ) . '</a>';
 		}
 
 		return $links;

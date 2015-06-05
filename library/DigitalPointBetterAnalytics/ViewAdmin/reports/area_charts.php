@@ -7,7 +7,7 @@ wp_enqueue_style('chosen_css', BETTER_ANALYTICS_PLUGIN_URL . 'assets/chosen/chos
 
 wp_enqueue_script('better_analytics_admin_js', BETTER_ANALYTICS_PLUGIN_URL . 'assets/digitalpoint/js/admin.js', array(), BETTER_ANALYTICS_VERSION );
 wp_enqueue_style('better_analytics_admin_css', BETTER_ANALYTICS_PLUGIN_URL . 'assets/digitalpoint/css/admin.css', array(), BETTER_ANALYTICS_VERSION);
-echo '<h2>' . __('Reports & Charts', 'better-analytics') . '</h2>';
+echo '<h2>' . esc_html__('Reports & Charts', 'better-analytics') . '</h2>';
 
 ?>
 
@@ -26,7 +26,7 @@ echo '<h2>' . __('Reports & Charts', 'better-analytics') . '</h2>';
 	<table id="parameters" class="form-table">
 		<?php
 		echo '<tr valign="top">
-						<th scope="row">' . __('Dimension', 'better-analytics') . '</th>
+						<th scope="row">' . esc_html__('Dimension', 'better-analytics') . '</th>
 						<td>';
 
 		echo '<select id="ba_dimension" name="dimension" class="chosen-charts">';
@@ -49,16 +49,16 @@ echo '<h2>' . __('Reports & Charts', 'better-analytics') . '</h2>';
 
 
 		echo '<tr valign="top">
-						<th scope="row">' . __('Time Frame', 'better-analytics') . '</th>
+						<th scope="row">' . esc_html__('Time Frame', 'better-analytics') . '</th>
 						<td>';
 
 		echo '<select id="ba_time_frame" name="time_frame" class="chosen-charts">';
 
-			echo '<option value="30">' . __('1 Month', 'better-analytics') . '</option>';
-			echo '<option value="365" selected="selected">' . __('1 Year', 'better-analytics') . '</option>';
-			echo '<option value="730">' . __('2 Years', 'better-analytics') . '</option>';
-			echo '<option value="1825">' . __('5 Years', 'better-analytics') . '</option>';
-			echo '<option value="3650">' . __('10 Years', 'better-analytics') . '</option>';
+			echo '<option value="30">' . esc_html__('1 Month', 'better-analytics') . '</option>';
+			echo '<option value="365" selected="selected">' . esc_html__('1 Year', 'better-analytics') . '</option>';
+			echo '<option value="730">' . esc_html__('2 Years', 'better-analytics') . '</option>';
+			echo '<option value="1825">' . esc_html__('5 Years', 'better-analytics') . '</option>';
+			echo '<option value="3650">' . esc_html__('10 Years', 'better-analytics') . '</option>';
 
 		echo '</select>
 						</td>
@@ -66,14 +66,14 @@ echo '<h2>' . __('Reports & Charts', 'better-analytics') . '</h2>';
 
 
 		echo '<tr valign="top">
-						<th scope="row">' . __('Scope', 'better-analytics') . '</th>
+						<th scope="row">' . esc_html__('Scope', 'better-analytics') . '</th>
 						<td>';
 
 		echo '<select id="ba_scope" name="scope" class="chosen-charts">';
 
-			echo '<option value="day">' . __('Day', 'better-analytics') . '</option>';
-			echo '<option value="month" selected="selected">' . __('Month', 'better-analytics') . '</option>';
-			echo '<option value="year">' . __('Year', 'better-analytics') . '</option>';
+			echo '<option value="day">' . esc_html__('Day', 'better-analytics') . '</option>';
+			echo '<option value="month" selected="selected">' . esc_html__('Month', 'better-analytics') . '</option>';
+			echo '<option value="year">' . esc_html__('Year', 'better-analytics') . '</option>';
 
 		echo '</select>
 						</td>
@@ -84,7 +84,7 @@ echo '<h2>' . __('Reports & Charts', 'better-analytics') . '</h2>';
 
 
 		echo '<tr valign="top">
-						<th scope="row">' . __('Minimum Value To Plot', 'better-analytics') . '</th>
+						<th scope="row">' . esc_html__('Minimum Value To Plot', 'better-analytics') . '</th>
 						<td>';
 
 		echo '<input type="number" id="ba_minimum" name="minimum" value="100" min="0" step="100">
@@ -92,12 +92,12 @@ echo '<h2>' . __('Reports & Charts', 'better-analytics') . '</h2>';
 					</tr>';
 
 		echo '<tr valign="top">
-						<th scope="row">' . __('Display Chart As', 'better-analytics') . '</th>
+						<th scope="row">' . esc_html__('Display Chart As', 'better-analytics') . '</th>
 						<td>';
 
-		echo '<label><input name="chart_type" type="radio" value="percent"  checked="checked">' . __('Stacked Area Percent', 'better-analytics') . '</label> &nbsp;  &nbsp; ';
-		echo '<label><input name="chart_type" type="radio" value="absolute">' . __('Stacked', 'better-analytics') . '</label> &nbsp;  &nbsp; ';
-		echo '<label><input name="chart_type" type="radio" value="">' . __('Overlap', 'better-analytics') . '</label>
+		echo '<label><input name="chart_type" type="radio" value="percent"  checked="checked">' . esc_html__('Stacked Area Percent', 'better-analytics') . '</label> &nbsp;  &nbsp; ';
+		echo '<label><input name="chart_type" type="radio" value="absolute">' . esc_html__('Stacked', 'better-analytics') . '</label> &nbsp;  &nbsp; ';
+		echo '<label><input name="chart_type" type="radio" value="">' . esc_html__('Overlap', 'better-analytics') . '</label>
 
 
 						</td>

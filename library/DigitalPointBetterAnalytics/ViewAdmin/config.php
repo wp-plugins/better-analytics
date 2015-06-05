@@ -28,14 +28,14 @@
 	<h2><?php esc_html_e( 'Better Analytics' , 'better-analytics');?></h2>
 
 	<h3 class="nav-tab-wrapper" id="better-analytics_tabs">
-		<a class="nav-tab" id="general-tab" href="#top#general"><?php _e( 'General', 'better-analytics' ); ?></a>
-		<a class="nav-tab" id="dimensions-tab" href="#top#dimensions"><?php _e( 'Custom Dimensions', 'better-analytics' ); ?></a>
-		<a class="nav-tab" id="social-tab" href="#top#social"><?php _e( 'Social', 'better-analytics' ); ?></a>
-		<a class="nav-tab" id="advertising-tab" href="#top#advertising"><?php _e( 'Advertising', 'better-analytics' ); ?></a>
-		<a class="nav-tab" id="monitor-tab" href="#top#monitor"><?php _e( 'Monitoring', 'better-analytics' ); ?></a>
-		<a class="nav-tab" id="ecommerce-tab" href="#top#ecommerce"><?php _e( 'eCommerce', 'better-analytics' ); ?></a>
-		<a class="nav-tab" id="api-tab" href="#top#api"><?php _e('API', 'better-analytics' ); ?></a>
-		<a class="nav-tab" id="advanced-tab" href="#top#advanced"><?php _e('Advanced', 'better-analytics' ); ?></a>
+		<a class="nav-tab" id="general-tab" href="#top#general"><?php esc_html_e( 'General', 'better-analytics' ); ?></a>
+		<a class="nav-tab" id="dimensions-tab" href="#top#dimensions"><?php esc_html_e( 'Custom Dimensions', 'better-analytics' ); ?></a>
+		<a class="nav-tab" id="social-tab" href="#top#social"><?php esc_html_e( 'Social', 'better-analytics' ); ?></a>
+		<a class="nav-tab" id="advertising-tab" href="#top#advertising"><?php esc_html_e( 'Advertising', 'better-analytics' ); ?></a>
+		<a class="nav-tab" id="monitor-tab" href="#top#monitor"><?php esc_html_e( 'Monitoring', 'better-analytics' ); ?></a>
+		<a class="nav-tab" id="ecommerce-tab" href="#top#ecommerce"><?php esc_html_e( 'eCommerce', 'better-analytics' ); ?></a>
+		<a class="nav-tab" id="api-tab" href="#top#api"><?php esc_html_e('API', 'better-analytics' ); ?></a>
+		<a class="nav-tab" id="advanced-tab" href="#top#advanced"><?php esc_html_e('Advanced', 'better-analytics' ); ?></a>
 	</h3>
 
 
@@ -51,11 +51,11 @@
 			<div id="better-analytics_sidebar">
 
 				<div class="postbox support">
-					<h4><?php _e('Support / Feature Requests', 'better-analytics'); ?></h4>
+					<h4><?php esc_html_e('Support / Feature Requests', 'better-analytics'); ?></h4>
 					<div>
-						<?php _e('Better Analytics is user request driven, so if there\'s something you want it to do that it doesn\'t already do, or just have a question, simply ask!') . printf('<br /><br /><a class="button button-primary" href="%1$s">%2$s</a>', esc_url(menu_page_url('better-analytics_test', false)), __('Setup Test Tool', 'better-analytics')); ?>
+						<?php esc_html_e('Better Analytics is user request driven, so if there\'s something you want it to do that it doesn\'t already do, or just have a question, simply ask!') . printf('<br /><br /><a class="button button-primary" href="%1$s">%2$s</a>', esc_url(menu_page_url('better-analytics_test', false)), esc_html__('Setup Test Tool', 'better-analytics')); ?>
 					</div>
-					<h4 style="margin-top:2em;"><?php _e('Support / Request Venues', 'better-analytics'); ?></h4>
+					<h4 style="margin-top:2em;"><?php esc_html_e('Support / Request Venues', 'better-analytics'); ?></h4>
 					<div>
 						<?php printf('<a class="button button-primary" href="%1$s" target="_blank">%2$s</a> <a class="button button-primary" href="%3$s" target="_blank"><span class="dashicons dashicons-twitter"></span> %4$s</a>',
 							esc_url(BETTER_ANALYTICS_SUPPORT_URL . '#utm_source=admin_settings&utm_medium=wordpress&utm_campaign=plugin'),
@@ -67,38 +67,87 @@
 
 				</div>
 
+
+				<?php
+					if (!DigitalPointBetterAnalytics_Model_Admin::isLocaleSupported($locales))
+					{
+						?>
+
+						<div class="postbox translation">
+							<h4><?php
+									/* translators: This will only display if there is no translation file, so doesn't need to be translated */
+									esc_html_e('Translation / Localization', 'better-analytics');
+								?></h4>
+
+							<div>
+								<?php
+
+									if (version_compare($GLOBALS['wp_version'], '4.0.0', '<' ))
+									{
+										$localeName = get_locale();
+									}
+									else
+									{
+										require_once(ABSPATH . 'wp-admin/includes/translation-install.php');
+										$translations = wp_get_available_translations();
+
+										$locale = get_locale();
+
+										if (!empty($translations[$locale]))
+										{
+											$localeName = $translations[$locale]['english_name'];
+										}
+										else
+										{
+											/* translators: This will only display if there is no translation file, so doesn't need to be translated */
+											$localeName = esc_html__('Unknown', 'better-analytics');
+										}
+									}
+									/* translators: This will only display if there is no translation file, so doesn't need to be translated */
+									printf(esc_html__('Better Analytics currently supports %1$u languages, but unfortunately %3$s%2$s%4$s isn\'t one of them.'), count($locales), $localeName, '<strong>', '</strong>');
+									echo '<p />';
+									/* translators: This will only display if there is no translation file, so doesn't need to be translated */
+									printf(esc_html__('If you would like to help translate it into your language, please visit the %1$ssupport forum%2$s and we can show you how it\'s done.'), '<a href="' . esc_url(BETTER_ANALYTICS_SUPPORT_URL . '#utm_source=admin_settings&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">', '</a>');
+								?>
+							</div>
+						</div>
+					<?php
+					}
+				?>
+
+
 				<div class="postbox pro">
-					<h4><?php _e('Extra Features In Pro Version', 'better-analytics'); ?></h4>
+					<h4><?php esc_html_e('Extra Features In Pro Version', 'better-analytics'); ?></h4>
 					<div>
 						<ul>
 							<li>
-								<?php _e('More Advertising tracking options', 'better-analytics'); ?>
+								<?php esc_html_e('More Advertising tracking options', 'better-analytics'); ?>
 							</li>
 							<li>
-								<?php _e('More options for monitoring issues with site', 'better-analytics'); ?>
+								<?php esc_html_e('More options for monitoring issues with site', 'better-analytics'); ?>
 							</li>
 							<li>
-								<?php _e('More heat map metrics', 'better-analytics'); ?>
+								<?php esc_html_e('More heat map metrics', 'better-analytics'); ?>
 							</li>
 							<li>
-								<?php _e('More charting dimensions', 'better-analytics'); ?>
+								<?php esc_html_e('More charting dimensions', 'better-analytics'); ?>
 							</li>
 							<li>
-								<?php _e('eCommerce tracking', 'better-analytics'); ?>
+								<?php esc_html_e('eCommerce tracking', 'better-analytics'); ?>
 							</li>
 							<li>
-								<?php _e('Option for server-side tracking of users (or bots) with Analytics/privacy blockers', 'better-analytics'); ?>
+								<?php esc_html_e('Option for server-side tracking of users (or bots) with Analytics/privacy blockers', 'better-analytics'); ?>
 							</li>
 							<li>
-								<?php _e('API calls are faster (uses a custom system for parallel requests)', 'better-analytics'); ?>
+								<?php esc_html_e('API calls are faster (uses a custom system for parallel requests)', 'better-analytics'); ?>
 							</li>
 							<li>
-								<?php _e('Priority Support', 'better-analytics'); ?>
+								<?php esc_html_e('Priority Support', 'better-analytics'); ?>
 							</li>
 						</ul>
 						<?php
 
-							printf(__('You can %1$sget a license here%2$s.%3$sIf you already have a license, make sure your domain is listed under %4$syour verified domains%2$s.', 'better-analytics'),
+							printf(esc_html__('You can %1$sget a license here%2$s.%3$sIf you already have a license, make sure your domain is listed under %4$syour verified domains%2$s.', 'better-analytics'),
 								'<a href="' . esc_url(BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_settings&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">',
 								'</a>',
 								'<br /><br />',
@@ -133,7 +182,7 @@
 
 						echo '<select data-placeholder="Pick profile" id="ba_pick_profile" class="chosen-select">';
 
-						echo '<option value="">' . __('please pick a profile', 'better-analytics') . '</option>';
+						echo '<option value="">' . esc_html__('please pick a profile', 'better-analytics') . '</option>';
 
 						foreach ($profilePick as $key => $profile)
 						{
@@ -145,7 +194,7 @@
 					}
 					else
 					{
-						echo '<a id="ba_select_profile" class="button" href="' . menu_page_url('better-analytics_auth', false) . '">' . __('Link Your Google Analytics Account', 'better-analytics') . '</a>';
+						echo '<a id="ba_select_profile" class="button" href="' . menu_page_url('better-analytics_auth', false) . '">' . esc_html__('Link Your Google Analytics Account', 'better-analytics') . '</a>';
 					}
 					?>
 				</td>
@@ -491,12 +540,12 @@
 								wp_enqueue_style('thickbox');
 
 								printf('<p class="description">%s <a href="%s" class="thickbox" aria-label="%s" data-title="%s">%s</a></p>',
-									__('WooCommerce not enabled/active.', 'better-analytics'),
+									esc_html__('WooCommerce not enabled/active.', 'better-analytics'),
 									esc_url( network_admin_url( 'plugin-install.php?tab=plugin-information&plugin=woocommerce' .
 										'&TB_iframe=true&width=600&height=550' ) ),
 									esc_attr( sprintf( __( 'More information about %s' ), 'WooCommerce' ) ),
 									esc_attr( 'WooCommerce'),
-									__( 'View details' )
+									esc_html__( 'View details' )
 								);
 							}
 
@@ -518,12 +567,12 @@
 				$formatParams = DigitalPointBetterAnalytics_Base_Admin::groupProfiles($profiles['items']);
 
 				echo '<tr valign="top" class="group_api tab_content">
-						<th scope="row">' . __('Profile Used For Reporting', 'better-analytics') . '</th>
+						<th scope="row">' . esc_html__('Profile Used For Reporting', 'better-analytics') . '</th>
 						<td>';
 
 				echo '<select data-placeholder="Pick profile" id="ba_pick_api_profile" name="better_analytics[api][profile]" class="chosen-select">';
 
-				echo '<option value="">' . __('please pick a profile', 'better-analytics') . '</option>';
+				echo '<option value="">' . esc_html__('please pick a profile', 'better-analytics') . '</option>';
 
 				foreach ($formatParams as $url => $group)
 				{
@@ -570,7 +619,7 @@
 			<tr valign="top" class="group_api tab_content api_hideable"<?php echo (!@$betterAnalyticsOptions['api']['use_own'] ? ' style="display:none"' : '')?>>
 				<td colspan="2">
 
-					<?php echo '<fieldset style="border:1px solid grey;margin:10px;padding:20px;"><legend style="padding:0 5px;font-weight:bold;font-size:120%">' . __('Configuration', 'better-analytics') . '</legend>' .
+					<?php echo '<fieldset style="border:1px solid grey;margin:10px;padding:20px;"><legend style="padding:0 5px;font-weight:bold;font-size:120%">' . esc_html__('Configuration', 'better-analytics') . '</legend>' .
 							/* translators: %1$s = <strong>, %2$s = </strong> */
 							sprintf(__('Project needs to have the %1$sAnalytics API%2$s enabled under %1$sAPIs & auth -> APIs%2$s.', 'better_analytics'), '<strong>', '</strong>') . '<br /><br />' .
 							/* translators: %1$s = <strong>, %2$s = </strong> */
@@ -641,19 +690,19 @@
 
 						<?php
 							$fileTypes = array(
-								'avi' => __('Audio Video Interleave (.avi)', 'better-analytics'),
-								'doc' => __('Word (.doc)', 'better-analytics'),
-								'exe' => __('Executable (.exe)', 'better-analytics'),
-								'gz' => __('gzip (.gz)', 'better-analytics'),
-								'mpg' => __('MPEG-1 Video (.mpg)', 'better-analytics'),
-								'mp3' => __('MP3 (.mp3)', 'better-analytics'),
-								'pdf' => __('Acrobat (.pdf)', 'better-analytics'),
-								'ppt' => __('PowerPoint (.ppt)', 'better-analytics'),
-								'psd' => __('Photoshop (.psd)', 'better-analytics'),
-								'rar' => __('RAR (.rar)', 'better-analytics'),
-								'wmv' => __('Windows Media Video (.wmv)', 'better-analytics'),
-								'xls' => __('Excel (.xls)', 'better-analytics'),
-								'zip' => __('Zip Archive (.zip)', 'better-analytics')
+								'avi' => esc_html__('Audio Video Interleave (.avi)', 'better-analytics'),
+								'doc' => esc_html__('Word (.doc)', 'better-analytics'),
+								'exe' => esc_html__('Executable (.exe)', 'better-analytics'),
+								'gz' => esc_html__('gzip (.gz)', 'better-analytics'),
+								'mpg' => esc_html__('MPEG-1 Video (.mpg)', 'better-analytics'),
+								'mp3' => esc_html__('MP3 (.mp3)', 'better-analytics'),
+								'pdf' => esc_html__('Acrobat (.pdf)', 'better-analytics'),
+								'ppt' => esc_html__('PowerPoint (.ppt)', 'better-analytics'),
+								'psd' => esc_html__('Photoshop (.psd)', 'better-analytics'),
+								'rar' => esc_html__('RAR (.rar)', 'better-analytics'),
+								'wmv' => esc_html__('Windows Media Video (.wmv)', 'better-analytics'),
+								'xls' => esc_html__('Excel (.xls)', 'better-analytics'),
+								'zip' => esc_html__('Zip Archive (.zip)', 'better-analytics')
 							);
 
 							foreach ($fileTypes as $extension => $type)
@@ -783,7 +832,7 @@
 			<tr valign="top" class="group_advanced tab_content">
 				<th scope="row"><?php esc_html_e('Extra JavaScript', 'better-analytics');?> <span class="dashicons-before dashicons-info tooltip" title="<?php echo htmlspecialchars(sprintf(__('This allows you to add your own JavaScript code to the Analytics tracking code.  This JavaScript is inserted right before the %1$s function.', 'better-analytics'), '<strong>ga(\'send\', \'pageview\');</strong>')); ?>"></span></th>
 				<td>
-					<textarea name="better_analytics[extra_js]" rows="10" cols="50" id="ba_extra_js" class="large-text code"><?php echo esc_attr( @$betterAnalyticsOptions['extra_js'] ); ?></textarea>
+					<textarea name="better_analytics[extra_js]" rows="10" cols="50" id="ba_extra_js" class="large-text code"><?php echo esc_textarea( @$betterAnalyticsOptions['extra_js'] ); ?></textarea>
 				</td>
 			</tr>
 
@@ -793,7 +842,7 @@
 					<fieldset>
 						<label for="ba_debugging">
 							<input name="better_analytics[debugging]" type="checkbox" id="ba_debugging" value="1" <?php checked('1', @$betterAnalyticsOptions['debugging'] ); ?>>
-							<?php _e('Enable Google Analytics Debugging', 'better-analytics');?></label>
+							<?php esc_html_e('Enable Google Analytics Debugging', 'better-analytics');?></label>
 							<span class="dashicons-before dashicons-info tooltip" title="<?php esc_html_e('This will display Google Analytics debug data in the browser console.', 'better-analytics');?>"></span>
 
 					</fieldset>

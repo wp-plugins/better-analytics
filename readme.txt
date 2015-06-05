@@ -1,16 +1,17 @@
 === Better Analytics ===
 Contributors: digitalpoint
-Tags: analytics, google analytics, statistics, tracking, reports, charts, api, stats, google, digitalpoint
+Tags: analytics, google analytics, statistics, tracking, reports, charts, api, stats, youtube, outbrain, taboola, adsense, google, digitalpoint
 Donate link: https://marketplace.digitalpoint.com/better-analytics.3354/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin
 Requires at least: 3.8
 Tested up to: 4.2.2
+Stable tag: 1.0.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Adds Google Universal Analytics code to your site.  Ability to track basically everything.
+Adds Google Analytics code to your site.  Ability to track basically everything (down to links being clicked and YouTube videos being watched).
 
 == Description ==
-The Better Analytics plugin allows you to easily add Google Universal Analytics code to your website and gives you the power to track virtually everything.  Includes heatmaps, reports, charts, events and site issue tracking in your WordPress admin area.
+The Better Analytics plugin allows you to easily add Google Universal Analytics code to your website and gives you the power to track virtually everything.  Includes heat maps, reports, charts, events and site issue tracking in your WordPress admin area.
 
 <strong>Basic Tracking Features (each can be enabled/disabled):</strong>
 
@@ -49,7 +50,7 @@ The Better Analytics plugin allows you to easily add Google Universal Analytics 
 <strong>Reporting Features:</strong>
 
 * Dashboard Charts (realtime or historical)
-* Weekly Heatmaps
+* Weekly Heat Maps
 * Historical Area Percent Charts
 * Events
 * Issue Monitoring
@@ -73,7 +74,7 @@ The Better Analytics plugin allows you to easily add Google Universal Analytics 
 >
 > * Additional ad networks for ad click tracking
 > * More options for site issue monitoring
-> * More heatmap metrics
+> * More heat map metrics
 > * More charting dimensions
 > * eCommerce tracking (coming soon)
 > * Option for server-side tracking of users (or bots)
@@ -96,7 +97,17 @@ No, this plugin is for Google Universal Analytics.  You can upgrade any old non-
 If it's possible and it makes sense, then yes.  The best way to put in a request would be to create a thread in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).
 
 = I speak a language that isn't supported by this plugin, can I help translate it? =
-Yes.  Unfortunately we don't speak every language in the world, so if you would like to contribute a translation, please contact us in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).
+Yes.  Unfortunately we don't speak every language in the world, so if you would like to contribute a translation, please contact us in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).  If you are new to translating WordPress plugins, you might want to check out the free [Poedit](http://poedit.net/) program.
+
+== CDN ==
+
+The JavaScript used by this plugin should be able to be cached properly by content delivery networks (it has been tested with CloudFlare).  This means if your site uses CloudFlare, the JavaScript code will be cached in their data centers and delivered to end users via the closest data center.
+
+== Thanks ==
+
+Thank you to all the individuals who have contributed translations:
+
+* Indonesian: [Arick](http://www.developingwp.com/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin)
 
 == Screenshots ==
 
@@ -104,7 +115,7 @@ Yes.  Unfortunately we don't speak every language in the world, so if you would 
 2. Dashboard showing page views by normalized categories for the last month.
 3. Dashboard showing organic search traffic by country for the last 3 months.
 4. Dashboard showing sessions by date for the last 3 months.
-5. One of ~1,000 metric/segment combinations for weekly heatmaps (showing all sessions for the last 4 weeks).
+5. One of ~1,000 metric/segment combinations for weekly heat maps (showing all sessions for the last 4 weeks).
 6. Stacked area percent charts allow you to see historical changes (browser usage for the last 10 years shows the rise of Chrome and the fall of Internet Explorer).
 7. Event report shows things like external links being clicked, YouTube video engagement, comments being created, etc.  You are able to correlate that data against any other metrics you wish.  For example maybe you wanted to see what countries users are in that watch YouTube videos.
 8. Issue monitoring report alerts to you client-side issues with your site.  Things like invalid pages being accessed (404), JavaScript errors, images not loading, embedded YouTube videos that the author removed, etc.
@@ -118,5 +129,8 @@ Yes.  Unfortunately we don't speak every language in the world, so if you would 
 16. Advanced settings allow you to fine tune how the system works.
 
 == Changelog ==
+= 1.0.1 =
+* Translation: Indonesian
+
 = 1.0.0 =
 * Initial release

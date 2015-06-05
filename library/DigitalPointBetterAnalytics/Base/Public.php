@@ -100,7 +100,7 @@ class DigitalPointBetterAnalytics_Base_Public
 	{
 		if (version_compare($GLOBALS['wp_version'], BETTER_ANALYTICS_MINIMUM_WP_VERSION, '<' ))
 		{
-			$message = sprintf(__('%1$sBetter Analytics %4$s requires WordPress %5$s or higher.%2$s%3$sPlease %6$supgrade WordPress%7$s to a current version.', 'better-analytics'),
+			$message = sprintf(esc_html__('%1$sBetter Analytics %4$s requires WordPress %5$s or higher.%2$s%3$sPlease %6$supgrade WordPress%7$s to a current version.', 'better-analytics'),
 				'<strong>',
 				'</strong>',
 				'<br />',
@@ -371,7 +371,7 @@ class DigitalPointBetterAnalytics_Base_Public
 	{
 		$schedules['minutely'] = array(
 			'interval' => 60,
-			'display' => __('Every Minute', 'better-analytics')
+			'display' => esc_html__('Every Minute', 'better-analytics')
 		);
 		return $schedules;
 	}

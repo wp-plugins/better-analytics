@@ -4,7 +4,7 @@ wp_enqueue_script('jsapi', 'https://www.google.com/jsapi?autoload=%7B%22modules%
 
 wp_enqueue_script('better_analytics_admin_js', BETTER_ANALYTICS_PLUGIN_URL . 'assets/digitalpoint/js/admin.js', array(), BETTER_ANALYTICS_VERSION );
 wp_enqueue_style('better_analytics_admin_css', BETTER_ANALYTICS_PLUGIN_URL . 'assets/digitalpoint/css/admin.css', array(), BETTER_ANALYTICS_VERSION);
-echo '<h2>' . __('Reports & Charts', 'better-analytics') . '</h2>';
+echo '<h2>' . esc_html__('Reports & Charts', 'better-analytics') . '</h2>';
 
 ?>
 
@@ -23,7 +23,7 @@ echo '<h2>' . __('Reports & Charts', 'better-analytics') . '</h2>';
 		<?php
 
 		echo '<tr valign="top">
-						<th scope="row">' . __('Days Back', 'better-analytics') . '</th>
+						<th scope="row">' . esc_html__('Days Back', 'better-analytics') . '</th>
 						<td>';
 
 		echo '<input type="number" id="ba_days" name="days" value="7" min="1" max="3650" step="10">
