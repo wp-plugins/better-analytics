@@ -75,8 +75,7 @@
 
 						<div class="postbox translation">
 							<h4><?php
-									/* translators: This will only display if there is no translation file, so doesn't need to be translated */
-									esc_html_e('Translation / Localization', 'better-analytics');
+									echo 'Translation / Localization';
 								?></h4>
 
 							<div>
@@ -99,15 +98,12 @@
 										}
 										else
 										{
-											/* translators: This will only display if there is no translation file, so doesn't need to be translated */
-											$localeName = esc_html__('Unknown', 'better-analytics');
+											$localeName = 'Unknown';
 										}
 									}
-									/* translators: This will only display if there is no translation file, so doesn't need to be translated */
-									printf(esc_html__('Better Analytics currently supports %1$u languages, but unfortunately %3$s%2$s%4$s isn\'t one of them.'), count($locales), $localeName, '<strong>', '</strong>');
+									printf('Better Analytics currently supports %1$u languages, but unfortunately %3$s%2$s%4$s isn\'t one of them.', count($locales), $localeName, '<strong>', '</strong>');
 									echo '<p />';
-									/* translators: This will only display if there is no translation file, so doesn't need to be translated */
-									printf(esc_html__('If you would like to help translate it into your language, please visit the %1$ssupport forum%2$s and we can show you how it\'s done.'), '<a href="' . esc_url(BETTER_ANALYTICS_SUPPORT_URL . '#utm_source=admin_settings&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">', '</a>');
+									printf('If you would like to help translate it into your language, please visit the %1$ssupport forum%2$s and we can show you how it\'s done.', '<a href="' . esc_url(BETTER_ANALYTICS_SUPPORT_URL . '#utm_source=admin_settings&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">', '</a>');
 								?>
 							</div>
 						</div>
