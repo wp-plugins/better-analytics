@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Better Analytics 1.0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/better-analytics\n"
-"POT-Creation-Date: 2015-06-06 05:42:52+00:00\n"
+"POT-Creation-Date: 2015-06-06 18:39:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -238,7 +238,7 @@ msgstr ""
 
 #: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:54
 #: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:81
-msgid "Realtime"
+msgid "Real-time"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:96
@@ -1833,7 +1833,7 @@ msgid ""
 "track most everything (social button interactions, advertising clicks, "
 "emails sent/opened, YouTube video engagement, custom dimension tracking of "
 "authors/categories, etc.)  Integrates with API for reports/charts on "
-"dashboard, heatmaps and realtime traffic tracking."
+"dashboard, heat maps and real-time traffic tracking."
 msgstr ""
 
 #. Author URI of the plugin/theme
