@@ -51,7 +51,7 @@ class DigitalPointBetterAnalytics_ControllerAdmin_Analytics
 
 			wp_send_json(array(
 				'realtime_data' => $realTimeOutput,
-				'title' => __('Realtime', 'better-analytics')
+				'title' => __('Real-time', 'better-analytics')
 			));
 
 		}

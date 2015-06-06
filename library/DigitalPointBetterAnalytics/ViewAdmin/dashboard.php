@@ -78,7 +78,7 @@ else
 	echo '</select>
 </div>';
 
-	echo '<label style="white-space: nowrap;"><input type="checkbox" id="ba_realtime"' . ($betterAnalyticsDashboardPick['realtime'] ? ' checked="checked"' : '') . '> ' . esc_html__('Realtime', 'better-analytics') . '</label>';
+	echo '<label style="white-space: nowrap;"><input type="checkbox" id="ba_realtime"' . ($betterAnalyticsDashboardPick['realtime'] ? ' checked="checked"' : '') . '> ' . esc_html__('Real-time', 'better-analytics') . '</label>';
 
 	echo '<div id="ba_chart"></div>';
 
