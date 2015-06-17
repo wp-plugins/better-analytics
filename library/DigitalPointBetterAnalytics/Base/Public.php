@@ -40,7 +40,7 @@ class DigitalPointBetterAnalytics_Base_Public
 		{
 			$betterAnalyticsInternal = get_transient('ba_int');
 
-			if (@$betterAnalyticsInternal['v'] || strpos(@$_SERVER['SCRIPT_NAME'], '/plugins.php') !== false || $class == 'DigitalPointBetterAnalytics_Helper_Api')
+			if (@$betterAnalyticsInternal['v'] || strpos(@$_SERVER['SCRIPT_NAME'], '/plugins.php') !== false || strpos(@$_SERVER['SCRIPT_NAME'], '/tools.php') !== false || $class == 'DigitalPointBetterAnalytics_Helper_Api')
 			{
 				$allowed = true;
 			}
