@@ -131,7 +131,8 @@ Thank you to all the individuals who have contributed translations:
 == Changelog ==
 = 1.0.2 =
 * Bug: Fixed cosmetic error message when creating a new site in a multi-site setup with debugging on
-* Feature: Analytics heat maps, charts, event tracking and issue monitoring can be viewed on a per page basis via new Analytics option on admin bar
+* Feature: Analytics heat maps, charts, event tracking and issue monitoring can be viewed on a per page basis via new Page Analytics option on admin bar
+* Feature: Stats Widget
 
 = 1.0.1 =
 * Translation: Indonesian

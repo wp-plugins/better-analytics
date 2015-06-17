@@ -274,7 +274,7 @@ class DigitalPointBetterAnalytics_Base_Public
 		{
 			$wp_admin_bar->add_node(array(
 				'id' => 'analytics',
-				'title' => '<span class="ab-icon"></span><span id="ab-analytics" class="ab-label analytics">' . esc_html__('Analytics', 'better-analytics') . '</span>',
+				'title' => '<span class="ab-icon"></span><span id="ab-analytics" class="ab-label analytics">' . esc_html__('Page Analytics', 'better-analytics') . '</span>',
 				'href' => get_admin_url(null, 'admin.php?page=better-analytics_heatmaps&page_path=' . urlencode($_SERVER['REQUEST_URI'])),
 				'meta' => array('target' => '_blank')
 			));
