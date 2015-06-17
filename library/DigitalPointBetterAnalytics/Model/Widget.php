@@ -63,4 +63,43 @@ class DigitalPointBetterAnalytics_Model_Widget
 
 
 	}
+
+	public static function getStatsWidgetData($settings = null)
+	{
+		if (!settings)
+		{
+			$statsWidget = new DigitalPointBetterAnalytics_Widget_Stats();
+			$settings = $statsWidget->get_settings();
+		}
+
+		if ($settings)
+		{
+			$cacheKeys = array();
+
+			foreach ($settings as $setting)
+			{
+				$split = explode('|', $setting['metric']);
+
+				$cacheKeys[] = DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getData(
+					absint($setting['days']) . 'daysAgo',
+					'yesterday',
+					$split[0], // metric
+					'', // dimensions
+					'', // sort
+					@$split[1] // filters
+				);
+			}
+
+			foreach ($cacheKeys as $cacheKey)
+			{
+				$results = DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getResults($cacheKey);
+
+				set_transient(
+					'ba_stats_' . md5(@$setting['metric'] . @$setting['days']),
+					intval(@$results['rows'][0][0]),
+					21600 // 6 hour cache
+				);
+			}
+		}
+	}
 }

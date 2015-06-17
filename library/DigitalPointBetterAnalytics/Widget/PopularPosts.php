@@ -2,18 +2,20 @@
 /**
  * @package BetterAnalytics
  */
-class DigitalPointBetterAnalytics_Widget_PopularPosts extends WP_Widget {
+class DigitalPointBetterAnalytics_Widget_PopularPosts extends WP_Widget
+{
 
 	function __construct()
 	{
 		parent::__construct(
 			'better-analytics_popular_widget',
-			esc_html__( 'Better Analytics' , 'better-analytics'),
-			array( 'description' => esc_html__( 'Display the most popular content right now.' , 'better-analytics') )
+			esc_html__( 'Better Analytics: Popular' , 'better-analytics'),
+			array( 'description' => esc_html__( 'Display the most popular content right now.', 'better-analytics'))
 		);
 
-		if ( is_active_widget( false, false, $this->id_base ) ) {
-			add_action( 'wp_head', array( $this, 'css' ) );
+		if (is_active_widget(false, false, $this->id_base))
+		{
+			add_action('wp_head', array( $this, 'css'));
 		}
 	}
 

@@ -75,22 +75,42 @@ class DigitalPointBetterAnalytics_Base_Public
 	 */
 	protected function _initHooks()
 	{
-		add_action( 'wp_loaded', array($this, 'track_blocked' ));
+		add_action('wp_loaded', array($this, 'track_blocked' ));
 
-		add_action( 'wp_head', array($this, 'insert_code_head' ));
-		add_action( 'wp_footer', array($this, 'insert_code_footer' ));
+		add_action('wp_head', array($this, 'insert_code_head' ));
+		add_action('wp_footer', array($this, 'insert_code_footer' ));
 
-		add_action( 'user_register', array($this, 'user_register' ));
+		add_action('admin_bar_menu', array($this, 'admin_bar_menu'), 100);
 
-		add_action( 'wp_insert_comment', array($this, 'insert_comment'), 10, 2);
+		add_action('user_register', array($this, 'user_register' ));
 
-		add_filter( 'wp_mail', array($this, 'filter_mail' ));
-		add_filter( 'the_permalink_rss', array($this, 'fiter_rss_links' ));
-		add_filter( 'the_content_feed', array($this, 'filter_rss_content' ));
+		add_action('wp_insert_comment', array($this, 'insert_comment'), 10, 2);
 
-		add_action( 'better_analytics_cron_minutely', array('DigitalPointBetterAnalytics_CronEntry_Jobs', 'minute' ));
-		add_action( 'better_analytics_cron_hourly', array('DigitalPointBetterAnalytics_CronEntry_Jobs', 'hour' ));
+		add_filter('wp_mail', array($this, 'filter_mail' ));
+		add_filter('the_permalink_rss', array($this, 'fiter_rss_links' ));
+		add_filter('the_content_feed', array($this, 'filter_rss_content' ));
+
+		add_action('better_analytics_cron_minutely', array('DigitalPointBetterAnalytics_CronEntry_Jobs', 'minute' ));
+		add_action('better_analytics_cron_hourly', array('DigitalPointBetterAnalytics_CronEntry_Jobs', 'hour' ));
 	}
+
+
+	public function canViewReports()
+	{
+		$currentUser = wp_get_current_user();
+		$betterAnalyticsOptions = get_option('better_analytics');
+
+		if (array_intersect((array)$currentUser->roles, (array)@$betterAnalyticsOptions['roles_view_reports']))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+
 
 	/**
 	 * Do something on activation?
@@ -248,6 +268,52 @@ class DigitalPointBetterAnalytics_Base_Public
 		}
 	}
 
+	public function admin_bar_menu($wp_admin_bar)
+	{
+		if ($this->canViewReports())
+		{
+			$wp_admin_bar->add_node(array(
+				'id' => 'analytics',
+				'title' => '<span class="ab-icon"></span><span id="ab-analytics" class="ab-label analytics">' . esc_html__('Analytics', 'better-analytics') . '</span>',
+				'href' => get_admin_url(null, 'admin.php?page=better-analytics_heatmaps&page_path=' . urlencode($_SERVER['REQUEST_URI'])),
+				'meta' => array('target' => '_blank')
+			));
+
+			$_menu = array(
+				'heatmaps' => 'Heat Maps',
+				'areacharts' => 'Charts',
+				'events' => 'Events',
+				'monitor' => 'Issue Monitor'
+			);
+			foreach ($_menu as $id => $title)
+			{
+				$wp_admin_bar->add_node(array(
+					'parent' => 'analytics',
+					'id' => $id,
+					'title' => esc_html__($title, 'better-analytics'),
+					'href' => get_admin_url(null, 'admin.php?page=better-analytics_' . $id . '&page_path=' . urlencode($_SERVER['REQUEST_URI'])),
+					'meta' => array('target' => '_blank')
+				));
+			}
+
+			echo '<style>
+			#wpadminbar #wp-admin-bar-analytics .ab-icon:before {
+    			content: "\\f238";
+    			top: 4px;
+			}
+			@media screen and (max-width: 782px) {
+					#wpadminbar li#wp-admin-bar-analytics {
+					display: block;
+				}
+			}
+		</style>';
+
+		}
+
+	}
+
+
+
 
 	public function user_register($userId)
 	{
@@ -380,7 +446,7 @@ class DigitalPointBetterAnalytics_Base_Public
 	{
 		$betterAnalyticsOptions = get_option('better_analytics');
 
-		if ($betterAnalyticsOptions['$betterAnalyticsOptions'] == 'anchor')
+		if (@$betterAnalyticsOptions['$betterAnalyticsOptions'] == 'anchor')
 		{
 			$urlDelimiter = '#';
 		}

@@ -47,7 +47,7 @@ The Better Analytics plugin allows you to easily add Google Universal Analytics 
 * Pinterest
 * LinkedIn
 
-<strong>Reporting Features:</strong>
+<strong>Reporting Features (can be viewed site-wide or for individual page/URL):</strong>
 
 * Dashboard Charts (realtime or historical)
 * Weekly Heat Maps
@@ -97,7 +97,7 @@ No, this plugin is for Google Universal Analytics.  You can upgrade any old non-
 If it's possible and it makes sense, then yes.  The best way to put in a request would be to create a thread in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).
 
 = I speak a language that isn't supported by this plugin, can I help translate it? =
-Yes.  Unfortunately we don't speak every language in the world, so if you would like to contribute a translation, please contact us in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).  If you are new to translating WordPress plugins, you might want to check out the free [Poedit](http://poedit.net/) program.
+Yes.  Unfortunately we don't speak every language in the world, so if you would like to help with translating, please contact us in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).
 
 == CDN ==
 
@@ -129,6 +129,10 @@ Thank you to all the individuals who have contributed translations:
 16. Advanced settings allow you to fine tune how the system works.
 
 == Changelog ==
+= 1.0.2 =
+* Bug: Fixed cosmetic error message when creating a new site in a multi-site setup with debugging on
+* Feature: Analytics heat maps, charts, event tracking and issue monitoring can be viewed on a per page basis via new Analytics option on admin bar
+
 = 1.0.1 =
 * Translation: Indonesian
 

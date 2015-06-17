@@ -24,28 +24,15 @@ class DigitalPointBetterAnalytics_Base_Admin
 		return self::$_instance;
 	}
 
-	public function canViewReports()
-	{
-		$currentUser = wp_get_current_user();
-		$betterAnalyticsOptions = get_option('better_analytics');
-
-		if (array_intersect((array)$currentUser->roles, (array)@$betterAnalyticsOptions['roles_view_reports']))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
 	protected function _initHooks()
 	{
 		add_action('admin_init', array($this, 'admin_init'), 20);
 		add_action('admin_menu', array($this, 'admin_menu'));
 		add_action('admin_head', array($this, 'admin_head'));
 
-		add_action( 'wp_dashboard_setup', array($this, 'dashboard_setup'));
+	//	add_action('admin_bar_menu', array($this, 'admin_bar_menu'));
+
+		add_action('wp_dashboard_setup', array($this, 'dashboard_setup'));
 
 		add_action('wp_ajax_better-analytics_heatmaps', array($this, 'display_page'));
 		add_action('wp_ajax_better-analytics_area_charts', array($this, 'display_page'));
@@ -56,18 +43,18 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 		add_filter('plugin_action_links', array($this, 'plugin_action_links' ), 10, 2);
 		add_filter('wp_redirect', array($this, 'filter_redirect'));
-		add_filter( 'admin_footer_text', array($this, 'admin_footer_text' ));
-		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
+		add_filter('admin_footer_text', array($this, 'admin_footer_text' ));
+		add_filter('plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
 
 		$betterAnalyticsOptions = get_option('better_analytics');
 		if (!$betterAnalyticsOptions['property_id'])
 		{
-			add_action( 'admin_notices', array($this, 'not_configured' ) );
+			add_action('admin_notices', array($this, 'not_configured' ) );
 		}
 
 		if (get_transient('ba_last_error'))
 		{
-			add_action( 'admin_notices', array($this, 'last_error' ) );
+			add_action('admin_notices', array($this, 'last_error' ) );
 		}
 	}
 
@@ -86,7 +73,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 		$hook = add_management_page( esc_html__('OAuth2 Endpoint', 'better-analytics'), esc_html__('OAuth2 Endpoint', 'better-analytics'), 'manage_options', 'better-analytics_auth', array($this, 'api_authentication') );
 
 
-		if ($this->canViewReports())
+		if (DigitalPointBetterAnalytics_Base_Public::getInstance()->canViewReports())
 		{
 			$hook = add_menu_page(esc_html__('Analytics', 'better-analytics'), esc_html__('Analytics', 'better-analytics'), 'read', 'better-analytics_heatmaps', null, 'dashicons-chart-line', 3.1975123 );
 			$hook = add_submenu_page( 'better-analytics_heatmaps', esc_html__('Heat Maps', 'better-analytics'), esc_html__('Reports', 'better-analytics'), 'read', 'better-analytics_heatmaps', array($this, 'display_page') );
@@ -184,7 +171,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 	public function dashboard_setup()
 	{
-		if ($this->canViewReports())
+		if (DigitalPointBetterAnalytics_Base_Public::getInstance()->canViewReports())
 		{
 			wp_add_dashboard_widget(
 				'better-analytics',
@@ -239,7 +226,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 	public function display_page()
 	{
-		if ($this->canViewReports())
+		if (DigitalPointBetterAnalytics_Base_Public::getInstance()->canViewReports())
 		{
 			global $plugin_page;
 
@@ -260,7 +247,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 	public function display_charts()
 	{
-		if ($this->canViewReports())
+		if (DigitalPointBetterAnalytics_Base_Public::getInstance()->canViewReports())
 		{
 			$this->_getController()->actionCharts();
 		}

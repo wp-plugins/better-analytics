@@ -49,7 +49,9 @@ register_uninstall_hook(__FILE__, array('DigitalPointBetterAnalytics_Install', '
 
 DigitalPointBetterAnalytics_Base_Public::getInstance();
 
-add_action( 'widgets_init', array('DigitalPointBetterAnalytics_Widget_PopularPosts', 'register_widget'));
+add_action('widgets_init', array('DigitalPointBetterAnalytics_Widget_PopularPosts', 'register_widget'));
+add_action('widgets_init', array('DigitalPointBetterAnalytics_Widget_Stats', 'register_widget'));
+
 
 if (is_admin())
 {

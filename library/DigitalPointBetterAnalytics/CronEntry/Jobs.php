@@ -12,6 +12,8 @@ class DigitalPointBetterAnalytics_CronEntry_Jobs
 
 	public static function hour($all = false)
 	{
+		DigitalPointBetterAnalytics_Model_Widget::getStatsWidgetData();
+
 		// This really should be a core WordPress function (deleting expired transients), but w/e...
 
 		global $wpdb;
