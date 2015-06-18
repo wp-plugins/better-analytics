@@ -11,9 +11,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Adds Google Analytics code to your site.  Ability to track basically everything (down to links being clicked and YouTube videos being watched).
 
 == Description ==
-The Better Analytics plugin allows you to easily add Google Universal Analytics code to your website and gives you the power to track virtually everything.  Better Analytics includes heat maps, reports, charts, events and site issue tracking in your WordPress admin area.
+The Better Analytics plugin allows you to easily add Google Analytics code to your website and gives you the power to track virtually everything.  Better Analytics includes heat maps, reports, charts, events and site issue tracking in your WordPress admin area without the need to log into your Google Analytics account.
 
-<strong>Better Analytics Basic Tracking Features (each can be enabled/disabled):</strong>
+<strong>Better Google Analytics Basic Tracking Features (each can be enabled/disabled):</strong>
 
 * Link Attribution
 * User-ID/Session Unification
@@ -32,14 +32,14 @@ The Better Analytics plugin allows you to easily add Google Universal Analytics 
 * Page Not Found (404)
 * AJAX Requests
 
-<strong>Better Analytics Dimension Tracking:</strong>
+<strong>Better Google Analytics Dimension Tracking:</strong>
 
 * Categories
 * Author
 * Tags
 * User
 
-<strong>Better Analytics Social Button Engagement Tracking:</strong>
+<strong>Better Google Analytics Social Button Engagement Tracking:</strong>
 
 * Facebook
 * Twitter
@@ -47,15 +47,15 @@ The Better Analytics plugin allows you to easily add Google Universal Analytics 
 * Pinterest
 * LinkedIn
 
-<strong>Better Analytics Reporting Features (can be viewed site-wide or for individual page/URL):</strong>
+<strong>Better Google Analytics Reporting Features (can be viewed site-wide or for individual page/URL):</strong>
 
-* Dashboard Charts (realtime or historical)
+* Dashboard Charts (real time or historical)
 * Weekly Heat Maps
 * Historical Area Percent Charts
 * Events
 * Issue Monitoring
 
-<strong>Better Analytics Advanced Features:</strong>
+<strong>Better Google Analytics Advanced Features:</strong>
 
 * Suppress Tracking By User Role
 * View Reports By User Role
@@ -65,7 +65,7 @@ The Better Analytics plugin allows you to easily add Google Universal Analytics 
 * Insert Your Own Custom JavaScript
 * Debugging Mode
 
-<strong>Better Analytics Widgets Included:</strong>
+<strong>Better Google Analytics Widgets Included:</strong>
 
 * Popular Posts
 * Statistics based on selectable metric
@@ -91,7 +91,7 @@ The Better Analytics plugin allows you to easily add Google Universal Analytics 
 1. Optional (but probably a good idea so you don't double report your traffic) - disable any other Analytics code you have enabled.
 
 == Frequently Asked Questions ==
-= Can Better Analytics Be Used With The Legacy Google Analytics Code? =
+= Can Better Analytics Be Used With Legacy Google Analytics Code? =
 No, the Better Analytics plugin is for Google Universal Analytics.  You can upgrade any old non-Universal property to support both legacy and Universal under your [Google Analytics Property Settings](https://www.google.com/analytics/web/?#management/Settings/).
 
 = Can You Add [insert feature here] To Better Analytics? =
@@ -102,7 +102,7 @@ Yes.  Unfortunately we don't speak every language in the world, so if you would 
 
 == CDN ==
 
-The JavaScript used by Better Analytics should be able to be cached properly by content delivery networks (it has been tested with CloudFlare).  This means if your site uses CloudFlare, the JavaScript code will be cached in their data centers and delivered to end users via the closest data center.
+The JavaScript used by Better Analytics should be able to be cached properly by content delivery networks (it has been tested with CloudFlare).  This means if your site uses CloudFlare, the JavaScript code used by Google Analytics will be cached in their data centers and delivered to end users via the closest data center.
 
 == Thanks ==
 
@@ -112,31 +112,31 @@ Thank you to all the individuals who have contributed translations for Better An
 
 == Screenshots ==
 
-1. Analytics dashboard in realtime mode.
-2. Analytics dashboard showing page views by normalized categories for the last month.
-3. Analytics dashboard showing organic search traffic by country for the last 3 months.
-4. Analytics dashboard showing sessions by date for the last 3 months.
-5. One of ~1,000 metric/segment combinations for weekly heat maps (showing all sessions for the last 4 weeks).
-6. Stacked area percent charts allow you to see historical changes (browser usage for the last 10 years shows the rise of Chrome and the fall of Internet Explorer).
-7. Better Analytics event report shows things like external links being clicked, YouTube video engagement, comments being created, etc.  You are able to correlate that data against any other metrics you wish.  For example maybe you wanted to see what countries users are in that watch YouTube videos.
+1. Google Analytics dashboard in realtime mode.
+2. Google Analytics dashboard showing page views by normalized categories for the last month.
+3. Google Analytics dashboard showing organic search traffic by country for the last 3 months.
+4. Google Analytics dashboard showing sessions by date for the last 3 months.
+5. One of ~1,000 metric/segment combinations for Google Analytics weekly heat maps (showing all sessions for the last 4 weeks).
+6. Stacked area percent charts of your Google Analytics data allow you to see historical changes (browser usage for the last 10 years shows the rise of Chrome and the fall of Internet Explorer).
+7. Better Analytics event report shows things like external links being clicked, YouTube video engagement, comments being created, etc.  You are able to correlate that data against any other metrics from your Google Analytics account.  For example maybe you wanted to see what countries users are in that watch YouTube videos.
 8. Better Analytics issue monitoring report alerts to you client-side issues with your site.  Things like invalid pages being accessed (404), JavaScript errors, images not loading, embedded YouTube videos that the author removed, etc.
 9. An automated system that is able to check your Google Analytics account and helps you configure your Google Analytics web property settings properly is included.
 10. Better Analytics includes an optional front-end widget that shows popular pages/posts being viewed right now.
 11. Better Analytics General settings.
-12. Custom dimension tracking allows you to track categories, authors, tags and registered users.
-13. Social button engagement allows you to track things like Likes/Unlikes/Tweets/Shares.
+12. Google Analytics custom dimension tracking allows you to track categories, authors, tags and registered users.
+13. Social button engagement allows you to track things like Likes/Unlikes/Tweets/Shares right within your Google Analytics account.
 14. Track clicks on the ads on your site.
 15. Issue monitoring settings allow you to keep on top of client-side issues with your site.
-16. Advanced settings allow you to fine tune how the system works.
+16. Advanced settings allow you to fine tune how the system works with Google Analytics.
 
 == Changelog ==
 = 1.0.2 =
 * Bug: Fixed cosmetic error message when creating a new site in a multi-site setup with debugging on
-* Feature: Better Analytics heat maps, charts, event tracking and issue monitoring can be viewed on a per page basis via new Page Analytics option on admin bar
-* Feature: Better Analytics Stats Widget
+* Feature: Better Google Analytics heat maps, charts, event tracking and issue monitoring can be viewed on a per page basis via new Page Analytics option on admin bar
+* Feature: Better Google Analytics Stats Widget
 
 = 1.0.1 =
 * Translation: Indonesian
 
 = 1.0.0 =
-* Initial release
+* Initial release of Better Google Analytics
