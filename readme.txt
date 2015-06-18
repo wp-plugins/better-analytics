@@ -1,6 +1,6 @@
 === Better Google Analytics ===
 Contributors: digitalpoint
-Tags: analytics, google analytics, statistics, tracking, code, dashboard, analytics dashboard, google analytics dashboard, reports, charts, api, stats, realtime, youtube, outbrain, taboola, adsense, google, digitalpoint
+Tags: analytics, google analytics, statistics, tracking, code, dashboard, analytics dashboard, google analytics dashboard, reports, charts, api, stats, realtime, real time, youtube, outbrain, taboola, adsense, google, digitalpoint
 Donate link: https://marketplace.digitalpoint.com/better-analytics.3354/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin
 Requires at least: 3.8
 Tested up to: 4.2.2
@@ -26,7 +26,7 @@ The Better Analytics plugin allows you to easily add Google Analytics code to yo
 * File Downloads
 * Anonymize IPs
 * Demographic & Interest
-* Force Traffic Over SSL
+* Force Analytics Traffic Over SSL
 * RSS/Email Link Source Tracking
 * Advertising Ad Clicks
 * Page Not Found (404)
@@ -57,18 +57,18 @@ The Better Analytics plugin allows you to easily add Google Analytics code to yo
 
 <strong>Better Google Analytics Advanced Features:</strong>
 
-* Suppress Tracking By User Role
+* Suppress Google Analytics Tracking By User Role
 * View Reports By User Role
-* Adjust Location Of Analytics Code
-* Campaign Tracking By Anchor or Parameters
-* Adjustable Sample Rate
+* Adjust Location Of Google Analytics Code
+* Google Analytics Campaign Tracking By Anchor or Parameters
+* Adjustable Analytics Sample Rate
 * Insert Your Own Custom JavaScript
 * Debugging Mode
 
 <strong>Better Google Analytics Widgets Included:</strong>
 
 * Popular Posts
-* Statistics based on selectable metric
+* Statistics based on selectable Analytics metric
 
 > <strong>Better Analytics Pro</strong><br>
 > If you would like additional advanced functions, we offer a Pro version.
@@ -79,7 +79,7 @@ The Better Analytics plugin allows you to easily add Google Analytics code to yo
 > * More charting dimensions
 > * eCommerce tracking (coming soon)
 > * Option for server-side tracking of users (or bots)
-> * Faster API calls (uses a custom system for parallel requests)
+> * Faster Google Analytics API calls (uses a custom system for parallel requests)
 > * Priority support
 >
 > [Pro license available here](https://marketplace.digitalpoint.com/better-analytics-pro.3355/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin)
@@ -88,7 +88,7 @@ The Better Analytics plugin allows you to easily add Google Analytics code to yo
 1. Upload `better-analytics` folder to the `/wp-content/plugins/` directory.
 1. Activate the Better Analytics plugin through the 'Plugins' menu in the WordPress admin area.
 1. Add your Google Analytics Web Property ID under the 'Settings -> Better Analytics' area of the WordPress admin.
-1. Optional (but probably a good idea so you don't double report your traffic) - disable any other Analytics code you have enabled.
+1. Optional (but probably a good idea so you don't double report your traffic inside Google Analytics) - disable any other Google Analytics code you have enabled.
 
 == Frequently Asked Questions ==
 = What are the requirements of the Better Analytics plugin? =
@@ -118,7 +118,7 @@ Thank you to all the individuals who have contributed translations for Better An
 
 == Screenshots ==
 
-1. Google Analytics dashboard in realtime mode.
+1. Google Analytics dashboard in real time mode.
 2. Google Analytics dashboard showing page views by normalized categories for the last month.
 3. Google Analytics dashboard showing organic search traffic by country for the last 3 months.
 4. Google Analytics dashboard showing sessions by date for the last 3 months.
@@ -127,13 +127,14 @@ Thank you to all the individuals who have contributed translations for Better An
 7. Better Analytics event report shows things like external links being clicked, YouTube video engagement, comments being created, etc.  You are able to correlate that data against any other metrics from your Google Analytics account.  For example maybe you wanted to see what countries users are in that watch YouTube videos.
 8. Better Analytics issue monitoring report alerts to you client-side issues with your site.  Things like invalid pages being accessed (404), JavaScript errors, images not loading, embedded YouTube videos that the author removed, etc.
 9. An automated system that is able to check your Google Analytics account and helps you configure your Google Analytics web property settings properly is included.
-10. Better Analytics includes an optional front-end widget that shows popular pages/posts being viewed right now.
-11. Better Analytics General settings allows you to enable/disable all sorts of tracking features in your Google Analytics account.
-12. Google Analytics custom dimension tracking allows you to track categories, authors, tags and registered users.
-13. Social button engagement allows you to track things like Likes/Unlikes/Tweets/Shares right within your Google Analytics account.
-14. Track clicks on the ads on your site within your Google Analytics account.
-15. Issue monitoring settings allow you to keep on top of client-side issues with your site.
-16. Advanced settings allow you to fine tune how the system works with Google Analytics.
+10. Better Analytics includes an optional front-end widget that shows popular pages/posts being viewed right now (data comes from Google Analytics Real Time API).
+11. Better Analytics includes an optional front-end widget that allows you to display your Google Analytics stats based on any metric you wish.
+12. Better Analytics General settings allows you to enable/disable all sorts of tracking features in your Google Analytics account.
+13. Google Analytics custom dimension tracking allows you to track categories, authors, tags and registered users.
+14. Social button engagement allows you to track things like Likes/Unlikes/Tweets/Shares right within your Google Analytics account.
+15. Track clicks on the ads on your site within your Google Analytics account.
+16. Issue monitoring settings allow you to utilize your Google Analytics account to keep on top of client-side issues with your site.
+17. Advanced settings allow you to fine tune how the system works with Google Analytics.
 
 == Changelog ==
 = 1.0.2 =
