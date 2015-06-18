@@ -1,4 +1,4 @@
-=== Better Analytics ===
+=== Better Google Analytics ===
 Contributors: digitalpoint
 Tags: analytics, google analytics, statistics, tracking, code, dashboard, analytics dashboard, google analytics dashboard, reports, charts, api, stats, realtime, youtube, outbrain, taboola, adsense, google, digitalpoint
 Donate link: https://marketplace.digitalpoint.com/better-analytics.3354/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin
@@ -8,7 +8,7 @@ Stable tag: 1.0.2
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Adds Google Analytics code to your site.  Ability to track basically everything (down to links being clicked and YouTube videos being watched).
+Track everything with Google Analytics (clicked links, emails opened, YouTube videos being watched, etc.). Includes real time Analytics dashboard.
 
 == Description ==
 The Better Analytics plugin allows you to easily add Google Analytics code to your website and gives you the power to track virtually everything.  Better Analytics includes heat maps, reports, charts, events and site issue tracking in your WordPress admin area without the need to log into your Google Analytics account.
