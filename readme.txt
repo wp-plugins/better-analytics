@@ -87,22 +87,28 @@ The Better Analytics plugin allows you to easily add Google Analytics code to yo
 == Installation ==
 1. Upload `better-analytics` folder to the `/wp-content/plugins/` directory.
 1. Activate the Better Analytics plugin through the 'Plugins' menu in the WordPress admin area.
-1. Add your Web Property ID under the 'Settings -> Better Analytics' area of the WordPress admin.
+1. Add your Google Analytics Web Property ID under the 'Settings -> Better Analytics' area of the WordPress admin.
 1. Optional (but probably a good idea so you don't double report your traffic) - disable any other Analytics code you have enabled.
 
 == Frequently Asked Questions ==
-= Can Better Analytics Be Used With Legacy Google Analytics Code? =
-No, the Better Analytics plugin is for Google Universal Analytics.  You can upgrade any old non-Universal property to support both legacy and Universal under your [Google Analytics Property Settings](https://www.google.com/analytics/web/?#management/Settings/).
+= What are the requirements of the Better Analytics plugin? =
+You need a WordPress site (of course) and a Google Analytics account (which is [free over here](http://www.google.com/analytics/) if you don't already have one).
 
-= Can You Add [insert feature here] To Better Analytics? =
+= Can Better Analytics be used with legacy Google Analytics code? =
+No, the Better Analytics plugin is for Google Universal Analytics.  You can upgrade any old non-Universal Google Analytics property to support both legacy and Universal under your [Google Analytics Property Settings](https://www.google.com/analytics/web/?#management/Settings/).
+
+= Can you add [insert feature here] to Better Analytics? =
 If it's possible and it makes sense, then yes.  The best way to put in a feature request for Better Analytics would be to create a thread in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).
 
 = I speak a language that isn't supported by Better Analytics, can I help translate it? =
-Yes.  Unfortunately we don't speak every language in the world, so if you would like to help with translating, please contact us in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).
+Yes.  Unfortunately we don't speak every language in the world, so if you would like to help with translating the Better Google Analytics plugin, please contact us in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).
+
+= Do you have access to our Google Analytics data? =
+In no way, shape, or form do we have access to your Google Analytics data.  If you utilize the default Google Analytics API project credentials, the system will ask you for permission to access your data.  Google will then issue a one-time use code that is exchanged for OAuth2 credentials that are used when making API calls.  The code is one-time use (meaning if someone intercepted it and redeemed it for credentials, you wouldn't be able to yourself).  After your site redeems the code, it's not longer valid.  The resulting credentials are stored inside your installation and are never sent anywhere.  That being said, if you are still worried about it, you are able to utilize your own Google Analytics API project credentials (it's just a little more work for you to set up that Google API project).
 
 == CDN ==
 
-The JavaScript used by Better Analytics should be able to be cached properly by content delivery networks (it has been tested with CloudFlare).  This means if your site uses CloudFlare, the JavaScript code used by Google Analytics will be cached in their data centers and delivered to end users via the closest data center.
+The JavaScript used by Better Analytics should be able to be cached properly by content delivery networks (it has been tested with CloudFlare).  This means if your site uses CloudFlare, the JavaScript code used by Google Analytics will be cached in their data centers and delivered to end users via the closest data center (long story short is that it will make for a faster user experience).
 
 == Thanks ==
 
@@ -122,10 +128,10 @@ Thank you to all the individuals who have contributed translations for Better An
 8. Better Analytics issue monitoring report alerts to you client-side issues with your site.  Things like invalid pages being accessed (404), JavaScript errors, images not loading, embedded YouTube videos that the author removed, etc.
 9. An automated system that is able to check your Google Analytics account and helps you configure your Google Analytics web property settings properly is included.
 10. Better Analytics includes an optional front-end widget that shows popular pages/posts being viewed right now.
-11. Better Analytics General settings.
+11. Better Analytics General settings allows you to enable/disable all sorts of tracking features in your Google Analytics account.
 12. Google Analytics custom dimension tracking allows you to track categories, authors, tags and registered users.
 13. Social button engagement allows you to track things like Likes/Unlikes/Tweets/Shares right within your Google Analytics account.
-14. Track clicks on the ads on your site.
+14. Track clicks on the ads on your site within your Google Analytics account.
 15. Issue monitoring settings allow you to keep on top of client-side issues with your site.
 16. Advanced settings allow you to fine tune how the system works with Google Analytics.
 
