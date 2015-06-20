@@ -1,0 +1,1760 @@
+# Translation of Better Analytics in Indonesian
+# This file is distributed under the same license as the Better Analytics package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-06-05 23:47:23+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Better Analytics\n"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:359
+msgid "Set to 0 to disable."
+msgstr "Set ke 0 untuk menonaktifkan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:366
+msgid "Categories: "
+msgstr "Ketegori:"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:375
+msgid "Author: "
+msgstr "Penulis:"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:384
+msgid "Tags: "
+msgstr "Tag:"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:393
+msgid "Registered User: "
+msgstr "User Terdaftar:"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:409
+msgid "Button Engagement To Track"
+msgstr "Tombol Interaksi untuk Dipantau"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:415
+msgid "Facebook Like"
+msgstr "Facebook Like"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:425
+msgid "Google+ (Google Analytics always tracks)"
+msgstr "Google+ (Google Analytics selalu memantaunya)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:430
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:435
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:443
+msgid "Advertisement Clicks To Track"
+msgstr "Klik pada Iklan yang harus Dipantau"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:454
+msgid "Outbrain"
+msgstr "Outbrain"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:459
+msgid "Taboola"
+msgstr "Taboola"
+
+#. #-#-#-#-#  plugin.pot (Better Analytics 1.0.0)  #-#-#-#-#
+#. Author of the plugin/theme
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:464
+msgid "Digital Point"
+msgstr "Digital Point"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:475
+msgid "Site Issues To Track"
+msgstr "Permasalah pada Website yang harus dipantau"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:487
+msgid "This relies on the ability of the user's browser to load images which will vary between browsers and Internet connections.  This event can be a useful tool for finding missing images, but it keep in mind it will log any image that the end user's browser did not load (for any reason)."
+msgstr "Ini bergantung pada kemampuan browser tiap pengguna untuk memuat gambar yang tentu saja berbeda tergantung browser dan koneksi internet. Hal ini bisa digunakan sebagai alat untuk mencari gambar yang hilang. Harap diketahui jika setiap gambar yang tak dimuat pada browser pengguna juga akan dicatat (dengan alasan apapun)."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:507
+msgid "This allows you to quickly find old videos that the author has removed or disabled embeding for."
+msgstr "Ini bisa digunakan untuk mencari secara cepat video lama yang telah dihapus oleh pemiliknya atau tidak diperbolehkan untuk disematkan."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:516
+msgid "Debugging Events"
+msgstr "Peristiwa Teranalisa"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:535
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:543
+msgid "WooCommerce not enabled/active."
+msgstr "WooCommerce tidak diaktifkan."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:546
+msgid "More information about %s"
+msgstr "Informasi lebih lanjut tentang %s"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:548
+msgid "View details"
+msgstr "Lihat Detil"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:570
+msgid "Profile Used For Reporting"
+msgstr "Profil yang digunakan untuk Pelaporan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:599
+msgid "Link/Authenticate A Different Google Analytics Account"
+msgstr "Sambungkan/Autentikasikan Akun Google Analitik yang Berbeda"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:599
+msgid "Link/Authenticate Your Google Analytics Account"
+msgstr "Sambungkan/Autentikasikan Akun Google Analitik Anda"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:611
+msgid "Use Your Own Project Credentials"
+msgstr "Gunakan Data Kredensial Proyek anda sendiri"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:612
+msgid "If you have your own Google API Project that you wish to use, you can use your credentials for that web application."
+msgstr "Bila anda memiliki Google API tersendiri yang ingin dipakai, anda bisa memasukkan data kredensial tersebut disini."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:622
+msgid "Configuration"
+msgstr "Konfigurasi"
+
+#. translators: %1$s = <strong>, %2$s = </strong>
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:624
+msgid "Project needs to have the %1$sAnalytics API%2$s enabled under %1$sAPIs & auth -> APIs%2$s."
+msgstr "hanya bisa berjalan dengan %1$sAPI Analitik%2$s yang telah diaktifkan pada %1$sAPIs & auth -> APIs%2$s."
+
+#. translators: %1$s = <strong>, %2$s = </strong>
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:626
+msgid "Under %1$sAPIs & auth -> Credentials%2$s, you need to %1$sCreate new Client ID%2$s that is a %1$sWeb application%2$s with an authorized redirect URI of: %1$s%3$s%2$s"
+msgstr "Pada %1$sAPIs & auth -> Credentials%2$s, anda harus %1$smembuat ID Klien%2$s yaitu %1$sAplikasi berbasis Web%2$s dengan hak resmi pengalihan URI di: %1$s%3$s%2$s"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:633
+msgid "Client ID"
+msgstr "ID Klien"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:640
+msgid "Client Secret"
+msgstr "Kode Khusus Klien"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:648
+msgid "Roles To Not Track"
+msgstr "User yang tak perlu dipantau"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:648
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:686
+msgid "If a logged in user is part of one of these groups, Analytics will not track them."
+msgstr "Jika pengguna yang login merupakan bagian dari salah satu dari kelompok ini maka Analitik takkan melacaknya."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:668
+msgid "Roles Able To View Reports/Dashboard"
+msgstr "User yang bisa melihat laporan/Dasbor"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:686
+msgid "File Extensions To Track As Downloads"
+msgstr "Ekstensi File yang Terpantau sebagai Download"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:693
+msgid "Audio Video Interleave (.avi)"
+msgstr "Audio Video Interleave (.avi)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:694
+msgid "Word (.doc)"
+msgstr "Word (.doc)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:695
+msgid "Executable (.exe)"
+msgstr "Program (.exe)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:696
+msgid "gzip (.gz)"
+msgstr "gzip (.gz)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:697
+msgid "MPEG-1 Video (.mpg)"
+msgstr "MPEG-1 Video (.mpg)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:698
+msgid "MP3 (.mp3)"
+msgstr "MP3 (.mp3)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:699
+msgid "Acrobat (.pdf)"
+msgstr "Acrobat (.pdf)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:700
+msgid "PowerPoint (.ppt)"
+msgstr "Photoshop (.psd)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:701
+msgid "Photoshop (.psd)"
+msgstr "Photoshop (.psd)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:702
+msgid "RAR (.rar)"
+msgstr "RAR (.rar)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:703
+msgid "Windows Media Video (.wmv)"
+msgstr "Windows Media Video (.wmv)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:704
+msgid "Excel (.xls)"
+msgstr "Excel (.xls)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:705
+msgid "Zip Archive (.zip)"
+msgstr "Zip(.zip)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:719
+msgid "Track Users With Analytics Blockers"
+msgstr "Memantau Pengguna dengan Pemblokir Analitik"
+
+#. translators: %1$s = <strong>, %2$s = </strong>, %3$s = <p />
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:722
+msgid "If a user has a mechanism that is blocking them from being tracked with Google Analytics, you can use this option to do server-side page view tracking of that user.%3$s  For the most accuracy, %1$sit's not recommended to use this option for anything beyond \"Registered Users\"%2$s (having an account allows the system to track them uniquely on the backend).%3$s  Logging page views for \"Humans\" will lead to a lot of niche bots being tracked (ones not popular enough to be widely known as a spider)."
+msgstr "Bila pengguna menggunakan mekanisme yang membuat mereka tak terpantau dengan Google Analitik, anda bisa menggunakan menu ini untuk memantau apa saja yang dilakukan user tersebut via server.%3$s  Agar lebih akurat, %1$sdirekomendasikan hanya menggunakan menu ini untuk \"Pengguna Terdaftar\" saja%2$s (Setiap pengguna yang mempunyai akun bisa dipantau sistem secara khusus).%3$s  Memantau tampilan halaman untuk \"Manusia\" akan membuat beberapa robot (penjelajah website) diklasifikasikan sebagai manusia (Penjelajah Website yang belum begitu dikenal akan dianggap manusia)."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:728
+msgid "Never"
+msgstr "Tak Pernah"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:733
+msgid "Registered Users"
+msgstr "Pengguna Terdaftar"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:738
+msgid "Humans"
+msgstr "Manusia"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:751
+msgid "Location For Analytics Code"
+msgstr "Lokasi Kode Analitik"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:756
+msgid "Header"
+msgstr "Header"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:761
+msgid "Footer"
+msgstr "Footer"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:766
+msgid "No JavaScript (you have your own/other already)"
+msgstr "Tak Ada JavaScript (Sudah ada JavaScript milik anda/orang lain)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:772
+msgid "Use In Staff Area (wp-admin)"
+msgstr "Gunakan di Dashboard Staf"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:778
+msgid "When To Run Analytics Code"
+msgstr "Waktu untuk Menjalankan Kode Analitik"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:783
+msgid "Immediately"
+msgstr "Secepatnya"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:788
+msgid "After Page Loads"
+msgstr "Setelah Halaman Ditampilkan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:795
+msgid "Campaign Tracking Within URLs"
+msgstr "Pemantauan Promosi dalam URL"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:800
+msgid "In Anchor"
+msgstr "Pada Hiperlink"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:805
+msgid "In Parameters"
+msgstr "Di Parameter"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:812
+msgid "Sample Rate"
+msgstr "Rasio Sampel"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:812
+msgid "Specifies what percentage of users should be tracked.  Very large sites may need to use a lower sample rate to stay within Google Analytics processing limits."
+msgstr "Tentukan berapa persen pengguna yang harus dipantau. Website yang cukup besar sebaiknya menggunakan rasio sampel yang rendah agar tetap selaras dengan batasan proses dari Google Analitik."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:833
+msgid "Extra JavaScript"
+msgstr "JavaScript Tambahan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:833
+msgid "This allows you to add your own JavaScript code to the Analytics tracking code.  This JavaScript is inserted right before the %1$s function."
+msgstr "Anda bisa memasukkan kode JavaScript apapun pada Kode pemantauan Analytic. JavaScript tersebut akan diletakkan tepat sebelum fungsi %1$s."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:840
+msgid "Debugging"
+msgstr "Analisa Debug"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:845
+msgid "Enable Google Analytics Debugging"
+msgstr "Aktifkan Debug Google Analitik"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:846
+msgid "This will display Google Analytics debug data in the browser console."
+msgstr "Hal ini akan menampilkan proses debug dari Google Analytic pada konsole browser."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:13
+msgid "%1$sSet up API access%2$s to utilize Better Analytics charts."
+msgstr "%1$sAtur AKses ke API%2$s untuk memperoleh grafik Analitik."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:49
+msgid "by"
+msgstr "oleh"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:59
+msgid "for last"
+msgstr "yang terakhir"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:63
+msgid "7 Days"
+msgstr "7 Hari"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:64
+msgid "14 Days"
+msgstr "14 Hari"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:65
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:57
+msgid "1 Month"
+msgstr "Sebulan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:66
+msgid "3 Months"
+msgstr "3 bulan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:67
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:58
+msgid "1 Year"
+msgstr "1 Tahun"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:68
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:60
+msgid "5 Years"
+msgstr "5 Tahun"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:69
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:61
+msgid "10 Years"
+msgstr "10 Tahun"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:86
+msgid "active users"
+msgstr "User Aktif"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:10
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/events.php:7
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:8
+msgid "Reports & Charts"
+msgstr "Laporan dan Grafik"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:16
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/events.php:13
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:12
+msgid "Weekly Heat Maps"
+msgstr "Heatmap Mingguan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:19
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/events.php:16
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:15
+msgid "Issue Monitoring"
+msgstr "Pemantau Permasalahan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:29
+msgid "Dimension"
+msgstr "Dimensi"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:52
+msgid "Time Frame"
+msgstr "Jangka Waktu"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:59
+msgid "2 Years"
+msgstr "2 Tahun"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:69
+msgid "Scope"
+msgstr "Cakupan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:74
+msgid "Day"
+msgstr "Tanggal"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:75
+msgid "Month"
+msgstr "Bulan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:76
+msgid "Year"
+msgstr "Tahun"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:87
+msgid "Minimum Value To Plot"
+msgstr "Nilain Minimum untuk Ditampilkan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:95
+msgid "Display Chart As"
+msgstr "Tampilkan Grafik Sebagai"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:98
+msgid "Stacked Area Percent"
+msgstr "Persentasi di Area Bertumpuk"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:99
+msgid "Stacked"
+msgstr "Bertumpukan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:100
+msgid "Overlap"
+msgstr "Bersamaan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/events.php:26
+msgid "Days Back"
+msgstr "Hari Sebelumnya"
+
+#. translators: Sunday (day of the week), with everything between %s hidden on
+#. smaller screens (responsive)
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:26
+msgid "Sun%sday%s"
+msgstr "Mi%snggu%s"
+
+#. translators: Monday (day of the week), with everything between %s hidden on
+#. smaller screens (responsive)
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:31
+msgid "Mon%sday%s"
+msgstr "Sen%sin%s"
+
+#. translators: Tuesday (day of the week), with everything between %s hidden on
+#. smaller screens (responsive)
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:36
+msgid "Tue%ssday%s"
+msgstr "Sel%sasa%s"
+
+#. translators: Wednesday (day of the week), with everything between %s hidden
+#. on smaller screens (responsive)
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:41
+msgid "Wed%snesday%s"
+msgstr "Ra%sbu%s"
+
+#. translators: Thursday (day of the week), with everything between %s hidden
+#. on smaller screens (responsive)
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:46
+msgid "Thu%srsday%s"
+msgstr "Ka%smis%s"
+
+#. translators: Friday (day of the week), with everything between %s hidden on
+#. smaller screens (responsive)
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:51
+msgid "Fri%sday%s"
+msgstr "Jum%sat%s"
+
+#. translators: Saturday (day of the week), with everything between %s hidden
+#. on smaller screens (responsive)
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:56
+msgid "Sat%surday%s"
+msgstr "Sab%stu%s"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:76
+msgid "Metric"
+msgstr "Metrik"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:99
+msgid "Segment"
+msgstr "Segmen"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:124
+msgid "Weeks Of Data, Ending"
+msgstr "Data Mingguan, Bagian Akhir"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:125
+msgid "Days Ago"
+msgstr "Hari Yang Lalu"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:32
+msgid "Test Analytics Integration"
+msgstr "Tes Integrasi Analitik"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:35
+msgid "This is a checklist of things for full integration with Google Analytics. You can click on any of the titles to be taken where you need to go to configure that item."
+msgstr "Berikut ini adalah daftar hal-hal yang yang bisa diintegrasikan secara penuh dengan dengan Google Analitik. Silakan klik salah satu judul yang ada dan anda akan diarahkan untuk mengkonfigurasi item tersebut."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:37
+msgid "Things That Can Be Automatically Checked"
+msgstr "Hal-Hal Yang Bisa Di Cek Secara Otomatis"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:40
+msgid "Web Property ID Defined"
+msgstr "ID Propert Web Telah Ditetapkan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:49
+msgid "cURL Installed"
+msgstr "cURL Terinstall"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:55
+msgid "Not required, but recommended to have the cURL extensions enabled in PHP."
+msgstr "Tidak Diharuskan, namun direkomendasikan agar ekstensi cURL diaktifkan pada PHP."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:75
+msgid "Google Analytics Account Linked"
+msgstr "Akun Google Analitik Terhubung"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:82
+msgid "Analytics Profile Selected"
+msgstr "Profile Analitik Telah Dipilih"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:90
+msgid "Site Search Setup"
+msgstr "Pengaturan Pencarian Website"
+
+#. translators: %1$s = <strong>, %2$s = </strong>
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:97
+msgid "Found in Google Analytics account under %1$sView Settings -> Query Parameter%2$s (should be set to \"%1$ss%2$s\")."
+msgstr "Terletak pada Akun Google Analitik di menu %1$sView Settings -> Query Parameter%2$s (Harus di set ke \"%1$ss%2$s\")."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:103
+msgid "Ecommerce Tracking Enabled"
+msgstr "Pemantauan e-Commerce diaktifkan"
+
+#. translators: %1$s = <strong>, %2$s = </strong>
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:111
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:124
+msgid "Found in Google Analytics account under %1$sEcommerce Settings%2$s."
+msgstr "Terletak pada Akun Google Analitik di menu %1$sPengaturan e-Commerce%2$s."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:117
+msgid "Enhanced Ecommerce Tracking Enabled"
+msgstr "Pemantauan Lanjutan e-Commerce diaktifkan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:130
+msgid "Industry Vertical Set"
+msgstr "Industri Vertikal"
+
+#. translators: %1$s = <strong>, %2$s = </strong>, %3$s = current setting in
+#. Google Analytics account
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:137
+msgid "Found in Google Analytics account under %1$sProperty Settings%2$s (currently set to %1$s%3$s%2$s)."
+msgstr "Terletak di Akun Google Analitik pada menu %1$sPengaturan Properti%2$s (Saat ini di set ke %1$s%3$s%2$s)."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:143
+msgid "Custom Dimension For Category Tracking"
+msgstr "Dimensi Khusus untuk Memantau Kategori"
+
+#. translators: %1$s = <strong>, %2$s = </strong> ... %3$s can't be translated
+#. - leave
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:150
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:165
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:178
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:192
+msgid "Found in Google Analytics account under %1$sCustom Definitions -> Custom Dimensions%2$s (should be named \"%1$s%3$s%2$s\" and scoped for \"%1$sHit%2$s\")."
+msgstr "Terletak di Akun Google Analitik pada menu %1$sDefinisi Khusus -> Dimensi Khusus%2$s (harus tertulis \"%1$s%3$s%2$s\" dan mencakup \"%1$sHit%2$s\")."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:156
+msgid "Custom Dimension For Author Tracking"
+msgstr "Dimensi Khusus untuk Memantau Penulis"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:171
+msgid "Custom Dimension For Tag Tracking"
+msgstr "Dimensi Khusus untuk Memantau Tag/label"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:184
+msgid "Custom Dimension For User Tracking"
+msgstr "Dimensi Khusus untuk Memantau User"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:199
+msgid "Category Tracking Dimension Index Set"
+msgstr "Kumpulan Index Dimensi Pemantau Kategori"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:208
+msgid "Author Tracking Dimension Index Set"
+msgstr "Kumpulan Dimensi Pemantau Penulis"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:216
+msgid "Tag Tracking Dimension Index Set"
+msgstr "Kumpulan Dimensi Pemantau Tag/Label"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:224
+msgid "Registered User Tracking Dimension Index Set"
+msgstr "Kumpulan Dimensi Pemantau User Terdaftar"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:232
+msgid "Better Analytics Pro License"
+msgstr "Lisensi Pro Better Analytic"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:237
+msgid "A few extra advanced features are available when you license the Better Analytics Pro plugin.  Please don't steal, a crazy amount of work went into this.  Some of the extra features:"
+msgstr "Beberapa fitur ekstra akan tersedia setelah anda mendapatkan lisensi dari plugin Better Analitic Pro. Mari saling menghargai, begitu banyak waktu dihabiskan untuk mewujudkan plugin ini. Beberapa fitur ekstra diantaranya adalah:"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:241
+msgid "More metrics available for %1$sHeat Maps%2$s"
+msgstr "Metrik yang lebih banyak tersedia untuk %1$sHeat Maps%2$s"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:246
+msgid "More dimensions available for %1$sCharts%2$s"
+msgstr "Dimensi yang lebih banyak tersedia untuk %1$sGrafik%2$s"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:251
+msgid "More %1$sadvertising platform click tracking%2$s"
+msgstr "Lebih banyak %1$spemantauan klik pada platform perikalanan%2$s"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:256
+msgid "More %1$sissue monitoring options%2$s"
+msgstr "Lebih banyak %1$sopsi pemantauan permasalahan%2$s"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:261
+msgid "%1$seCommerce tracking%2$s"
+msgstr "%1$sPemantauan e-Commerce%2$s"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:266
+msgid "Ability to do %1$sserver-side tracking of users%2$s"
+msgstr "Kemampuan untuk %1$smemantau pengguna pada level server%2$s"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:271
+msgid "Faster API calls (utilizes a multi-threaded mechanism)"
+msgstr "Request API yang lebih cepat (memanfaatkan mekanisme multi-thread)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:276
+msgid "%1$sPriority support%2$s"
+msgstr "%1$sPrioritas Dukungan%2$s"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:281
+msgid "A Warm & Fuzzy Feeling knowing you are helping to continue future development"
+msgstr "Sebuah perasaan senang dan bangga mengetahui anda membantu untuk melanjutkan pengembangan di masa mendatang"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:294
+msgid "Things That Need To Be Checked Manually"
+msgstr "Hal-hal yang perlu di cek secara manual"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:297
+msgid "User-ID Tracking"
+msgstr "User-ID terpantau"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:300
+msgid "Found in Google Analytics account under %1$sTracking Info -> User-ID%2$s."
+msgstr "Terdapat di Akun Google Analytics pada %1$sTracking Info -> User-ID%2$s."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:305
+msgid "Demographic and Interest Reports"
+msgstr "Laporan Demografi dan Minat Pengguna"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:308
+msgid "Found in Google Analytics account under %1$sProperty Settings%1$s."
+msgstr "Terdapat di akun Google Analytics pada %1$sPengaturan Properti%1$s."
+
+#: library/DigitalPointBetterAnalytics/Widget/PopularPosts.php:12
+msgid "Display the most popular content right now."
+msgstr "Tampilkan konten paling populer saat ini."
+
+#: library/DigitalPointBetterAnalytics/Widget/PopularPosts.php:46
+msgid "No Linked Google Analytics Account (API access required for this widget).  You can link one in the %1$sBetter Analytics API settings%2$s."
+msgstr "Tak ada Akun GOogle Analytic yang terhubung (akses pada API dibutuhkan untuk menggunakan widget ini). Anda bisa menghubungkannya di %1$sPengaturan API Better Analytics%2$s."
+
+#: library/DigitalPointBetterAnalytics/Widget/PopularPosts.php:51
+msgid "Title:"
+msgstr "Judul:"
+
+#: library/DigitalPointBetterAnalytics/Widget/PopularPosts.php:54
+msgid "Number of URLs to show:"
+msgstr "Jumlah URL untuk ditampilkan:"
+
+#. Plugin URI of the plugin/theme
+msgid "https://marketplace.digitalpoint.com/better-analytics.3354/item"
+msgstr "https://marketplace.digitalpoint.com/better-analytics.3354/item"
+
+#. Description of the plugin/theme
+msgid "Adds Google Universal Analytics code to your WordPress site.  Options to track most everything (social button interactions, advertising clicks, emails sent/opened, YouTube video engagement, custom dimension tracking of authors/categories, etc.)  Integrates with API for reports/charts on dashboard, heatmaps and realtime traffic tracking."
+msgstr "Masukkan Kode Analitik Google Universal ke Website WordPress anda. Pilihan untuk memantau hampir segala hal (interaksi pada tombol sosial, klik pada iklan, email terkirim/terbuka, interaksi pada video YouTube, pemantauan khusus pada penulis/kategori, dan lainnya.) Terintegrasi dengan API untuk laporan/grafik pada Dasbor, Heatmap dan pemantauan trafik secara realtime."
+
+#. Author URI of the plugin/theme
+msgid "https://www.digitalpoint.com/"
+msgstr "https://www.digitalpoint.com/"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:56
+msgid "Better Analytics is user request driven, so if there's something you want it to do that it doesn't already do, or just have a question, simply ask!"
+msgstr "Better Analytics diciptakan atas permintaan para penggunanya, jadi bila ada sesuatu hal yang kamu inginkan namun belum tersedia, atau jika ada pertanyaan, tanyakan saja."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:56
+msgid "Setup Test Tool"
+msgstr "Alat Penguji Pengaturan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:58
+msgid "Support / Request Venues"
+msgstr "Tempat untuk Dukungan / Request"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:62
+msgid "Forum"
+msgstr "Forum"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:64
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:420
+msgid "Twitter"
+msgstr "Twitter"
+
+#. translators: This will only display if there is no translation file, so
+#. doesn't need to be translated
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:79
+msgid "Translation / Localization"
+msgstr ""
+
+#. translators: This will only display if there is no translation file, so
+#. doesn't need to be translated
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:103
+msgid "Unknown"
+msgstr ""
+
+#. translators: This will only display if there is no translation file, so
+#. doesn't need to be translated
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:107
+msgid "Better Analytics currently supports %1$u languages, but unfortunately %3$s%2$s%4$s isn't one of them."
+msgstr ""
+
+#. translators: This will only display if there is no translation file, so
+#. doesn't need to be translated
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:110
+msgid "If you would like to help translate it into your language, please visit the %1$ssupport forum%2$s and we can show you how it's done."
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:120
+msgid "Extra Features In Pro Version"
+msgstr "Fitur Ekstra di Versi Pro"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:124
+msgid "More Advertising tracking options"
+msgstr "Opsi Pemantauan Periklanan yang lebih banyak"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:127
+msgid "More options for monitoring issues with site"
+msgstr "Opsi yang lebih banyak untuk mengawasi permasalahan pada website"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:130
+msgid "More heat map metrics"
+msgstr "Metrik yang lebih banyak pada Heat Map"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:133
+msgid "More charting dimensions"
+msgstr "Grafik Dimensi yang lebih banyak"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:136
+msgid "eCommerce tracking"
+msgstr "Pemantauan e-Commerce"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:139
+msgid "Option for server-side tracking of users (or bots) with Analytics/privacy blockers"
+msgstr "Opsi pada level server untuk memantau pengunjung (atau bots) dengan penjagaan Privasi/Analytics"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:142
+msgid "API calls are faster (uses a custom system for parallel requests)"
+msgstr "Komunikasi melalui API sesungguhnya lebih cepat (menggunakan sistem khusus untuk request secara paralel)"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:145
+msgid "Priority Support"
+msgstr "Lebih Diprioritaskan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:150
+msgid "You can %1$sget a license here%2$s.%3$sIf you already have a license, make sure your domain is listed under %4$syour verified domains%2$s."
+msgstr "Anda bisa %1$smendapatkan lisensi disini%2$s.%3$sBila anda telah memiliki lisensi, pastikan domain anda sudah terdaftar pada %4$sdomain anda yang terverifikasi%2$s."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:167
+msgid "Google Analytics Web Property ID"
+msgstr "Web Property ID Google Analytics"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:185
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:575
+msgid "please pick a profile"
+msgstr "Silakan pilih profile"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:197
+msgid "Link Your Google Analytics Account"
+msgstr "Hubungkan Akun Google Analytics Anda"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:210
+msgid "Enhanced Link Attribution"
+msgstr "Link Atribusi Modern"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:212
+msgid "See separate information for multiple links on a page that all have the same destination. For example, if there are two links on the same page that both lead to the Contact Us page, then you see separate click information for each link.%1$sSee when one page element has multiple destinations. For example, a Search button on your page is likely to lead to multiple destinations.%1$sTrack buttons, menus, and actions driven by JavaScript."
+msgstr "Lihat informasi tersendiri mengenai beberapa link pada sebuah halaman yang memiliki tujuan yang sama. Sebagai contoh, bila ada dua link di halaman yang sama yang mengarah pada halaman Kontak, Anda bisa melihat informasi tersendiri di setiap link tersebut.%1$sMenampilkan jika ada satu elemen halaman yang memiliki arah tujuan berbeda. Sebagai contoh, Tombol pencarian di halaman anda bisa mengarah ke banyak tujuan.%1$sTombol Tracking, menu, dan aksi dikendalikan oleh JavaScript."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:219
+msgid "Track Registered Users By User ID"
+msgstr "Catat User Terdaftar dengan User ID"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:220
+msgid "This feature allows you to utilize %1$ssession unification%2$s within Google Analytics."
+msgstr "Fitur ini memperbolehkan anda menggunakan %1$spenggabungan sesi%2$s pada Google Analytics."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:232
+msgid "Events To Track"
+msgstr "Peristiwa Untuk Dicatat"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:238
+msgid "User Engagement"
+msgstr "Interaksi User"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:241
+msgid "This will give you an %1$sadjusted bounce rate%2$s."
+msgstr "Ini akan memberikan anda sebuah %1$spenyesuaian rasio kunjungan sesaat%2$s."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:250
+msgid "User Registration"
+msgstr "User yang Mendaftar"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:255
+msgid "Comments Being Created"
+msgstr "Komentar tercipta"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:260
+msgid "YouTube Video Engagement"
+msgstr "Interaksi Video YouTube"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:261
+msgid "This works with the modern IFRAME YouTube embeds.  It does not work with the old OBJECT embeds.%1$sTracks things like video plays, pauses, plays to end, etc."
+msgstr "Hanya bekerja dengan sisipan IFRAME YouTube yang baru. Takkan berfungsi pada sisipan OBJECT yang lama.%1$sCatat banyak hal seperti video yang dimainkan, dihentikan sesaat, dimainkan hingga akhir, dan lain sebagainya."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:270
+msgid "Emails Sent/Opened"
+msgstr "Email Terkirim/Terbuka"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:275
+msgid "Clicks On External Links"
+msgstr "Klik pada Link Eksternal"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:288
+msgid "Privacy"
+msgstr "Privasi"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:293
+msgid "Anonymize IPs"
+msgstr "Sembunyikan IP"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:294
+msgid "Detailed information about IP Anonymization in Google Analytics can be found %1$sover here%2$s."
+msgstr "Informasi mendetail tentang Penyembunyian IP pada Google Analytic bisa ditemukan %1$sdi sini%2$s."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:302
+msgid "Demographic & Interest Tracking"
+msgstr "Pemantauan Demografi dan Minat"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:303
+msgid "This allows you to view extra dimensions about users (Age, Gender, Affinity Categories, In-Market Segments and Other Categories.%1$sThis requires enabling the option in your %2$sGoogle Analytics account%3$s under %4$sProperty Settings%5$s."
+msgstr "Anda bisa melihat dimensi yang lebih banyak mengenai pengguna (Usia, Gender, Kesukaan, Segmen Pasar dan Kategori Lainnya.%1$sHal ini bisa diaktifkan pada %2$sAkun Google Analytics anda%3$s di %4$sPengaturan Properti%5$s."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:314
+msgid "Force Analytics Traffic Over SSL"
+msgstr "Berlakukan Analitik Trafik melalui SSL"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:315
+msgid "If your site is HTTPS based, Analytics traffic will always go over SSL.  If you have an insecure site, but wish Analytics traffic to still be secure, use this option.  Additionally, SSL traffic is going to be generally faster because it's able to utilize the %1$sSPDY protocol%2$s."
+msgstr "Bila website anda menggunakan HTTPS, Analitik Trafik akan selalu melalui SSL. Bila anda tidak menggunakan HTTPS namun menginginkan Analitik Trafik lebih aman, gunakan menu  ini. Lagipula, trafik melalui SSL akan lebih cepat karena menggunakan %1$sprotokol SPDY%2$s."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:325
+msgid "Link Source Tracking"
+msgstr "Sumber Asal Link Pemantauan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:330
+msgid "RSS"
+msgstr "RSS"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:331
+msgid "Links within RSS feed will be tagged to track the source/medium as being RSS."
+msgstr "Link pada RSS Feed akan ditandai sebagai RSS pada sumber/media-nya."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:336
+msgid "Email"
+msgstr "Email"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:337
+msgid "Links within RSS feed will be tagged to track the source/medium as being Email."
+msgstr "Link pada RSS Feed akan ditandai sebagai Email pada sumber/media-nya."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:347
+msgid "If you want to track custom dimensions, you need to create the custom dimensions in your %1$sGoogle Analytics account settings%2$s (under %3$sCustom Definitions -> Custom Dimension%4$s)%5$sThey should be scoped as \"%3$sHit%4$s\"."
+msgstr "Bila anda ingin mencatat dimensi khusus, anda harus membuatnya di %1$spengaturan akun Google Analytics%2$s (terdapat pada %3$sCustom Definitions -> Custom Dimension%4$s)%5$sKeduanya termasuk dalam \"%3$sHit%4$s\"."
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:358
+msgid "Dimension Indexes"
+msgstr "Dimensi Terindeks"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:85
+msgid "Test Analytics Setup"
+msgstr "Tes Pengaturan Analytic"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:86
+msgid "OAuth2 Endpoint"
+msgstr "OAuth2 Endpoint"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:91
+msgid "Analytics"
+msgstr "Analytics"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:92
+msgid "Heat Maps"
+msgstr "Heat Maps"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:92
+msgid "Reports"
+msgstr "Laporan"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:94
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:17
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/events.php:14
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:13
+msgid "Charts"
+msgstr "Grafik"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:95
+msgid "Issue Monitor"
+msgstr "Pengawas permasalahan"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:96
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:362
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:416
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:18
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/events.php:15
+#: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:14
+msgid "Events"
+msgstr "Peristiwa"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:100
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:117
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:215
+msgid "Settings"
+msgstr "Pengaturan"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:101
+msgid "Test Setup"
+msgstr "Tes Pengaturan"
+
+#. #-#-#-#-#  plugin.pot (Better Analytics 1.0.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:104
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:191
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:323
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:367
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:28
+#: library/DigitalPointBetterAnalytics/Widget/PopularPosts.php:11
+msgid "Better Analytics"
+msgstr "Better Analytics"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:128
+msgid "Pro version not up to date."
+msgstr "Versi Pro bukan yang terbaru"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:129
+msgid "Installed:"
+msgstr "Terpasang:"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:131
+msgid "Latest:"
+msgstr "Terbaru:"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:136
+msgid "Pro version installed"
+msgstr "Veri Pro telah terpasang"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:140
+msgid "Pro version installed, but not active.  Did you %1$sverify ownership of your domain%2$s?"
+msgstr "Versi Pro telah terinstall tapi belum aktif. Apakah anda %1$ssudah memverifikasi domain anda%2$s?"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:147
+msgid "Pro version not installed."
+msgstr "Versi Pro belum terinstall."
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:215
+msgid "Google Analytics Web Property ID not selected."
+msgstr "ID Web Property dari Google Analytic belum dipilih."
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:220
+msgid "Last Analytics Error:"
+msgstr "Eror Analytic terakhir:"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:255
+msgid "Invalid method:"
+msgstr "Metode yang salah:"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:280
+msgid "Invalid Google API Code:"
+msgstr "Kode Google API yang salah:"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:286
+msgid "Unknown Google API Error:"
+msgstr "Eror pada Google API yang tak diketahui:"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:321
+msgid "Overview"
+msgstr "Gambaran"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:324
+msgid "At the most basic level, it will automatically add Google Analytics Universal code to your website.  It gives you the flexibility to track virtually everything about your site.  From page views to YouTube video engagement (and everything in between)."
+msgstr "Pada level terendah, secara otomatis akan memasang kode Google Analytics Universal pada website anda. hal ini akan memberikan keleluasaan dalam memantau website anda hampir dalam segala hal. Mulai dari jumlah halaman yang ditampilkan hingga interaksi pada video YouTube (dan segala hal diantaranya)."
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:331
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:346
+msgid "Pro"
+msgstr "Pro"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:333
+msgid "Pro Version"
+msgstr "Versi pro"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:334
+msgid "There is a Pro version of this plugin that gives you a few added features.  More metrics/dimensions, more tracking options, etc."
+msgstr "Telah tersedia versi Pro dari plugin ini yang memiliki beberapa fitur tambahan. Dimensi/Metriks yang lebih banyak, Pilihan pemantauan yang beragam, dan lain-lain. "
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:343
+msgid "For more information:"
+msgstr "Informasi lebih lanjut:"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:344
+msgid "Info"
+msgstr "Informasi"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:345
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:379
+msgid "Support"
+msgstr "Dukungan"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:358
+msgid "colossal"
+msgstr "kolosal"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:358
+msgid "elephantine"
+msgstr "membesar"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:358
+msgid "glorious"
+msgstr "kejayaan"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:358
+msgid "grand"
+msgstr "lebih besar lagi"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:358
+msgid "huge"
+msgstr "sangat besar"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:358
+msgid "mighty"
+msgstr "teramat besar"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:358
+msgid "WTF?"
+msgstr "WTF?"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:358
+msgid "sexy"
+msgstr "menarik"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:366
+msgid "If you like %1$s, please leave us a %2$s rating. A %3$s thank you in advance!"
+msgstr "Bila anda suka%1$s, berilah %2$s rating. A %3$s Terima kasih sebelumnya!"
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:379
+msgid "Visit Support Forum"
+msgstr "Kunjungi Forum untuk bantuan"
+
+#: library/DigitalPointBetterAnalytics/Base/Public.php:103
+msgid "%1$sBetter Analytics %4$s requires WordPress %5$s or higher.%2$s%3$sPlease %6$supgrade WordPress%7$s to a current version."
+msgstr "%1$sBetter Analytics %4$s membutuhkan WordPress %5$s atau yang lebih baru.%2$s%3$sSilahkan %6$supgrade WordPress%7$s ke versi terbaru."
+
+#: library/DigitalPointBetterAnalytics/Base/Public.php:374
+msgid "Every Minute"
+msgstr "Setiap Menit"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:39
+msgid "Organic Search Keywords"
+msgstr "Kata Kunci Pencarian Organik"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:39
+msgid "Referring URL"
+msgstr "Berasal dari URL"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:39
+msgid "Current Page"
+msgstr "Halaman Saat Ini"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:39
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:586
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:686
+msgid "Medium"
+msgstr "Media"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:39
+msgid "Devices"
+msgstr "Perangkat"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:39
+msgid "Visitors"
+msgstr "Pengunjung"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:54
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:81
+msgid "Realtime"
+msgstr "Realtime"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:96
+msgid "Not all metrics are available for unlicensed copies of the Better Analytics plugin.%1$s%2$sYou can license a copy over here.%3$s%1$sIf this is a valid license, make sure the purchaser of the add-on has verified ownership of this domain %4$sover here%3$s."
+msgstr "Tidak semua metriks tersedia pada plugin Better Analytics yang belum terlisensi.%1$s%2$sAnda bisa mendapat lisensinya disini.%3$s%1$sBila sudah terlisensi, pastikan pembeli telah memverifikasikan kepemilikan domain %4$sdisini%3$s."
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:148
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:347
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:401
+msgid "Invalid number of days."
+msgstr "Jumlah hari salah"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:152
+msgid "Invalid dimension."
+msgstr "Dimensi salah"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:159
+msgid "Not all dimensions are available for unlicensed copies of the Better Analytics plugin.%1$s%2$sYou can license a copy over here.%3$s%1$sIf this is a valid license, make sure the purchaser of the add-on has verified ownership of this domain %4$sover here%3$s."
+msgstr "TidakTidak semua dimensi tersedia pada plugin Better Analytics yang belum terlisensi.%1$s%2$sAnda bisa mendapat lisensinya disini.%3$s%1$sBila sudah terlisensi, pastikan pembeli telah memverifikasikan kepemilikan domain %4$sdisini%3$s."
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:246
+msgid "Keywords Provided"
+msgstr "Kata Kunci yang tersedia"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:247
+msgid "Keywords Not Provided"
+msgstr "Kata Kunci tak tersedia"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:315
+msgid "History for"
+msgstr "Riwayat untuk"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:320
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:380
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:435
+msgid "No data for the criteria given"
+msgstr "Tak ada data untuk kriteria tersebut"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:363
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:417
+msgid "Category"
+msgstr "Kategori"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:364
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:418
+msgid "Type"
+msgstr "Tipe"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:365
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:419
+msgid "Detail"
+msgstr "Detil"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:452
+msgid "No Linked Google Analytics Account."
+msgstr "Tak ada akun Google Analytics yang terhubung"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:454
+msgid "You can link one in the Better Analytics API settings."
+msgstr "Anda bisa menghubungkannya di pengaturan API Better Analytics."
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:466
+msgid "User"
+msgstr "Pengguna"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:467
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:706
+msgid "Users"
+msgstr "Para Pengguna"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:469
+msgid "Session"
+msgstr "Sesi"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:470
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:705
+msgid "Sessions"
+msgstr "Sesi-sesi"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:471
+msgid "Hits"
+msgstr "Hits"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:473
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:584
+msgid "Traffic Sources"
+msgstr "Sumber Trafik"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:474
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:708
+msgid "Organic Search"
+msgstr "Pencarian Organik"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:476
+msgid "AdWords"
+msgstr "AdWords"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:477
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:532
+msgid "Impressions"
+msgstr "Impresi"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:478
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:530
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:537
+msgid "Clicks"
+msgstr "Klik"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:479
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:531
+msgid "Cost"
+msgstr "Harga"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:480
+msgid "CPM"
+msgstr "CPM"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:481
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:528
+msgid "CPC"
+msgstr "CPC"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:483
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:484
+msgid "Social Activities"
+msgstr "Aktivitas Social"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:486
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:619
+msgid "Page Tracking"
+msgstr "Pantau Halaman"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:487
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:704
+msgid "Page Views"
+msgstr "Tampilan Halaman"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:489
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:616
+msgid "Internal Search"
+msgstr "Pencarian Internal"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:490
+msgid "Unique Searches"
+msgstr "Pencarian unik"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:492
+msgid "Site Speed"
+msgstr "kecepatan Website"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:493
+msgid "Page Load Time"
+msgstr "Waktu Muat halaman"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:495
+msgid "Event Tracking"
+msgstr "Pantau Peristiwa"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:496
+msgid "Total Events"
+msgstr "Jumlah Peristiwa"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:497
+msgid "Unique Events"
+msgstr "Peritiwa Unik"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:498
+msgid "User Registrations"
+msgstr "Registrasi Pengguna"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:499
+msgid "Comments Created"
+msgstr "Komentar Tercipta"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:500
+msgid "YouTube Video Played"
+msgstr "Video YouTube Dimainkan"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:501
+msgid "YouTube Video Paused"
+msgstr "Video YouTube dihentikan Sementara"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:502
+msgid "YouTube Video Plays To End"
+msgstr "Video Youtube  dimainkan hingga akhir"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:503
+msgid "Emails Sent"
+msgstr "Email Terkirim"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:504
+msgid "Emails Opened"
+msgstr "Email Terbuka"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:505
+msgid "External Links Clicked"
+msgstr "Link eksternal terklik"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:506
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:280
+msgid "File Downloads"
+msgstr "File Terdownload"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:507
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:486
+msgid "Images Not Loading"
+msgstr "Gambar Tak Terbuka"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:508
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:481
+msgid "Page Not Found (404)"
+msgstr "Halaman Tak Ditemukan (404)"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:509
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:522
+msgid "AJAX Requests"
+msgstr "Memuat AJAX"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:510
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:493
+msgid "JavaScript Errors"
+msgstr "JavaScript Eror"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:511
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:498
+msgid "AJAX Errors"
+msgstr "AJAX Eror"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:512
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:502
+msgid "Browser Console Errors"
+msgstr "Konsole Browser Eror"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:513
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:506
+msgid "YouTube Errors"
+msgstr "YouTube Eror"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:515
+msgid "Advertisement Clicked"
+msgstr "Iklan Terklik"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:518
+msgid "Ecommerce"
+msgstr "E-commerce"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:519
+msgid "Transactions"
+msgstr "Transaksi"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:520
+msgid "Transaction Revenue"
+msgstr "Pendapatan Transaksi"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:521
+msgid "Revenue Per Transaction"
+msgstr "Pendapatan Per Transaksi"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:523
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:524
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:622
+msgid "Social Interactions"
+msgstr "Interaksi Sosial"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:525
+msgid "Unique Social Interactions"
+msgstr "Interaksi Sosial Unik"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:527
+msgid "DoubleClick Campaign Manager"
+msgstr "Manajer Kampanye DoubleClick"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:529
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:539
+msgid "CTR"
+msgstr "CTR"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:534
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:449
+msgid "AdSense"
+msgstr "AdSense"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:535
+msgid "Revenue"
+msgstr "Pendapatan"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:536
+msgid "Views"
+msgstr "Tampilan"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:538
+msgid "Page Impressions"
+msgstr "Tampilan Halaman"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:540
+msgid "ECPM"
+msgstr "eCPM"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:541
+msgid "Exits"
+msgstr "Pergi"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:542
+msgid "Viewable Impressions"
+msgstr "Impresi Terlihat"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:543
+msgid "Coverage"
+msgstr "Jangkauan"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:551
+msgid "Default Segments"
+msgstr "Segmen Standar"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:552
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:743
+msgid "Everything"
+msgstr "Semuanya"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:553
+msgid "All Visits"
+msgstr "Smua Kunjungan"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:554
+msgid "New Visitors"
+msgstr "Pengunjung Baru"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:555
+msgid "Returning Visitors"
+msgstr "Pengungjung yang Kembali"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:556
+msgid "Paid Search Traffic"
+msgstr "Trafik pencarian Berbayar"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:557
+msgid "Non-paid Search Traffic"
+msgstr "Trafik Pencarian Tak Berbayar"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:558
+msgid "Search Traffic"
+msgstr "Trafik Pencarian"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:559
+msgid "Direct Traffic"
+msgstr "Trafik langung"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:560
+msgid "Referral Traffic"
+msgstr "Trafik Rujukan"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:561
+msgid "Visits with Conversions"
+msgstr "Kunjungan dengan Konversi"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:562
+msgid "Visits with Transactions"
+msgstr "Kunjungan dengan Transaksi"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:563
+msgid "Mobile and Tablet Traffic"
+msgstr "Trafik dari Ponsel dan Tablet"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:564
+msgid "Non-bounce Visits"
+msgstr "Bukan Kunjungan Sesaat"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:565
+msgid "Tablet Traffic"
+msgstr "Trafik dari Tablet"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:566
+msgid "Mobile Traffic"
+msgstr "Trafik dari Ponsel"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:567
+msgid "Male Users"
+msgstr "Pengguna Pria"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:568
+msgid "Female Users"
+msgstr "Pengguna Wanita"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:579
+msgid "Visitor"
+msgstr "Pengunjung"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:580
+msgid "Visitor Type"
+msgstr "Tipe Pengunjung"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:581
+msgid "Visit Count"
+msgstr "Jumlah Kunjungan"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:582
+msgid "Days Since Last Visit"
+msgstr "Hari Sejak Kunjungan Terakhir"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:585
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:683
+msgid "Source"
+msgstr "Sumber"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:587
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:623
+msgid "Social Network"
+msgstr "Sosial Network"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:588
+msgid "Search Keywords Provided"
+msgstr "Kata Kunci Pencarian Tersedia"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:589
+msgid "Organic Search Marketshare"
+msgstr "Pangsa Pasar Pencarian Organik"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:591
+msgid "Platform"
+msgstr "Platform"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:592
+msgid "Browser"
+msgstr "Browser"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:593
+msgid "Operating System"
+msgstr "Sistem Operasi"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:594
+msgid "Operating System Version"
+msgstr "Versi Sistem Operasi"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:595
+msgid "Is Mobile"
+msgstr "Perangkat Ponsel"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:596
+msgid "Is Tablet"
+msgstr "Perangkat Tablet"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:597
+msgid "Mobile Operating System"
+msgstr "Sistem Operasi Ponsel"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:598
+msgid "Mobile Device Marketing Name"
+msgstr "Nama Pemasaran Perangkat Ponsel"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:599
+msgid "Mobile Device Branding"
+msgstr "Merek Perangkat Seluler"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:600
+msgid "Mobile Device Model"
+msgstr "Model Perangkat Seluler"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:601
+msgid "Mobile Input Selector"
+msgstr "Input Selektor Ponsel"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:602
+msgid "Mobile Device Info"
+msgstr "Info Perangkat Seluler"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:604
+msgid "Geo / Network"
+msgstr "Geografi / Jaringan"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:605
+msgid "Continent"
+msgstr "Benua"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:606
+msgid "Sub-Continent"
+msgstr "Sub-Benua"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:607
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:687
+msgid "Country"
+msgstr "Negara"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:609
+msgid "System"
+msgstr "Sistem"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:610
+msgid "Flash Version"
+msgstr "Versi Flash"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:611
+msgid "Java Enabled"
+msgstr "Java Diaktifkan"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:612
+msgid "Language"
+msgstr "Bahasa"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:613
+msgid "Screen Colors"
+msgstr "Warna Layar"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:614
+msgid "Screen Resolution"
+msgstr "Resolusi Layar"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:617
+msgid "Search Used"
+msgstr "Pencarian yang Digunakan"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:620
+msgid "Hostname"
+msgstr "Hostname"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:624
+msgid "Social Action"
+msgstr "Interaksi Sosial"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:625
+msgid "Social Network Action"
+msgstr "Interaksi pada Sosial Network"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:626
+msgid "Social Engagement Type"
+msgstr "Tipe Interaksi Sosial"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:628
+msgid "Custom Variables"
+msgstr "Variable Khusus"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:629
+msgid "Custom Dimension 1"
+msgstr "Dimensi Khusus 1"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:630
+msgid "Custom Dimension 2"
+msgstr "Dimensi Khusus 2"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:631
+msgid "Custom Dimension 3"
+msgstr "Dimensi Khusus 3"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:632
+msgid "Custom Dimension 4"
+msgstr "Dimensi Khusus 4"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:633
+msgid "Custom Dimension 5"
+msgstr "Dimensi Khusus 5"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:634
+msgid "Custom Variable Value 1"
+msgstr "Angka Variabel Khusus 1"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:635
+msgid "Custom Variable Value 2"
+msgstr "Angka Variabel Khusus 2"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:636
+msgid "Custom Variable Value 3"
+msgstr "Angka Variabel Khusus 3"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:637
+msgid "Custom Variable Value 4"
+msgstr "Angka Variabel Khusus 4"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:638
+msgid "Custom Variable Value 5"
+msgstr "Angka Variabel Khusus 5"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:640
+msgid "Audience"
+msgstr "Pengunjung"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:641
+msgid "Age Bracket"
+msgstr "Jenjang Usia"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:642
+msgid "Gender"
+msgstr "Gender"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:643
+msgid "Interest Affinity"
+msgstr "Pengelompokan Minat"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:644
+msgid "Interest In Market"
+msgstr "Minat pada pasar"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:645
+msgid "Interest Other"
+msgstr "Minat pada lainnya"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:668
+msgid "Date"
+msgstr "Tanggal"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:672
+msgid "Categories"
+msgstr "Kategori"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:676
+msgid "Authors"
+msgstr "Pemilik"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:680
+msgid "Tags"
+msgstr "Tag"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:684
+msgid "Referrer"
+msgstr "Sumber Asal"
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:707
+msgid "Session Length"
+msgstr "Lama Sesi"
+
+#: library/DigitalPointBetterAnalytics/Helper/Reporting.php:65
+msgid "No API tokens to refresh."
+msgstr "Tak ada Token API untuk di muat ulang"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:31
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:205
+msgid "General"
+msgstr "Umum"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:32
+msgid "Custom Dimensions"
+msgstr "Dimensi Buatan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:33
+msgid "Social"
+msgstr "Social"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:34
+msgid "Advertising"
+msgstr "Periklanan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:35
+msgid "Monitoring"
+msgstr "Pengawasan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:36
+msgid "eCommerce"
+msgstr "e-Commerce"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:37
+msgid "API"
+msgstr "API"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:38
+msgid "Advanced"
+msgstr "Menu Lanjutan"
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:54
+msgid "Support / Feature Requests"
+msgstr "Request Dukungan / Fitur"
