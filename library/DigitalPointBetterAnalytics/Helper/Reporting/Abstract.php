@@ -216,6 +216,7 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 
 		$dimensions = $this->_cacheLoad($cacheKey);
 
+		// Not caching dimensions (only 1 minute cache anyway)
 		$dimensions = false;
 
 		if (!$dimensions)

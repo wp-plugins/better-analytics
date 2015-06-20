@@ -19,7 +19,6 @@
 	{
 		$profiles = array();
 	}
-
 ?>
 
 
@@ -176,7 +175,7 @@
 					{
 						$siteHostname = parse_url(site_url(), PHP_URL_HOST);
 
-						echo '<select data-placeholder="Pick profile" id="ba_pick_profile" class="chosen-select">';
+						echo '<select data-placeholder="' . esc_html__('Pick profile', 'better-analytics') . '" id="ba_pick_profile" class="chosen-select">';
 
 						echo '<option value="">' . esc_html__('please pick a profile', 'better-analytics') . '</option>';
 
@@ -346,50 +345,176 @@
 						'<strong>',
 						'</strong>',
 						'<br /><br />'
-					); ?>
+					);
+
+					if (!empty($profilePick[@$betterAnalyticsOptions['property_id']]))
+					{
+						$dimensions = DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getDimensions($profilePick[@$betterAnalyticsOptions['property_id']][2], $betterAnalyticsOptions['property_id']);
+						$dimensions = DigitalPointBetterAnalytics_Model_Reporting::parseDimensions($dimensions);
+					}
+					else
+
+					{
+						$dimensions = array();
+					}
+
+					?>
 				</td>
 			</tr>
 
 			<tr valign="top" class="group_dimensions tab_content">
 				<th scope="row"><?php esc_html_e('Dimension Indexes', 'better-analytics');?>
-				<p class="description" style="font-weight: normal;"><?php esc_html_e('Set to 0 to disable.', 'better-analytics');?></p></th>
+					<p class="description"
+					   style="font-weight: normal;">
+						<?php
+							if (!$dimensions)
+							{
+								esc_html_e('Set to 0 to disable.', 'better-analytics');
+							}
+							else
+							{
+								/* translators: %1$s = <br /> */
+								printf(esc_html__('Drop-down boxes are coming from%1$scustom dimensions defined within%1$syour Google Analytics account.', 'better-analytics'), '<br />');
+
+							}
+
+						?></p>
+				</th>
 				<td>
 
 					<fieldset>
 						<div style="display:table">
 							<div style="display:table-row">
 								<div style="display:table-cell;text-align:right;padding-right:10px;">
-									<label for="ba_dimension_category"><?php esc_html_e('Categories: ', 'better-analytics');?></label>
+									<label
+										for="ba_dimension_category"><?php esc_html_e('Categories: ', 'better-analytics');?></label>
 								</div>
 								<div style="display:table-cell">
-									<input type="number" name="better_analytics[dimension][category]" id="ba_dimension_category" min="0" max="20" step="1" value="<?php echo esc_attr( intval(@$betterAnalyticsOptions['dimension']['category']) ); ?>" />
+									<?php
+
+										if ($dimensions)
+										{
+											echo '<select data-placeholder="' . esc_html__('Pick dimension', 'better-analytics') . '" id="ba_dimension_category" name="better_analytics[dimension][category]" class="chosen-select">';
+
+											echo '<option value="">' . esc_html__('[none]', 'better-analytics') . '</option>';
+
+											foreach ($dimensions as $index => $name)
+											{
+												echo '<option value="' . $index . '"' . ($index == @$betterAnalyticsOptions['dimension']['category'] ? ' selected="selected"' : '') . '>' . htmlentities($name) . '</option>';
+											}
+											echo '</select>';
+
+										}
+										else
+										{
+											echo '<input type="number" name="better_analytics[dimension][category]"
+											   id="ba_dimension_category" min="0" max="20" step="1"
+											   value="' . esc_attr(intval(@$betterAnalyticsOptions['dimension']['category'])) . '"/>';
+										}
+
+									?>
 								</div>
 							</div>
 
 							<div style="display:table-row">
 								<div style="display:table-cell;text-align:right;padding-right:10px;">
-									<label for="ba_dimension_author"><?php esc_html_e('Author: ', 'better-analytics');?></label>
+									<label
+										for="ba_dimension_author"><?php esc_html_e('Author: ', 'better-analytics');?></label>
 								</div>
 								<div style="display:table-cell">
-									<input type="number" name="better_analytics[dimension][author]" id="ba_dimension_author" min="0" max="20" step="1" value="<?php echo esc_attr( intval(@$betterAnalyticsOptions['dimension']['author']) ); ?>" />
+
+									<?php
+
+									if ($dimensions)
+									{
+										echo '<select data-placeholder="' . esc_html__('Pick dimension', 'better-analytics') . '" id="ba_dimension_author" name="better_analytics[dimension][author]" class="chosen-select">';
+
+										echo '<option value="">' . esc_html__('[none]', 'better-analytics') . '</option>';
+
+										foreach ($dimensions as $index => $name)
+										{
+											echo '<option value="' . $index . '"' . ($index == @$betterAnalyticsOptions['dimension']['author'] ? ' selected="selected"' : '') . '>' . htmlentities($name) . '</option>';
+										}
+										echo '</select>';
+
+									}
+									else
+									{
+										echo '<input type="number" name="better_analytics[dimension][author]"
+											   id="ba_dimension_author" min="0" max="20" step="1"
+											   value="' . esc_attr(intval(@$betterAnalyticsOptions['dimension']['author'])) . '"/>';
+									}
+
+									?>
+
 								</div>
 							</div>
 
 							<div style="display:table-row">
 								<div style="display:table-cell;text-align:right;padding-right:10px;">
-									<label for="ba_dimension_tags"><?php esc_html_e('Tags: ', 'better-analytics');?></label>
+									<label
+										for="ba_dimension_tags"><?php esc_html_e('Tags: ', 'better-analytics');?></label>
 								</div>
 								<div style="display:table-cell">
-									<input type="number" name="better_analytics[dimension][tag]" id="ba_dimension_tags" min="0" max="20" step="1" value="<?php echo esc_attr( intval(@$betterAnalyticsOptions['dimension']['tag']) ); ?>" />
+
+									<?php
+
+									if ($dimensions)
+									{
+										echo '<select data-placeholder="' . esc_html__('Pick dimension', 'better-analytics') . '" id="ba_dimension_tags" name="better_analytics[dimension][tag]" class="chosen-select">';
+
+										echo '<option value="">' . esc_html__('[none]', 'better-analytics') . '</option>';
+
+										foreach ($dimensions as $index => $name)
+										{
+											echo '<option value="' . $index . '"' . ($index == @$betterAnalyticsOptions['dimension']['tag'] ? ' selected="selected"' : '') . '>' . htmlentities($name) . '</option>';
+										}
+										echo '</select>';
+
+									}
+									else
+									{
+										echo '<input type="number" name="better_analytics[dimension][tag]"
+											   id="ba_dimension_tags" min="0" max="20" step="1"
+											   value="' . esc_attr(intval(@$betterAnalyticsOptions['dimension']['tag'])) . '"/>';
+									}
+
+									?>
+
 								</div>
 							</div>
 
 							<div style="display:table-row">
 								<div style="display:table-cell;text-align:right;padding-right:10px;">
-									<label for="ba_dimension_user"><?php esc_html_e('Registered User: ', 'better-analytics');?></label>
+									<label
+										for="ba_dimension_user"><?php esc_html_e('Registered User: ', 'better-analytics');?></label>
 								</div>
 								<div style="display:table-cell">
-									<input type="number" name="better_analytics[dimension][user]" id="ba_dimension_user" min="0" max="20" step="1" value="<?php echo esc_attr( intval(@$betterAnalyticsOptions['dimension']['user']) ); ?>" />
+
+									<?php
+
+									if ($dimensions)
+									{
+										echo '<select data-placeholder="' . esc_html__('Pick dimension', 'better-analytics') . '" id="ba_dimension_user" name="better_analytics[dimension][user]" class="chosen-select">';
+
+										echo '<option value="">' . esc_html__('[none]', 'better-analytics') . '</option>';
+
+										foreach ($dimensions as $index => $name)
+										{
+											echo '<option value="' . $index . '"' . ($index == @$betterAnalyticsOptions['dimension']['user'] ? ' selected="selected"' : '') . '>' . htmlentities($name) . '</option>';
+										}
+										echo '</select>';
+
+									}
+									else
+									{
+										echo '<input type="number" name="better_analytics[dimension][author]"
+											   id="ba_dimension_user" min="0" max="20" step="1"
+											   value="' . esc_attr(intval(@$betterAnalyticsOptions['dimension']['author'])) . '"/>';
+									}
+
+									?>
+
 								</div>
 							</div>
 
@@ -566,7 +691,7 @@
 						<th scope="row">' . esc_html__('Profile Used For Reporting', 'better-analytics') . '</th>
 						<td>';
 
-				echo '<select data-placeholder="Pick profile" id="ba_pick_api_profile" name="better_analytics[api][profile]" class="chosen-select">';
+				echo '<select data-placeholder="' . esc_html__('Pick profile', 'better-analytics') . '" id="ba_pick_api_profile" name="better_analytics[api][profile]" class="chosen-select">';
 
 				echo '<option value="">' . esc_html__('please pick a profile', 'better-analytics') . '</option>';
 
@@ -644,12 +769,10 @@
 				<th scope="row"><?php esc_html_e('Roles To Not Track', 'better-analytics');?> <span class="dashicons-before dashicons-info tooltip" title="<?php esc_html_e('If a logged in user is part of one of these groups, Analytics will not track them.', 'better-analytics');?>"></span></th>
 				<td>
 
-					<select data-placeholder="Pick roles to not track" id="ba_roles_no_track" name="better_analytics[roles_no_track][]" multiple class="chosen-select">
+					<select data-placeholder="<?php esc_html_e('Pick roles to not track', 'better-analytics'); ?>" id="ba_roles_no_track" name="better_analytics[roles_no_track][]" multiple class="chosen-select">
 						<option value=""></option>
 
 						<?php
-						print_r ($betterAnalyticsOptions);
-
 							global $wp_roles;
 							foreach ($wp_roles->roles as $role => $val)
 							{
@@ -664,7 +787,7 @@
 				<th scope="row"><?php esc_html_e('Roles Able To View Reports/Dashboard', 'better-analytics');?></th>
 				<td>
 
-					<select data-placeholder="Pick roles that are able to view reports" id="ba_roles_view_reports" name="better_analytics[roles_view_reports][]" multiple class="chosen-select">
+					<select data-placeholder="<?php esc_html_e('Pick roles that are able to view reports', 'better-analytics'); ?>" id="ba_roles_view_reports" name="better_analytics[roles_view_reports][]" multiple class="chosen-select">
 						<option value=""></option>
 
 						<?php
@@ -681,7 +804,7 @@
 			<tr valign="top" class="group_advanced tab_content">
 				<th scope="row"><?php esc_html_e('File Extensions To Track As Downloads', 'better-analytics');?> <span class="dashicons-before dashicons-info tooltip" title="<?php esc_html_e('If a logged in user is part of one of these groups, Analytics will not track them.', 'better-analytics');?>"></span></th>
 				<td>
-					<select data-placeholder="Pick file extensions" id="ba_file_extensions" name="better_analytics[file_extensions][]" multiple class="chosen-select">
+					<select data-placeholder="<?php esc_html_e('Pick file extensions', 'better-analytics'); ?>" id="ba_file_extensions" name="better_analytics[file_extensions][]" multiple class="chosen-select">
 						<option value=""></option>
 
 						<?php

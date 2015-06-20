@@ -22,9 +22,6 @@
 
 	$checks['licensed'] = DigitalPointBetterAnalytics_Helper_Api::check(true);
 
-//	$checks['user_dimension_set'] = (XenForo_Application::getOptions()->dpBetterAnalyticsDimensionIndexUser > 0 && @$checks['dimensions']['User']['index'] == XenForo_Application::getOptions()->dpBetterAnalyticsDimensionIndexUser);
-//	$checks['forum_dimension_set'] = (XenForo_Application::getOptions()->dpBetterAnalyticsDimentionIndex > 0 && @$checks['dimensions']['Forum']['index'] == XenForo_Application::getOptions()->dpBetterAnalyticsDimentionIndex);
-
 ?>
 
 <div class="wrap">

@@ -30,8 +30,6 @@ class DigitalPointBetterAnalytics_Base_Admin
 		add_action('admin_menu', array($this, 'admin_menu'));
 		add_action('admin_head', array($this, 'admin_head'));
 
-	//	add_action('admin_bar_menu', array($this, 'admin_bar_menu'));
-
 		add_action('wp_dashboard_setup', array($this, 'dashboard_setup'));
 
 		add_action('wp_ajax_better-analytics_heatmaps', array($this, 'display_page'));
@@ -379,7 +377,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 			{
 				if (empty($profilesOutput[$profile['webPropertyId']]))
 				{
-					$profilesOutput[$profile['webPropertyId']] = array($profile['websiteUrl'], $profile['name']);
+					$profilesOutput[$profile['webPropertyId']] = array($profile['websiteUrl'], $profile['name'], $profile['accountId']);
 				}
 			}
 		}

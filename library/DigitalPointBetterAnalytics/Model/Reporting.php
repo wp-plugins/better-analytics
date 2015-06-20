@@ -202,4 +202,17 @@ class DigitalPointBetterAnalytics_Model_Reporting
 			),
 		);
 	}
+
+	public static function parseDimensions($dimensions)
+	{
+		$output = array();
+		if (@$dimensions['items'])
+		{
+			foreach($dimensions['items'] as $dimension)
+			{
+				$output[$dimension['index']] = $dimension['name'] . ($dimension['scope'] != 'HIT' ? ' ' . sprintf(esc_html__('(scope set to %s, should be HIT)', 'better-analytics'), $dimension['scope']) : '');
+			}
+		}
+		return $output;
+	}
 }
