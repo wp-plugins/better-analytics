@@ -1,6 +1,6 @@
 === Better Google Analytics ===
 Contributors: digitalpoint
-Tags: analytics, google analytics, universal analytics, statistics, tracking, code, dashboard, analytics dashboard, google analytics dashboard, reports, charts, multisite, api, stats, web stats, visits, javascript, pageviews, marketing, widget, realtime, real time, youtube, outbrain, taboola, adsense, google, digitalpoint
+Tags: analytics, google analytics, universal analytics, statistics, tracking, code, dashboard, analytics dashboard, google analytics dashboard, google analytics plugin, google analytics widget, reports, charts, multisite, api, stats, web stats, visits, javascript, pageviews, marketing, widget, realtime, real time, youtube, outbrain, taboola, adsense, google, digitalpoint
 Donate link: https://marketplace.digitalpoint.com/better-analytics.3354/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin
 Requires at least: 3.8
 Tested up to: 4.2.2
@@ -19,7 +19,7 @@ If you link your Google Analytics account, the Better Google Analytics plugin is
 
 Better Google Analytics uses lightweight (and client-side cacheable) JavaScript to give your users the fastest possible experience on your website.  Fully compatible with multisite network setups.
 
-<strong>Better Google Analytics Basic Tracking Features (each can be enabled/disabled):</strong>
+= Better Google Analytics Basic Tracking Features (each can be enabled/disabled): =
 
 * Link Attribution
 * User-ID/Session Unification
@@ -38,14 +38,14 @@ Better Google Analytics uses lightweight (and client-side cacheable) JavaScript 
 * Page Not Found (404)
 * AJAX Requests
 
-<strong>Better Google Analytics Dimension Tracking:</strong>
+ = Better Google Analytics Dimension Tracking: =
 
 * Categories
 * Author
 * Tags
 * User
 
-<strong>Better Google Analytics Social Button Engagement Tracking:</strong>
+= Better Google Analytics Social Button Engagement Tracking: =
 
 * Facebook
 * Twitter
@@ -53,7 +53,7 @@ Better Google Analytics uses lightweight (and client-side cacheable) JavaScript 
 * Pinterest
 * LinkedIn
 
-<strong>Better Google Analytics Reporting Features (can be viewed site-wide or for individual page/URL):</strong>
+= Better Google Analytics Reporting Features (can be viewed site-wide or for individual page/URL): =
 
 * Dashboard Charts (real time or historical)
 * Weekly Heat Maps
@@ -61,7 +61,7 @@ Better Google Analytics uses lightweight (and client-side cacheable) JavaScript 
 * Events
 * Issue Monitoring
 
-<strong>Better Google Analytics Advanced Features:</strong>
+= Better Google Analytics Advanced Features: =
 
 * Suppress Google Analytics Tracking By User Role
 * View Reports By User Role
@@ -71,7 +71,7 @@ Better Google Analytics uses lightweight (and client-side cacheable) JavaScript 
 * Insert Your Own Custom JavaScript
 * Debugging Mode
 
-<strong>Better Google Analytics Widgets Included:</strong>
+= Better Google Analytics Widgets Included: =
 
 * Popular Posts
 * Statistics based on selectable Analytics metric
