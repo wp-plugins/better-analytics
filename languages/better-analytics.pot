@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Better Analytics 1.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/better-analytics\n"
-"POT-Creation-Date: 2015-06-20 18:25:56+00:00\n"
+"POT-Creation-Date: 2015-06-23 20:17:58+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,38 +12,39 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:70
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:75
 msgid "Test Analytics Setup"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:71
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:76
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:97
 msgid "OAuth2 Endpoint"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:76
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:80
 msgid "Analytics"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:77
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:81
 msgid "Heat Maps"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:77
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:81
 msgid "Reports"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:79
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:83
 #: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:17
 #: library/DigitalPointBetterAnalytics/ViewAdmin/reports/events.php:14
 #: library/DigitalPointBetterAnalytics/ViewAdmin/reports/heatmaps.php:14
 msgid "Charts"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:80
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:84
 msgid "Issue Monitor"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:81
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:85
 #: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:384
 #: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:442
 #: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:18
@@ -52,77 +53,77 @@ msgstr ""
 msgid "Events"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:85
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:102
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:200
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:88
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:109
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:208
 msgid "Settings"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:86
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:89
 msgid "Test Setup"
 msgstr ""
 
 #. #-#-#-#-#  plugin.pot (Better Analytics 1.0.3)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:89
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:176
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:308
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:352
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:91
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:184
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:329
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:372
 #: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:27
 msgid "Better Analytics"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:113
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:120
 msgid "Pro version not up to date."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:114
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:121
 msgid "Installed:"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:116
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:123
 msgid "Latest:"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:121
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:128
 msgid "Pro version installed"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:125
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:132
 msgid ""
 "Pro version installed, but not active.  Did you %1$sverify ownership of your "
 "domain%2$s?"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:132
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:139
 msgid "Pro version not installed."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:200
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:208
 msgid "Google Analytics Web Property ID not selected."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:205
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:213
 msgid "Last Analytics Error:"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:240
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:248
 msgid "Invalid method:"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:265
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:273
 msgid "Invalid Google API Code:"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:271
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:279
 msgid "Unknown Google API Error:"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:306
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:327
 msgid "Overview"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:309
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:330
 msgid ""
 "At the most basic level, it will automatically add Google Analytics "
 "Universal code to your website.  It gives you the flexibility to track "
@@ -130,73 +131,77 @@ msgid ""
 "engagement (and everything in between)."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:316
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:331
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:337
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:351
 msgid "Pro"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:318
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:339
 msgid "Pro Version"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:319
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:340
 msgid ""
 "There is a Pro version of this plugin that gives you a few added features.  "
 "More metrics/dimensions, more tracking options, etc."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:328
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:348
 msgid "For more information:"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:329
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:349
 msgid "Info"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:330
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:364
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:350
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:384
 msgid "Support"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:343
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:363
 msgid "colossal"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:343
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:363
 msgid "elephantine"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:343
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:363
 msgid "glorious"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:343
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:363
 msgid "grand"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:343
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:363
 msgid "huge"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:343
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:363
 msgid "mighty"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:343
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:363
 msgid "WTF?"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:343
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:363
 msgid "sexy"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:351
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:371
 msgid ""
 "If you like %1$s, please leave us a %2$s rating. A %3$s thank you in advance!"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Base/Admin.php:364
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:384
 msgid "Visit Support Forum"
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/Base/Admin.php:389
+msgid "Verify Domain"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/Base/Public.php:123
@@ -226,7 +231,7 @@ msgid "Current Page"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:39
-#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:523
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:532
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:142
 msgid "Medium"
 msgstr ""
@@ -327,45 +332,53 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:520
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:521
+msgid "Publication Year"
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:525
+msgid "User Role"
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:529
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:141
 msgid "Source"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:521
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:530
 msgid "Referrer"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:524
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:533
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:163
 msgid "Country"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:541
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:550
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:29
 msgid "Page Views"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:542
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:551
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:12
 msgid "Sessions"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:543
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:552
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:9
 msgid "Users"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:544
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:553
 msgid "Session Length"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:545
+#: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:554
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:16
 msgid "Organic Search"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Helper/Reporting.php:65
+#: library/DigitalPointBetterAnalytics/Helper/Reporting.php:75
 msgid "No API tokens to refresh."
 msgstr ""
 
@@ -492,37 +505,37 @@ msgid "File Downloads"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:49
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:607
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:675
 msgid "Images Not Loading"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:50
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:602
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:670
 msgid "Page Not Found (404)"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:51
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:643
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:711
 msgid "AJAX Requests"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:52
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:614
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:682
 msgid "JavaScript Errors"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:53
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:619
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:687
 msgid "AJAX Errors"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:54
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:623
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:691
 msgid "Browser Console Errors"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:55
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:627
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:695
 msgid "YouTube Errors"
 msgstr ""
 
@@ -566,7 +579,7 @@ msgid "CTR"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:76
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:570
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:638
 msgid "AdSense"
 msgstr ""
 
@@ -603,7 +616,7 @@ msgid "Default Segments"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/Model/Reporting.php:110
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:862
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:960
 msgid "Everything"
 msgstr ""
 
@@ -932,7 +945,7 @@ msgid "Forum"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:63
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:541
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:609
 msgid "Twitter"
 msgstr ""
 
@@ -985,12 +998,12 @@ msgid "Google Analytics Web Property ID"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:178
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:694
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:762
 msgid "Pick profile"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:180
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:696
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:764
 msgid "please pick a profile"
 msgstr ""
 
@@ -1126,7 +1139,7 @@ msgstr ""
 msgid ""
 "If you want to track custom dimensions, you need to create the custom "
 "dimensions in your %1$sGoogle Analytics account settings%2$s (under "
-"%3$sCustom Definitions -> Custom Dimension%4$s)%5$sThey should be scoped as "
+"%3$sCustom Definitions -> Custom Dimension%4$s).%5$sThey should be scoped as "
 "\"%3$sHit%4$s\"."
 msgstr ""
 
@@ -1153,6 +1166,8 @@ msgstr ""
 #: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:430
 #: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:464
 #: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:498
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:532
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:566
 msgid "Pick dimension"
 msgstr ""
 
@@ -1160,6 +1175,8 @@ msgstr ""
 #: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:432
 #: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:466
 #: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:500
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:534
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:568
 msgid "[none]"
 msgstr ""
 
@@ -1172,52 +1189,60 @@ msgid "Tags: "
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:490
+msgid "Publication Year: "
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:524
+msgid "User Role: "
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:558
 msgid "Registered User: "
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:530
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:598
 msgid "Button Engagement To Track"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:536
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:604
 msgid "Facebook Like"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:546
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:614
 msgid "Google+ (Google Analytics always tracks)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:551
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:619
 msgid "Pinterest"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:556
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:624
 msgid "LinkedIn"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:564
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:632
 msgid "Advertisement Clicks To Track"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:575
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:643
 msgid "Outbrain"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:580
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:648
 msgid "Taboola"
 msgstr ""
 
 #. #-#-#-#-#  plugin.pot (Better Analytics 1.0.3)  #-#-#-#-#
 #. Author of the plugin/theme
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:585
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:653
 msgid "Digital Point"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:596
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:664
 msgid "Site Issues To Track"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:608
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:676
 msgid ""
 "This relies on the ability of the user's browser to load images which will "
 "vary between browsers and Internet connections.  This event can be a useful "
@@ -1225,170 +1250,183 @@ msgid ""
 "that the end user's browser did not load (for any reason)."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:628
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:696
 msgid ""
 "This allows you to quickly find old videos that the author has removed or "
 "disabled embeding for."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:637
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:705
 msgid "Debugging Events"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:656
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:724
 msgid "WooCommerce"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:664
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:732
 msgid "WooCommerce not enabled/active."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:667
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:735
 msgid "More information about %s"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:669
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:737
 msgid "View details"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:691
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:759
 msgid "Profile Used For Reporting"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:720
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:794
+msgid "Multisite Mode: Analytics account linked at network level"
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:802
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config_network.php:20
 msgid "Link/Authenticate A Different Google Analytics Account"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:720
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:802
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config_network.php:20
 msgid "Link/Authenticate Your Google Analytics Account"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:732
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:821
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config_network.php:39
 msgid "Use Your Own Project Credentials"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:733
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:823
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config_network.php:40
 msgid ""
 "If you have your own Google API Project that you wish to use, you can use "
 "your credentials for that web application."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:743
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:834
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config_network.php:50
 msgid "Configuration"
 msgstr ""
 
 #. translators: %1$s = <strong>, %2$s = </strong>
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:745
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:836
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config_network.php:52
 msgid ""
 "Project needs to have the %1$sAnalytics API%2$s enabled under %1$sAPIs & "
 "auth -> APIs%2$s."
 msgstr ""
 
 #. translators: %1$s = <strong>, %2$s = </strong>
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:747
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:838
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config_network.php:54
 msgid ""
 "Under %1$sAPIs & auth -> Credentials%2$s, you need to %1$sCreate new Client "
 "ID%2$s that is a %1$sWeb application%2$s with an authorized redirect URI of: "
 "%1$s%3$s%2$s"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:754
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:846
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config_network.php:61
 msgid "Client ID"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:761
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:856
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config_network.php:68
 msgid "Client Secret"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:769
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:867
 msgid "Roles To Not Track"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:769
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:805
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:867
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:903
 msgid ""
 "If a logged in user is part of one of these groups, Analytics will not track "
 "them."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:772
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:870
 msgid "Pick roles to not track"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:787
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:885
 msgid "Roles Able To View Reports/Dashboard"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:790
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:888
 msgid "Pick roles that are able to view reports"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:805
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:903
 msgid "File Extensions To Track As Downloads"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:807
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:905
 msgid "Pick file extensions"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:812
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:910
 msgid "Audio Video Interleave (.avi)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:813
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:911
 msgid "Word (.doc)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:814
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:912
 msgid "Executable (.exe)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:815
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:913
 msgid "gzip (.gz)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:816
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:914
 msgid "MPEG-1 Video (.mpg)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:817
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:915
 msgid "MP3 (.mp3)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:818
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:916
 msgid "Acrobat (.pdf)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:819
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:917
 msgid "PowerPoint (.ppt)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:820
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:918
 msgid "Photoshop (.psd)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:821
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:919
 msgid "RAR (.rar)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:822
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:920
 msgid "Windows Media Video (.wmv)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:823
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:921
 msgid "Excel (.xls)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:824
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:922
 msgid "Zip Archive (.zip)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:838
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:936
 msgid "Track Users With Analytics Blockers"
 msgstr ""
 
 #. translators: %1$s = <strong>, %2$s = </strong>, %3$s = <p />
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:841
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:939
 msgid ""
 "If a user has a mechanism that is blocking them from being tracked with "
 "Google Analytics, you can use this option to do server-side page view "
@@ -1399,93 +1437,101 @@ msgid ""
 "tracked (ones not popular enough to be widely known as a spider)."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:847
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:945
 msgid "Never"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:852
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:950
 msgid "Registered Users"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:857
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:955
 msgid "Humans"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:870
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:968
 msgid "Location For Analytics Code"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:875
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:973
 msgid "Header"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:880
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:978
 msgid "Footer"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:885
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:983
 msgid "No JavaScript (you have your own/other already)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:891
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:989
 msgid "Use In Staff Area (wp-admin)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:897
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:995
 msgid "When To Run Analytics Code"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:902
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:1000
 msgid "Immediately"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:907
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:1005
 msgid "After Page Loads"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:914
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:1012
 msgid "Campaign Tracking Within URLs"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:919
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:1017
 msgid "In Anchor"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:924
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:1022
 msgid "In Parameters"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:931
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:1029
 msgid "Sample Rate"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:931
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:1029
 msgid ""
 "Specifies what percentage of users should be tracked.  Very large sites may "
 "need to use a lower sample rate to stay within Google Analytics processing "
 "limits."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:952
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:1050
 msgid "Extra JavaScript"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:952
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:1050
 msgid ""
 "This allows you to add your own JavaScript code to the Analytics tracking "
 "code.  This JavaScript is inserted right before the %1$s function."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:959
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:1057
 msgid "Debugging"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:964
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:1062
 msgid "Enable Google Analytics Debugging"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:965
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:1063
 msgid "This will display Google Analytics debug data in the browser console."
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config_network.php:13
+msgid "Better Analytics Settings"
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/config_network.php:26
+msgid "Delete Existing Tokens"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:13
@@ -1753,6 +1799,8 @@ msgstr ""
 #: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:162
 #: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:175
 #: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:189
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:203
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:219
 msgid ""
 "Found in Google Analytics account under %1$sCustom Definitions -> Custom "
 "Dimensions%2$s (should be named \"%1$s%3$s%2$s\" and scoped for \"%1$sHit%2$s"
@@ -1768,91 +1816,107 @@ msgid "Custom Dimension For Tag Tracking"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:181
+msgid "Custom Dimension For Publication Year Tracking"
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:195
+msgid "Custom Dimension For User Role Tracking"
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:211
 msgid "Custom Dimension For User Tracking"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:196
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:226
 msgid "Category Tracking Dimension Index Set"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:205
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:235
 msgid "Author Tracking Dimension Index Set"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:213
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:243
 msgid "Tag Tracking Dimension Index Set"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:221
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:251
+msgid "Publication Year Tracking Dimension Index Set"
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:259
+msgid "User Role Tracking Dimension Index Set"
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:268
 msgid "Registered User Tracking Dimension Index Set"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:229
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:276
 msgid "Better Analytics Pro License"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:234
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:281
 msgid ""
 "A few extra advanced features are available when you license the Better "
 "Analytics Pro plugin.  Please don't steal, a crazy amount of work went into "
 "this.  Some of the extra features:"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:238
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:285
 msgid "More metrics available for %1$sHeat Maps%2$s"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:243
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:290
 msgid "More dimensions available for %1$sCharts%2$s"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:248
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:295
 msgid "More %1$sadvertising platform click tracking%2$s"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:253
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:300
 msgid "More %1$sissue monitoring options%2$s"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:258
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:305
 msgid "%1$seCommerce tracking%2$s"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:263
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:310
 msgid "Ability to do %1$sserver-side tracking of users%2$s"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:268
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:315
 msgid "Faster API calls (utilizes a multi-threaded mechanism)"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:273
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:320
 msgid "%1$sPriority support%2$s"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:278
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:325
 msgid ""
 "A Warm & Fuzzy Feeling knowing you are helping to continue future development"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:291
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:338
 msgid "Things That Need To Be Checked Manually"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:294
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:341
 msgid "User-ID Tracking"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:297
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:344
 msgid ""
 "Found in Google Analytics account under %1$sTracking Info -> User-ID%2$s."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:302
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:349
 msgid "Demographic and Interest Reports"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:305
+#: library/DigitalPointBetterAnalytics/ViewAdmin/test.php:352
 msgid "Found in Google Analytics account under %1$sProperty Settings%1$s."
 msgstr ""
 

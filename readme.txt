@@ -4,7 +4,7 @@ Tags: analytics, google analytics, universal analytics, statistics, tracking, co
 Donate link: https://marketplace.digitalpoint.com/better-analytics.3354/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin
 Requires at least: 3.8
 Tested up to: 4.2.2
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,7 @@ Better Google Analytics uses lightweight (and client-side cacheable) JavaScript 
 * Author
 * Tags
 * Publication Year
+* User Role
 * User
 
 = Better Google Analytics Social Button Engagement Tracking: =
@@ -69,7 +70,7 @@ Better Google Analytics uses lightweight (and client-side cacheable) JavaScript 
 * Adjust Location Of Google Analytics Code
 * Google Analytics Campaign Tracking By Anchor or Parameters
 * Adjustable Analytics Sample Rate
-* Insert Your Own Custom Analytics JavaScript
+* Insert Your Own Custom Google Analytics JavaScript
 * Debugging Mode
 
 = Better Google Analytics Widgets Included: =
@@ -99,7 +100,7 @@ Better Google Analytics uses lightweight (and client-side cacheable) JavaScript 
 
 == Frequently Asked Questions ==
 = What are the requirements of the Better Analytics plugin? =
-You need a WordPress site (of course) and a Google Analytics account (which is [free over here](http://www.google.com/analytics/) if you don't already have a Google Analytics account).
+You need a WordPress site (of course) running WordPress 3.8 or higher and a Google Analytics account (which is [free over here](http://www.google.com/analytics/) if you don't already have a Google Analytics account).
 
 = Can Better Analytics be used with legacy Google Analytics code? =
 No, the Better Analytics plugin is for Google Universal Analytics.  You can upgrade any old non-Universal Google Analytics property to support both legacy and Universal under your [Google Analytics Property Settings](https://www.google.com/analytics/web/?#management/Settings/).
@@ -109,6 +110,9 @@ If it's possible and it makes sense, then yes.  The best way to put in a feature
 
 = I speak a language that isn't supported by Better Analytics, can I help translate it? =
 Yes.  Unfortunately we don't speak every language in the world, so if you would like to help with translating the Better Google Analytics plugin, please contact us in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).
+
+= Does Better Google Analytics Support A WordPress Multisite Network? =
+Yes, you can install the Better Google Analytics plugin for a single site in the network or for all sites in the network.  Additionally, you can optionally link a single Google Analytics account for all sites in the network (or you can link unique Google Analytics accounts for each site in the network... either way, it's up to you).
 
 = Do you have access to our Google Analytics data? =
 In no way, shape, or form do we have access to your Google Analytics data.
@@ -151,7 +155,8 @@ Thank you to all the individuals who have contributed translations for Better Go
 * Bug: Fixed cosmetic formatting issue on settings page when on very thin screens (responsive mobile)
 * Feature: Added new Google Analytics Custom Dimension tracking option (Publication Year)
 * Feature: Added new Google Analytics Custom Dimension tracking option (User Role)
-* Feature: Ability to optionally have a single linked Google Analytics account for all sites in a multisite network setup
+* Feature: Added ability to optionally have a single linked Google Analytics account for all sites in a multisite network setup
+* Feature: Added ability to specify a custom Google Analytics API project ID for a multisite network (similar to how you can already for a single site)
 * Added "Verify Domain" link to plugin page when Pro version is installed on an unknown domain
 
 = 1.0.3 =
