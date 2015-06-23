@@ -472,7 +472,7 @@ class DigitalPointBetterAnalytics_ControllerAdmin_Analytics
 	{
 		$betterAnalyticsOptions = get_option('better_analytics');
 
-		if (!get_option('ba_tokens') || !@$betterAnalyticsOptions['api']['profile'])
+		if (!DigitalPointBetterAnalytics_Base_Public::getInstance()->getTokens() || !@$betterAnalyticsOptions['api']['profile'])
 		{
 			$this->_responseException(sprintf('%1$s <a href="%2$s">%3$s</a>',
 				__('No Linked Google Analytics Account.', 'better-analytics'),
@@ -516,6 +516,15 @@ class DigitalPointBetterAnalytics_ControllerAdmin_Analytics
 		{
 			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['tag']] = __('Tags', 'better-analytics');
 		}
+		if (!empty($betterAnalyticsOptions['dimension']['year']))
+		{
+			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['year']] = __('Publication Year', 'better-analytics');
+		}
+		if (!empty($betterAnalyticsOptions['dimension']['role']))
+		{
+			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['role']] = __('User Role', 'better-analytics');
+		}
+
 
 		$dimensions['p:ga:source'] = __('Source', 'better-analytics');
 		$dimensions['p:ga:fullReferrer'] = __('Referrer', 'better-analytics');

@@ -15,8 +15,13 @@ class DigitalPointBetterAnalytics_Helper_Reporting extends DigitalPointBetterAna
 		switch ($option)
 		{
 			case 'apiClientId':
+				$betterAnalyticsSiteOptions = get_site_option('better_analytics_site');
 				$betterAnalyticsOptions = get_option('better_analytics');
-				if (@$betterAnalyticsOptions['api']['use_own'])
+				if (!empty($betterAnalyticsSiteOptions['api']['use_own']))
+				{
+					return @$betterAnalyticsSiteOptions['api']['client_id'];
+				}
+				elseif (!empty($betterAnalyticsOptions['api']['use_own']))
 				{
 					return @$betterAnalyticsOptions['api']['client_id'];
 				}
@@ -25,8 +30,13 @@ class DigitalPointBetterAnalytics_Helper_Reporting extends DigitalPointBetterAna
 					return $this->_credentials['client_id'];
 				}
 			case 'apiClientSecret':
+				$betterAnalyticsSiteOptions = get_site_option('better_analytics_site');
 				$betterAnalyticsOptions = get_option('better_analytics');
-				if (@$betterAnalyticsOptions['api']['use_own'])
+				if (!empty($betterAnalyticsSiteOptions['api']['use_own']))
+				{
+					return @$betterAnalyticsSiteOptions['api']['client_secret'];
+				}
+				elseif (!empty($betterAnalyticsOptions['api']['use_own']))
 				{
 					return @$betterAnalyticsOptions['api']['client_secret'];
 				}
@@ -39,7 +49,7 @@ class DigitalPointBetterAnalytics_Helper_Reporting extends DigitalPointBetterAna
 				return @$betterAnalyticsOptions['api']['profile'];
 
 			case 'tokens':
-				return @json_decode(get_option('ba_tokens'));
+				return @json_decode(DigitalPointBetterAnalytics_Base_Public::getInstance()->getTokens());
 
 			case 'internalV':
 				$betterAnalyticsOptions = get_transient('ba_int');
@@ -52,12 +62,12 @@ class DigitalPointBetterAnalytics_Helper_Reporting extends DigitalPointBetterAna
 
 	protected function _saveTokens($tokens)
 	{
-		update_option('ba_tokens', json_encode($tokens));
+		DigitalPointBetterAnalytics_Base_Public::getInstance()->updateTokens($tokens);
 	}
 
 	protected function _deleteTokens()
 	{
-		delete_option('ba_tokens');
+		DigitalPointBetterAnalytics_Base_Public::getInstance()->deleteTokens();
 	}
 
 	protected function _throwException()

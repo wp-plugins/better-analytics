@@ -394,7 +394,7 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 		{
 			foreach ($chartData as $name => $value)
 			{
-				$outputData[] = array($name, $value);
+				$outputData[] = array((string)$name, $value);
 			}
 		}
 

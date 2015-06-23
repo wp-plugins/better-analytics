@@ -43,7 +43,7 @@ class DigitalPointBetterAnalytics_Widget_PopularPosts extends WP_Widget
 
 		$betterAnalyticsOptions = get_option('better_analytics');
 
-		if (!get_option('ba_tokens') || !$betterAnalyticsOptions['api']['profile'])
+		if (!DigitalPointBetterAnalytics_Base_Public::getInstance()->getTokens() || !$betterAnalyticsOptions['api']['profile'])
 		{
 			echo '<p>' . sprintf(esc_html__('No Linked Google Analytics Account (API access required for this widget).  You can link one in the %1$sBetter Analytics API settings%2$s.', 'better-analytics'), '<a href="' . esc_url(menu_page_url('better-analytics', false) . '#top#api') . '">', '</a>') . '</p>';
 		}

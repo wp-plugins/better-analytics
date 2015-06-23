@@ -14,8 +14,8 @@ class DigitalPointBetterAnalytics_Install
 
 				restore_current_blog();
 			}
-//			delete_site_option('better_analytics_network_options');
-//			delete_site_transient('some_option');
+			delete_site_option('ba_site_tokens');
+			delete_site_option('better_analytics_site');
 		}
 		else
 		{ // Cleanup Single install

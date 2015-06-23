@@ -483,6 +483,66 @@ class DigitalPointBetterAnalytics_Base_Public
 		return $match[0] . $urlDelimiter . 'utm_source=rss&utm_medium=rss';
 	}
 
+
+	public function usingMultisiteTokens()
+	{
+		if (is_multisite())
+		{
+			if (get_site_option('ba_site_tokens'))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public function getTokens()
+	{
+		if (is_multisite())
+		{
+			if (!$tokens = get_site_option('ba_site_tokens'))
+			{
+				$tokens = get_option('ba_tokens');
+			}
+		}
+		else
+		{
+			$tokens = get_option('ba_tokens');
+		}
+
+		return $tokens;
+	}
+
+	public function updateTokens($tokens, $forceMultisite = false)
+	{
+		if (!is_string($tokens))
+		{
+			$tokens = json_encode($tokens);
+		}
+		if ($forceMultisite || $this->usingMultisiteTokens())
+		{
+			update_site_option('ba_site_tokens', $tokens);
+		}
+		else
+		{
+			update_option('ba_tokens', $tokens);
+		}
+	}
+
+	public function deleteTokens()
+	{
+		if ($this->usingMultisiteTokens())
+		{
+			delete_site_option('ba_site_tokens');
+		}
+		else
+		{
+			delete_option('ba_tokens');
+		}
+	}
+
+
+
 	/**
 	 * Log debugging info to the error log.
 	 *

@@ -5,7 +5,7 @@ class DigitalPointBetterAnalytics_Model_Widget
 	public static function getRealtimeData($secondsToCache = 300, $returnData = false)
 	{
 		$betterAnalyticsOptions = get_option('better_analytics');
-		if (get_option('ba_tokens') && @$betterAnalyticsOptions['api']['profile'])
+		if (DigitalPointBetterAnalytics_Base_Public::getInstance()->getTokens() && @$betterAnalyticsOptions['api']['profile'])
 		{
 			$reportingObject = DigitalPointBetterAnalytics_Helper_Reporting::getInstance();
 			$cacheKey = $reportingObject->getRealtime('rt:activeUsers', 'rt:source,rt:medium,rt:referralPath,rt:pagePath,rt:deviceCategory,rt:country,rt:keyword');

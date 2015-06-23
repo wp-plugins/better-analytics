@@ -5,7 +5,8 @@ $betterAnalyticsInternal = get_transient('ba_int');
 $createOptions = array();
 
 $baCategories = $baTags = array();
-$baAuthor = null;
+$baAuthor = $baRole = null;
+$baYear = 0;
 
 // get category ID from category archives pages
 global $wp_query;
@@ -40,6 +41,8 @@ if (!count($baCategories) && !is_front_page())
 
 	if ($post = get_post())
 	{
+		$baYear = absint(substr(@$post->post_date, 0, 4));
+
 		if ($post->post_author > 0)
 		{
 			$baAuthor = get_the_author_meta('display_name', $post->post_author);
@@ -63,6 +66,11 @@ if (!count($baCategories) && !is_front_page())
 $jsonOptions = array('tid' => @$betterAnalyticsOptions['property_id']);
 
 $currentUser = wp_get_current_user();
+if (!$baRole = implode(',', (array)@$currentUser->roles))
+{
+	$baRole = 'guest';
+}
+
 if (@$betterAnalyticsOptions['track_userid'] && @$currentUser->ID > 0)
 {
 	$createOptions['userId'] = intval($currentUser->ID);
@@ -148,12 +156,27 @@ if (!empty($betterAnalyticsOptions['dimension']['author']) && $baAuthor)
 	);
 }
 
-
 if (!empty($betterAnalyticsOptions['dimension']['tag']) && $baTags)
 {
 	$jsonOptions['d']['t'] = array(
 		intval($betterAnalyticsOptions['dimension']['tag']),
 		implode(',', $baTags)
+	);
+}
+
+if (!empty($betterAnalyticsOptions['dimension']['year']) && $baYear)
+{
+	$jsonOptions['d']['y'] = array(
+		intval($betterAnalyticsOptions['dimension']['year']),
+		$baYear
+	);
+}
+
+if (!empty($betterAnalyticsOptions['dimension']['role']) && $baRole)
+{
+	$jsonOptions['d']['r'] = array(
+		intval($betterAnalyticsOptions['dimension']['role']),
+		$baRole
 	);
 }
 

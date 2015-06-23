@@ -17,7 +17,7 @@
 		$checks['level'] = @$property['level'];
 		$checks['industryVertical'] = @$property['industryVertical'];
 
-		$checks['dimensions'] = DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getDimensionsByPropertyId(@$checks['matchingProfile']['accountId'], $betterAnalyticsOptions['property_id'], array('Categories', 'Author', 'Tags', 'User'));
+		$checks['dimensions'] = DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getDimensionsByPropertyId(@$checks['matchingProfile']['accountId'], $betterAnalyticsOptions['property_id'], array('Categories', 'Author', 'Tags', 'Year', 'Role', 'User'));
 	}
 
 	$checks['licensed'] = DigitalPointBetterAnalytics_Helper_Api::check(true);
@@ -71,7 +71,7 @@
 		<tr valign="top">
 			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#api', esc_html__('Google Analytics Account Linked', 'better-analytics'));?></th>
 				<?php
-					echo (get_option('ba_tokens') ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					echo (DigitalPointBetterAnalytics_Base_Public::getInstance()->getTokens() ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 		</tr>
 
@@ -86,7 +86,7 @@
 
 			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', esc_html__('Site Search Setup', 'better-analytics'));?></th>
 				<?php
-					echo ($checks['siteSearchSetup'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					echo (@$checks['siteSearchSetup'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
 				<?php
@@ -99,7 +99,7 @@
 		<tr valign="top">
 			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', esc_html__('Ecommerce Tracking Enabled', 'better-analytics'));?></th>
 				<?php
-					echo ($checks['ecommerceTracking'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					echo (@$checks['ecommerceTracking'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
 
@@ -113,7 +113,7 @@
 		<tr valign="top">
 			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', esc_html__('Enhanced Ecommerce Tracking Enabled', 'better-analytics'));?></th>
 				<?php
-					echo ($checks['enhancedEcommerceTracking'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					echo (@$checks['enhancedEcommerceTracking'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
 				<?php
@@ -126,7 +126,7 @@
 		<tr valign="top">
 			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', esc_html__('Industry Vertical Set', 'better-analytics'));?></th>
 				<?php
-					echo ($checks['industryVertical'] && $checks['industryVertical'] != 'UNSPECIFIED' ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					echo (!empty($checks['industryVertical']) && $checks['industryVertical'] != 'UNSPECIFIED' ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
 				<?php
@@ -139,7 +139,7 @@
 		<tr valign="top">
 			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', esc_html__('Custom Dimension For Category Tracking', 'better-analytics'));?></th>
 				<?php
-					echo ($checks['dimensions']['Categories'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					echo (!empty($checks['dimensions']['Categories']) ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
 				<?php
@@ -152,7 +152,7 @@
 		<tr valign="top">
 			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', esc_html__('Custom Dimension For Author Tracking', 'better-analytics'));?></th>
 				<?php
-					echo ($checks['dimensions']['Author'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					echo (!empty($checks['dimensions']['Author']) ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 
 			<td class="description">
@@ -167,7 +167,7 @@
 		<tr valign="top">
 			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', esc_html__('Custom Dimension For Tag Tracking', 'better-analytics'));?></th>
 				<?php
-					echo ($checks['dimensions']['Tags'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					echo (!empty($checks['dimensions']['Tags']) ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
 				<?php
@@ -178,9 +178,39 @@
 		</tr>
 
 		<tr valign="top">
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', esc_html__('Custom Dimension For Publication Year Tracking', 'better-analytics'));?></th>
+			<?php
+			echo (!empty($checks['dimensions']['Year']) ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+			?>
+			<td class="description">
+
+				<?php
+				/* translators: %1$s = <strong>, %2$s = </strong> ... %3$s can't be translated - leave */
+				printf(esc_html__('Found in Google Analytics account under %1$sCustom Definitions -> Custom Dimensions%2$s (should be named "%1$s%3$s%2$s" and scoped for "%1$sHit%2$s").', 'better-analytics'), '<strong>', '</strong>', 'Year');
+				?>
+			</td>
+		</tr>
+
+		<tr valign="top">
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', esc_html__('Custom Dimension For User Role Tracking', 'better-analytics'));?></th>
+			<?php
+			echo (!empty($checks['dimensions']['Role']) ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+			?>
+			<td class="description">
+
+				<?php
+				/* translators: %1$s = <strong>, %2$s = </strong> ... %3$s can't be translated - leave */
+				printf(esc_html__('Found in Google Analytics account under %1$sCustom Definitions -> Custom Dimensions%2$s (should be named "%1$s%3$s%2$s" and scoped for "%1$sHit%2$s").', 'better-analytics'), '<strong>', '</strong>', 'Role');
+				?>
+			</td>
+		</tr>
+
+
+
+		<tr valign="top">
 			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://www.google.com/analytics/web/?#management/Settings/', esc_html__('Custom Dimension For User Tracking', 'better-analytics'));?></th>
 				<?php
-					echo ($checks['dimensions']['User'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					echo (!empty($checks['dimensions']['User']) ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td class="description">
 
@@ -195,7 +225,7 @@
 
 			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', esc_html__('Category Tracking Dimension Index Set', 'better-analytics'));?></th>
 				<?php
-					echo ($betterAnalyticsOptions['dimension']['category'] > 0 && @$checks['dimensions']['Categories']['index'] == $betterAnalyticsOptions['dimension']['category'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					echo (@$betterAnalyticsOptions['dimension']['category'] > 0 && @$checks['dimensions']['Categories']['index'] == $betterAnalyticsOptions['dimension']['category'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td></td>
 		</tr>
@@ -204,7 +234,7 @@
 
 			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', esc_html__('Author Tracking Dimension Index Set', 'better-analytics'));?></th>
 				<?php
-					echo ($betterAnalyticsOptions['dimension']['author'] > 0 && @$checks['dimensions']['Author']['index'] == $betterAnalyticsOptions['dimension']['author'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					echo (@$betterAnalyticsOptions['dimension']['author'] > 0 && @$checks['dimensions']['Author']['index'] == $betterAnalyticsOptions['dimension']['author'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td></td>
 		</tr>
@@ -212,15 +242,32 @@
 		<tr valign="top">
 			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', esc_html__('Tag Tracking Dimension Index Set', 'better-analytics'));?></th>
 				<?php
-					echo ($betterAnalyticsOptions['dimension']['tag'] > 0 && @$checks['dimensions']['Tags']['index'] == $betterAnalyticsOptions['dimension']['tag'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					echo (@$betterAnalyticsOptions['dimension']['tag'] > 0 && @$checks['dimensions']['Tags']['index'] == $betterAnalyticsOptions['dimension']['tag'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td></td>
 		</tr>
 
 		<tr valign="top">
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', esc_html__('Publication Year Tracking Dimension Index Set', 'better-analytics'));?></th>
+				<?php
+					echo (@$betterAnalyticsOptions['dimension']['year'] > 0 && @$checks['dimensions']['Year']['index'] == $betterAnalyticsOptions['dimension']['year'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+				?>
+			<td></td>
+		</tr>
+
+		<tr valign="top">
+			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', esc_html__('User Role Tracking Dimension Index Set', 'better-analytics'));?></th>
+				<?php
+					echo (@$betterAnalyticsOptions['dimension']['role'] > 0 && @$checks['dimensions']['Role']['index'] == $betterAnalyticsOptions['dimension']['role'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+				?>
+			<td></td>
+		</tr>
+
+
+		<tr valign="top">
 			<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#dimensions', esc_html__('Registered User Tracking Dimension Index Set', 'better-analytics'));?></th>
 				<?php
-					echo ($betterAnalyticsOptions['dimension']['user'] > 0 && @$checks['dimensions']['User']['index'] == $betterAnalyticsOptions['dimension']['user'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					echo (@$betterAnalyticsOptions['dimension']['user'] > 0 && @$checks['dimensions']['User']['index'] == $betterAnalyticsOptions['dimension']['user'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 				?>
 			<td></td>
 		</tr>

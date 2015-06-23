@@ -161,7 +161,7 @@
 			<tr valign="top" class="group_general tab_content">
 				<th scope="row"><?php esc_html_e('Google Analytics Web Property ID', 'better-analytics');?></th>
 				<td>
-					<input type="text" name="better_analytics[property_id]" id="ba_property_id" placeholder="UA-000000-01" style="width: 25%;" value="<?php echo esc_attr( @$betterAnalyticsOptions['property_id'] ); ?>" />
+					<input type="text" name="better_analytics[property_id]" id="ba_property_id" placeholder="UA-000000-01" style="width:25%;min-width:110px;" value="<?php echo esc_attr( @$betterAnalyticsOptions['property_id'] ); ?>" />
 					<?php
 
 
@@ -339,7 +339,7 @@
 
 			<tr valign="top" class="group_dimensions tab_content">
 				<td colspan="2">
-					<?php printf(__('If you want to track custom dimensions, you need to create the custom dimensions in your %1$sGoogle Analytics account settings%2$s (under %3$sCustom Definitions -> Custom Dimension%4$s)%5$sThey should be scoped as "%3$sHit%4$s".', 'better-analytics'),
+					<?php printf(__('If you want to track custom dimensions, you need to create the custom dimensions in your %1$sGoogle Analytics account settings%2$s (under %3$sCustom Definitions -> Custom Dimension%4$s).%5$sThey should be scoped as "%3$sHit%4$s".', 'better-analytics'),
 						'<a href="' . esc_url('https://www.google.com/analytics/web/?#management/Settings/') . '" target="_blank">',
 						'</a>',
 						'<strong>',
@@ -487,6 +487,74 @@
 							<div style="display:table-row">
 								<div style="display:table-cell;text-align:right;padding-right:10px;">
 									<label
+										for="ba_dimension_year"><?php esc_html_e('Publication Year: ', 'better-analytics');?></label>
+								</div>
+								<div style="display:table-cell">
+
+									<?php
+
+									if ($dimensions)
+									{
+										echo '<select data-placeholder="' . esc_html__('Pick dimension', 'better-analytics') . '" id="ba_dimension_year" name="better_analytics[dimension][year]" class="chosen-select">';
+
+										echo '<option value="">' . esc_html__('[none]', 'better-analytics') . '</option>';
+
+										foreach ($dimensions as $index => $name)
+										{
+											echo '<option value="' . $index . '"' . ($index == @$betterAnalyticsOptions['dimension']['year'] ? ' selected="selected"' : '') . '>' . htmlentities($name) . '</option>';
+										}
+										echo '</select>';
+
+									}
+									else
+									{
+										echo '<input type="number" name="better_analytics[dimension][year]"
+											   id="ba_dimension_user" min="0" max="20" step="1"
+											   value="' . esc_attr(intval(@$betterAnalyticsOptions['dimension']['year'])) . '"/>';
+									}
+
+									?>
+
+								</div>
+							</div>
+
+							<div style="display:table-row">
+								<div style="display:table-cell;text-align:right;padding-right:10px;">
+									<label
+										for="ba_dimension_role"><?php esc_html_e('User Role: ', 'better-analytics');?></label>
+								</div>
+								<div style="display:table-cell">
+
+									<?php
+
+									if ($dimensions)
+									{
+										echo '<select data-placeholder="' . esc_html__('Pick dimension', 'better-analytics') . '" id="ba_dimension_role" name="better_analytics[dimension][role]" class="chosen-select">';
+
+										echo '<option value="">' . esc_html__('[none]', 'better-analytics') . '</option>';
+
+										foreach ($dimensions as $index => $name)
+										{
+											echo '<option value="' . $index . '"' . ($index == @$betterAnalyticsOptions['dimension']['role'] ? ' selected="selected"' : '') . '>' . htmlentities($name) . '</option>';
+										}
+										echo '</select>';
+
+									}
+									else
+									{
+										echo '<input type="number" name="better_analytics[dimension][role]"
+											   id="ba_dimension_role" min="0" max="20" step="1"
+											   value="' . esc_attr(intval(@$betterAnalyticsOptions['dimension']['role'])) . '"/>';
+									}
+
+									?>
+
+								</div>
+							</div>
+
+							<div style="display:table-row">
+								<div style="display:table-cell;text-align:right;padding-right:10px;">
+									<label
 										for="ba_dimension_user"><?php esc_html_e('Registered User: ', 'better-analytics');?></label>
 								</div>
 								<div style="display:table-cell">
@@ -508,9 +576,9 @@
 									}
 									else
 									{
-										echo '<input type="number" name="better_analytics[dimension][author]"
+										echo '<input type="number" name="better_analytics[dimension][user]"
 											   id="ba_dimension_user" min="0" max="20" step="1"
-											   value="' . esc_attr(intval(@$betterAnalyticsOptions['dimension']['author'])) . '"/>';
+											   value="' . esc_attr(intval(@$betterAnalyticsOptions['dimension']['user'])) . '"/>';
 									}
 
 									?>
@@ -713,57 +781,87 @@
 			}
 				?>
 
+
+
 			<tr valign="top" class="group_api tab_content">
 				<th scope="row"></th>
 				<td>
+
+					<?php
+						if (get_site_option('ba_site_tokens') && get_site_option('ba_site_tokens') != get_option('ba_tokens'))
+						{
+							$multisiteMode = true;
+							esc_html_e('Multisite Mode: Analytics account linked at network level');
+						}
+						else
+						{
+							$multisiteMode = false;
+					?>
+
 					<a id="ba_select_profile" class="button" href="<?php menu_page_url('better-analytics_auth'); ?>"><?php
 							get_option('ba_tokens') ? esc_html_e('Link/Authenticate A Different Google Analytics Account', 'better-analytics') : esc_html_e('Link/Authenticate Your Google Analytics Account', 'better-analytics');?></a>
+					<?php
+						}
+					?>
 				</td>
 			</tr>
 
 
+			<?php
+				if (!$multisiteMode)
+				{
+					?>
+					<tr valign="top" class="group_api tab_content">
+						<th scope="row"></th>
+						<td>
+							<fieldset>
+								<label for="ba_api_use_own">
+									<input name="better_analytics[api][use_own]" type="checkbox" id="ba_api_use_own"
+										   value="1" <?php checked('1', @$betterAnalyticsOptions['api']['use_own']); ?>>
+									<?php esc_html_e('Use Your Own Project Credentials', 'better-analytics');?></label>
+								<span class="dashicons-before dashicons-info tooltip"
+									  title="<?php echo htmlspecialchars(sprintf(__('If you have your own Google API Project that you wish to use, you can use your credentials for that web application.', 'better-analytics')));?>"></span>
 
-			<tr valign="top" class="group_api tab_content">
-				<th scope="row"></th>
-				<td>
-					<fieldset>
-						<label for="ba_api_use_own">
-							<input name="better_analytics[api][use_own]" type="checkbox" id="ba_api_use_own" value="1" <?php checked('1', @$betterAnalyticsOptions['api']['use_own'] ); ?>>
-							<?php esc_html_e('Use Your Own Project Credentials', 'better-analytics');?></label>
-						<span class="dashicons-before dashicons-info tooltip" title="<?php echo htmlspecialchars(sprintf(__('If you have your own Google API Project that you wish to use, you can use your credentials for that web application.', 'better-analytics')));?>"></span>
+							</fieldset>
 
-					</fieldset>
+						</td>
+					</tr>
 
-				</td>
-			</tr>
+					<tr valign="top"
+						class="group_api tab_content api_hideable"<?php echo(!@$betterAnalyticsOptions['api']['use_own'] ? ' style="display:none"' : '')?>>
+						<td colspan="2">
 
-			<tr valign="top" class="group_api tab_content api_hideable"<?php echo (!@$betterAnalyticsOptions['api']['use_own'] ? ' style="display:none"' : '')?>>
-				<td colspan="2">
-
-					<?php echo '<fieldset style="border:1px solid grey;margin:10px;padding:20px;"><legend style="padding:0 5px;font-weight:bold;font-size:120%">' . esc_html__('Configuration', 'better-analytics') . '</legend>' .
-							/* translators: %1$s = <strong>, %2$s = </strong> */
-							sprintf(__('Project needs to have the %1$sAnalytics API%2$s enabled under %1$sAPIs & auth -> APIs%2$s.', 'better_analytics'), '<strong>', '</strong>') . '<br /><br />' .
-							/* translators: %1$s = <strong>, %2$s = </strong> */
-							sprintf(__('Under %1$sAPIs & auth -> Credentials%2$s, you need to %1$sCreate new Client ID%2$s that is a %1$sWeb application%2$s with an authorized redirect URI of: %1$s%3$s%2$s', 'better-analytics'), '<strong>', '</strong>', menu_page_url('better-analytics_auth', false))
-					 . '</fieldset>';?>
-				</td>
-			</tr>
+							<?php echo '<fieldset style="border:1px solid grey;margin:10px;padding:20px;"><legend style="padding:0 5px;font-weight:bold;font-size:120%">' . esc_html__('Configuration', 'better-analytics') . '</legend>' .
+								/* translators: %1$s = <strong>, %2$s = </strong> */
+								sprintf(__('Project needs to have the %1$sAnalytics API%2$s enabled under %1$sAPIs & auth -> APIs%2$s.', 'better_analytics'), '<strong>', '</strong>') . '<br /><br />' .
+								/* translators: %1$s = <strong>, %2$s = </strong> */
+								sprintf(__('Under %1$sAPIs & auth -> Credentials%2$s, you need to %1$sCreate new Client ID%2$s that is a %1$sWeb application%2$s with an authorized redirect URI of: %1$s%3$s%2$s', 'better-analytics'), '<strong>', '</strong>', menu_page_url('better-analytics_auth', false))
+								. '</fieldset>';?>
+						</td>
+					</tr>
 
 
-			<tr valign="top" class="group_api tab_content api_hideable"<?php echo (!@$betterAnalyticsOptions['api']['use_own'] ? ' style="display:none"' : '')?>>
-				<th scope="row"><?php esc_html_e('Client ID', 'better-analytics');?></th>
-				<td>
-					<input type="text" name="better_analytics[api][client_id]" id="ba_api_client_id" placeholder="0000000000.apps.googleusercontent.com" value="<?php echo esc_attr( @$betterAnalyticsOptions['api']['client_id'] ); ?>" />
-				</td>
-			</tr>
+					<tr valign="top"
+						class="group_api tab_content api_hideable"<?php echo(!@$betterAnalyticsOptions['api']['use_own'] ? ' style="display:none"' : '')?>>
+						<th scope="row"><?php esc_html_e('Client ID', 'better-analytics');?></th>
+						<td>
+							<input type="text" name="better_analytics[api][client_id]" id="ba_api_client_id"
+								   placeholder="0000000000.apps.googleusercontent.com"
+								   value="<?php echo esc_attr(@$betterAnalyticsOptions['api']['client_id']); ?>"/>
+						</td>
+					</tr>
 
-			<tr valign="top" class="group_api tab_content api_hideable"<?php echo (!@$betterAnalyticsOptions['api']['use_own'] ? ' style="display:none"' : '')?>>
-				<th scope="row"><?php esc_html_e('Client Secret', 'better-analytics');?></th>
-				<td>
-					<input type="text" name="better_analytics[api][client_secret]" id="ba_api_client_secret" value="<?php echo esc_attr( @$betterAnalyticsOptions['api']['client_secret'] ); ?>" />
-				</td>
-			</tr>
-
+					<tr valign="top"
+						class="group_api tab_content api_hideable"<?php echo(!@$betterAnalyticsOptions['api']['use_own'] ? ' style="display:none"' : '')?>>
+						<th scope="row"><?php esc_html_e('Client Secret', 'better-analytics');?></th>
+						<td>
+							<input type="text" name="better_analytics[api][client_secret]" id="ba_api_client_secret"
+								   value="<?php echo esc_attr(@$betterAnalyticsOptions['api']['client_secret']); ?>"/>
+						</td>
+					</tr>
+			<?php
+				}
+			?>
 
 			<tr valign="top" class="group_advanced tab_content">
 				<th scope="row"><?php esc_html_e('Roles To Not Track', 'better-analytics');?> <span class="dashicons-before dashicons-info tooltip" title="<?php esc_html_e('If a logged in user is part of one of these groups, Analytics will not track them.', 'better-analytics');?>"></span></th>

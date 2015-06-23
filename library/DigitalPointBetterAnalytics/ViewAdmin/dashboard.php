@@ -8,7 +8,7 @@ wp_enqueue_style('better_analytics_admin_css', BETTER_ANALYTICS_PLUGIN_URL . 'as
 $betterAnalyticsOptions = get_option('better_analytics');
 DigitalPointBetterAnalytics_Helper_Api::check();
 
-if (!get_option('ba_tokens') || !$betterAnalyticsOptions['api']['profile'])
+if (!DigitalPointBetterAnalytics_Base_Public::getInstance()->getTokens() || !$betterAnalyticsOptions['api']['profile'])
 {
 	printf(esc_html__('%1$sSet up API access%2$s to utilize Better Analytics charts.', 'better-analytics'),
 		'<a href="' . esc_url(menu_page_url('better-analytics', false) . '#top#api') . '">',

@@ -28,6 +28,8 @@ class DigitalPointBetterAnalytics_Base_Admin
 	{
 		add_action('admin_init', array($this, 'admin_init'), 20);
 		add_action('admin_menu', array($this, 'admin_menu'));
+		add_action('network_admin_menu', array($this, 'network_admin_menu'));
+
 		add_action('admin_head', array($this, 'admin_head'));
 
 		add_action('wp_dashboard_setup', array($this, 'dashboard_setup'));
@@ -43,6 +45,9 @@ class DigitalPointBetterAnalytics_Base_Admin
 		add_filter('wp_redirect', array($this, 'filter_redirect'));
 		add_filter('admin_footer_text', array($this, 'admin_footer_text' ));
 		add_filter('plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
+
+		add_filter('wpmu_options', array($this, 'show_network_settings'));
+		add_action('update_wpmu_options', array($this, 'save_network_settings'));
 
 		$betterAnalyticsOptions = get_option('better_analytics');
 		if (!$betterAnalyticsOptions['property_id'])
@@ -67,27 +72,29 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 	public function admin_menu()
 	{
-		$hook = add_management_page( esc_html__('Test Analytics Setup', 'better-analytics'), esc_html__('Test Analytics Setup', 'better-analytics'), 'manage_options', 'better-analytics_test', array($this, 'display_test_page') );
-		$hook = add_management_page( esc_html__('OAuth2 Endpoint', 'better-analytics'), esc_html__('OAuth2 Endpoint', 'better-analytics'), 'manage_options', 'better-analytics_auth', array($this, 'api_authentication') );
-
+		add_management_page( esc_html__('Test Analytics Setup', 'better-analytics'), esc_html__('Test Analytics Setup', 'better-analytics'), 'manage_options', 'better-analytics_test', array($this, 'display_test_page') );
+		add_management_page( esc_html__('OAuth2 Endpoint', 'better-analytics'), esc_html__('OAuth2 Endpoint', 'better-analytics'), 'manage_options', 'better-analytics_auth', array($this, 'api_authentication') );
 
 		if (DigitalPointBetterAnalytics_Base_Public::getInstance()->canViewReports())
 		{
-			$hook = add_menu_page(esc_html__('Analytics', 'better-analytics'), esc_html__('Analytics', 'better-analytics'), 'read', 'better-analytics_heatmaps', null, 'dashicons-chart-line', 3.1975123 );
-			$hook = add_submenu_page( 'better-analytics_heatmaps', esc_html__('Heat Maps', 'better-analytics'), esc_html__('Reports', 'better-analytics'), 'read', 'better-analytics_heatmaps', array($this, 'display_page') );
+			add_menu_page(esc_html__('Analytics', 'better-analytics'), esc_html__('Analytics', 'better-analytics'), 'read', 'better-analytics_heatmaps', null, 'dashicons-chart-line', 3.1975123 );
+			add_submenu_page( 'better-analytics_heatmaps', esc_html__('Heat Maps', 'better-analytics'), esc_html__('Reports', 'better-analytics'), 'read', 'better-analytics_heatmaps', array($this, 'display_page') );
 
-			$hook = add_submenu_page( 'better-analytics_heatmaps', esc_html__('Charts', 'better-analytics'), esc_html__('Charts', 'better-analytics'), 'read', 'better-analytics_areacharts', array($this, 'display_page') );
-			$hook = add_submenu_page( 'better-analytics_heatmaps', esc_html__('Issue Monitor', 'better-analytics'), esc_html__('Issue Monitor', 'better-analytics'), 'read', 'better-analytics_monitor', array($this, 'display_page') );
-			$hook = add_submenu_page( 'better-analytics_heatmaps', esc_html__('Events', 'better-analytics'), esc_html__('Events', 'better-analytics'), 'read', 'better-analytics_events', array($this, 'display_page') );
+			add_submenu_page( 'better-analytics_heatmaps', esc_html__('Charts', 'better-analytics'), esc_html__('Charts', 'better-analytics'), 'read', 'better-analytics_areacharts', array($this, 'display_page') );
+			add_submenu_page( 'better-analytics_heatmaps', esc_html__('Issue Monitor', 'better-analytics'), esc_html__('Issue Monitor', 'better-analytics'), 'read', 'better-analytics_monitor', array($this, 'display_page') );
+			add_submenu_page( 'better-analytics_heatmaps', esc_html__('Events', 'better-analytics'), esc_html__('Events', 'better-analytics'), 'read', 'better-analytics_events', array($this, 'display_page') );
 		}
 
-
-		$hook = add_submenu_page( 'better-analytics_heatmaps', esc_html__('Settings', 'better-analytics'), esc_html__('Settings', 'better-analytics'), 'manage_options', 'options-general.php' . '?page=better-analytics' );
-		$hook = add_submenu_page( 'better-analytics_heatmaps', esc_html__('Test Setup', 'better-analytics'), esc_html__('Test Setup', 'better-analytics'), 'manage_options', 'tools.php' . '?page=better-analytics_test' );
-
+		add_submenu_page( 'better-analytics_heatmaps', esc_html__('Settings', 'better-analytics'), esc_html__('Settings', 'better-analytics'), 'manage_options', 'options-general.php' . '?page=better-analytics' );
+		add_submenu_page( 'better-analytics_heatmaps', esc_html__('Test Setup', 'better-analytics'), esc_html__('Test Setup', 'better-analytics'), 'manage_options', 'tools.php' . '?page=better-analytics_test' );
 
 		$hook = add_options_page( esc_html__('Better Analytics', 'better-analytics'), esc_html__('Better Analytics', 'better-analytics'), 'manage_options', 'better-analytics', array($this, 'display_configuration_page'));
 		add_action( "load-$hook", array($this, 'admin_help'));
+	}
+
+	public function network_admin_menu()
+	{
+		add_submenu_page( 'settings.php', esc_html__('OAuth2 Endpoint', 'better-analytics'), esc_html__('OAuth2 Endpoint', 'better-analytics'), 'manage_network', 'better-analytics_auth', array($this, 'api_authentication') );
 	}
 
 
@@ -140,7 +147,8 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 	public function admin_head()
 	{
-		remove_submenu_page( 'tools.php', 'better-analytics_auth' );
+		remove_submenu_page('tools.php', 'better-analytics_auth');
+		remove_submenu_page('settings.php', 'better-analytics_auth');
 
 		$_reportingPages = array(
 			'better-analytics_heatmaps',
@@ -275,17 +283,30 @@ class DigitalPointBetterAnalytics_Base_Admin
 			$response->expires_at = time() + $response->expires_in - 100;
 			unset($response->expires_in);
 
-			update_option('ba_tokens', json_encode($response));
+			DigitalPointBetterAnalytics_Base_Public::getInstance()->updateTokens($response, is_network_admin());
 			DigitalPointBetterAnalytics_CronEntry_Jobs::hour(true);
 
-			wp_redirect(menu_page_url('better-analytics', false) . '#top#api', 302);
-
+			if (is_network_admin())
+			{
+				wp_redirect(self_admin_url('settings.php'), 302);
+			}
+			else
+			{
+				wp_redirect(menu_page_url('better-analytics', false) . '#top#api', 302);
+			}
 			return;
 		}
 
-		wp_redirect(DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getAuthenticationUrl(menu_page_url('better-analytics_auth', false)), 302);
-	}
+		$url = menu_page_url('better-analytics_auth', false);
 
+		// Hacky fix for WordPress bug:  https://core.trac.wordpress.org/ticket/28226
+		if (strpos($url, 'wp-admin/settings.php'))
+		{
+			$url = str_replace('wp-admin/settings.php', 'wp-admin/network/settings.php', $url);
+		}
+
+		wp_redirect(DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getAuthenticationUrl($url), 302);
+	}
 
 
 	/**
@@ -320,7 +341,6 @@ class DigitalPointBetterAnalytics_Base_Admin
 						''
 				)
 			);
-
 		}
 
 		// Help Sidebar
@@ -362,10 +382,45 @@ class DigitalPointBetterAnalytics_Base_Admin
 		if ($file == plugin_basename(BETTER_ANALYTICS_PLUGIN_DIR . '/better-analytics.php'))
 		{
 			$links['support'] = '<a href="' . esc_url(BETTER_ANALYTICS_SUPPORT_URL ) . '" title="' . esc_attr( esc_html__( 'Visit Support Forum', 'better-analytics' ) ) . '">' . esc_html__( 'Support', 'better-analytics' ) . '</a>';
+
+			$betterAnalyticsInternal = get_transient('ba_int');
+			if (DigitalPointBetterAnalytics_Base_Pro::$installed && empty($betterAnalyticsInternal['v']))
+			{
+				$links['verify_domain'] = '<a href="' . esc_url('https://forums.digitalpoint.com/marketplace/domain-verification#utm_source=admin_plugins&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">' . esc_html__( 'Verify Domain', 'better-analytics' ) . '</a>';
+			}
 		}
 
 		return $links;
 	}
+
+	public function show_network_settings()
+	{
+		$this->view('config_network');
+	}
+
+	public function save_network_settings()
+	{
+		if (@$_POST['better_analytics']['api']['delete_tokens'])
+		{
+			delete_site_option('ba_site_tokens');
+		}
+
+		$options = array('api' => array());
+
+		$options['api']['use_own'] = absint(@$_POST['better_analytics']['api']['use_own']);
+		if ($options['api']['use_own'])
+		{
+			$options['api']['client_id'] = sanitize_text_field(@$_POST['better_analytics']['api']['client_id']);
+			$options['api']['client_secret'] = sanitize_text_field(@$_POST['better_analytics']['api']['client_secret']);
+		}
+		else
+		{
+			$options['api']['client_id'] = $options['api']['client_secret'] = '';
+		}
+
+		update_site_option( 'better_analytics_site', $options);
+	}
+
 
 	public static function getProfilePropertyIds($profiles)
 	{
