@@ -168,7 +168,6 @@ class DigitalPointBetterAnalytics_ControllerAdmin_Analytics
 			{
 				if (array_search($_POST['dimension'], array('browser', 'operatingSystem', 'source', 'medium')) === false)
 				{
-
 					wp_send_json(array('error' => sprintf(__('Not all dimensions are available for unlicensed copies of the Better Analytics plugin.%1$s%2$sYou can license a copy over here.%3$s%1$sIf this is a valid license, make sure the purchaser of the add-on has verified ownership of this domain %4$sover here%3$s.', 'better-analytics'),
 						'<br /><br />',
 						'<a href="' . esc_url(BETTER_ANALYTICS_PRO_PRODUCT_URL . '#utm_source=admin_reports_ajax&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">',

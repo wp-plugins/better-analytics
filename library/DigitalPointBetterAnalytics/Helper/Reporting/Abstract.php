@@ -20,6 +20,8 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 	protected $_currentHandle = null;
 	protected $_url = null;
 
+	protected $_overrideTokens = null;
+
 	/**
 	 * Protected constructor. Use {@link getInstance()} instead.
 	 */
@@ -91,9 +93,9 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 
 
 
-	public function getAuthenticationUrl($state = null)
+	public function getAuthenticationUrl($state = null, $includeEditScope = false, $accessType = 'offline')
 	{
-		return self::$_oAuthEndpoint . 'auth?redirect_uri=' . urlencode($this->_getAdminAuthUrl()) . ($state ? '&state=' . urlencode($state) : '') . '&response_type=code&client_id=' . urlencode($this->_getOption('apiClientId')) . '&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fanalytics&approval_prompt=force&access_type=offline';
+		return self::$_oAuthEndpoint . 'auth?redirect_uri=' . urlencode($this->_getAdminAuthUrl()) . ($state ? '&state=' . urlencode($state) : '') . '&response_type=code&client_id=' . urlencode($this->_getOption('apiClientId')) . '&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fanalytics' . ($includeEditScope ? '.edit' : '') . '&approval_prompt=force&access_type=' . urlencode($accessType);
 	}
 
 	public function exchangeCodeForToken($code)
@@ -112,10 +114,19 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 		return json_decode($this->_execHandlerAction());
 	}
 
+	public function overrideTokens($tokens)
+	{
+		$this->_overrideTokens = $tokens;
+	}
+
 	public function checkAccessToken($throwException = true)
 	{
-		$tokens = $this->_getOption('tokens');
+		if ($this->_overrideTokens)
+		{
+			return $this->_overrideTokens;
+		}
 
+		$tokens = $this->_getOption('tokens');
 		if (empty($tokens->refresh_token))
 		{
 			if ($throwException)
@@ -207,6 +218,32 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 			$this->_cacheSave($cacheKey, $profiles, 1);
 		}
 		return $profiles;
+	}
+
+	public function patchProfile($accountId, $profileId, $fields = array())
+	{
+		$fields = json_encode($fields);
+
+		if ($tokens = $this->checkAccessToken())
+		{
+			$url = sprintf(self::$_webPropertiesEndpoint . '%s', $accountId, $profileId);
+
+			$this->_initHttp($url);
+			$this->_setParamsAction(array(
+				'access_token' => $tokens->access_token,
+				'body' => $fields
+			));
+			$response = $this->_execHandlerAction('PATCH');
+
+			echo $url;
+
+			echo 'RESULTS = ';
+			print_r ($response);
+
+
+			$profile = json_decode($response, true);
+		}
+
 	}
 
 
@@ -548,5 +585,39 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 		{
 			return false;
 		}
+	}
+
+
+	public function getIndustryVerticals()
+	{
+		return array(
+			'UNSPECIFIED',
+			'ARTS_AND_ENTERTAINMENT',
+			'AUTOMOTIVE',
+			'BEAUTY_AND_FITNESS',
+			'BOOKS_AND_LITERATURE',
+			'BUSINESS_AND_INDUSTRIAL_MARKETS',
+			'COMPUTERS_AND_ELECTRONICS',
+			'FINANCE',
+			'FOOD_AND_DRINK',
+			'GAMES',
+			'HEALTHCARE',
+			'HOBBIES_AND_LEISURE',
+			'HOME_AND_GARDEN',
+			'INTERNET_AND_TELECOM',
+			'JOBS_AND_EDUCATION',
+			'LAW_AND_GOVERNMENT',
+			'NEWS',
+			'ONLINE_COMMUNITIES',
+			'OTHER',
+			'PEOPLE_AND_SOCIETY',
+			'PETS_AND_ANIMALS',
+			'REAL_ESTATE',
+			'REFERENCE',
+			'SCIENCE',
+			'SHOPPING',
+			'SPORTS',
+			'TRAVEL'
+		);
 	}
 }

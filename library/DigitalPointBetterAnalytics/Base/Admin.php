@@ -44,6 +44,8 @@ class DigitalPointBetterAnalytics_Base_Admin
 		add_filter('plugin_action_links', array($this, 'plugin_action_links' ), 10, 2);
 		add_filter('wp_redirect', array($this, 'filter_redirect'));
 		add_filter('admin_footer_text', array($this, 'admin_footer_text' ));
+
+		add_filter('all_plugins', array($this, 'all_plugins'));
 		add_filter('plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
 
 		add_filter('wpmu_options', array($this, 'show_network_settings'));
@@ -375,6 +377,12 @@ class DigitalPointBetterAnalytics_Base_Admin
 			);
 		}
 		return $footerText;
+	}
+
+	public function all_plugins($plugins)
+	{
+		unset($plugins['better-analytics-pro/better-analytics-pro.php']);
+		return $plugins;
 	}
 
 	public function plugin_row_meta($links, $file)

@@ -118,6 +118,19 @@ class DigitalPointBetterAnalytics_Helper_Reporting extends DigitalPointBetterAna
 				)
 			);
 		}
+		elseif($action == 'PATCH')
+		{
+			$accessToken = $this->_urlInfo['params']['access_token'];
+			unset($this->_urlInfo['params']['access_token']);
+
+			$response = wp_remote_request($this->_urlInfo['url'] . '?access_token=' . urlencode($accessToken),
+				array(
+					'method' => 'PATCH',
+					'headers' => array('Content-Type' => 'application/json'),
+					'body' => $this->_urlInfo['params']['body']
+				)
+			);
+		}
 		else
 		{
 			$response = wp_remote_get($this->_urlInfo['url'] . '?' . http_build_query($this->_urlInfo['params']));

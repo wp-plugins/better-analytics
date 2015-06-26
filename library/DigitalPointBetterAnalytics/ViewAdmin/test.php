@@ -22,7 +22,73 @@
 
 	$checks['licensed'] = DigitalPointBetterAnalytics_Helper_Api::check(true);
 
+	if ($code = sanitize_text_field(@$_REQUEST['code']))
+	{
+		if (!$property)
+		{
+			echo 'You need to first link a Google Analytics account and pick a profile to auto-configure it.';
+		}
+		elseif (empty($_REQUEST['vertical']))
+		{
+			wp_enqueue_script('chosen_js', BETTER_ANALYTICS_PLUGIN_URL . 'assets/chosen/chosen.jquery.min.js', array(), BETTER_ANALYTICS_VERSION );
+			wp_enqueue_style('chosen_css', BETTER_ANALYTICS_PLUGIN_URL . 'assets/chosen/chosen.min.css', array(), BETTER_ANALYTICS_VERSION);
+
+			wp_enqueue_script('better-analytics_admin_js', BETTER_ANALYTICS_PLUGIN_URL . 'assets/digitalpoint/js/admin.js', array(), BETTER_ANALYTICS_VERSION );
+
+			$verticals = DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getIndustryVerticals();
+
+
+			echo '<div class="wrap test-configure">
+
+			<h2>' . esc_html__( 'Auto-Configure' , 'better-analytics') . '</h2>';
+
+			esc_html_e( 'Please select the industry vertical that you wish your site to be assigned to.' , 'better-analytics');
+
+			echo '<form action="' . esc_url(menu_page_url('better-analytics_test', false)) . '" method="POST" style="padding:15px">
+				<input type="hidden" name="code" value="' . htmlentities($_REQUEST['code']) .'">';
+
+			echo '<select name="vertical" data-placeholder="' . esc_html__('Pick industry vertical', 'better-analytics') . '" id="ba_pick_vertical" class="chosen-select">';
+
+			foreach ($verticals as $vertical)
+			{
+				echo '<option' . ($vertical == $property['industryVertical'] ? ' selected="selected"' : '') . '>' . htmlentities($vertical) . '</option>';
+			}
+			echo '</select><p>';
+
+			esc_html_e('Only use this option if you are sure you want to auto-configure everything.  This will perform the following actions:', 'better-analytics');
+			echo '<ul style="list-style: initial;padding-left:30px;">';
+			echo '<li>' . sprintf(esc_html__('Set Site Search Query Parameter to %s on Analytics account', 'better-analytics'), '<strong>"q"</strong>') . '</li>';
+			echo '<li>' . esc_html__('Enable Ecommerce options on Analytics account', 'better-analytics') . '</li>';
+			echo '<li>' . esc_html__('Set Industry Vertical on Analytics account', 'better-analytics') . '</li>';
+			echo '<li>' . sprintf(esc_html__('Create 6 custom dimensions for this Analytics property if they do not already exist (%s)', 'better-analytics'), 'Categories, Author, Tags, Year, Role, User') . '</li>';
+			echo '<li>' . esc_html__('Map the 6 custom dimensions in your Better Analytics settings', 'better-analytics') . '</li>';
+			echo '</ul></p>';
+
+			submit_button(esc_html__('Auto-Configure', 'better-analytics'));
+
+			echo '</form>';
+		}
+		elseif($_SERVER['REQUEST_METHOD'] == 'POST')
+		{
+			$vertical = sanitize_text_field($_REQUEST['vertical']);
+
+			$tokens = DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->exchangeCodeForToken($code);
+
+			DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->overrideTokens($tokens);
+
+			DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->patchProfile($property['accountId'], $property['id'], array('industryVertical' => $vertical));
+
+			//print_r ($tokens);
+		}
+
+
+
+	}
+
+	// <a href="<?php echo DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getAuthenticationUrl(esc_url(menu_page_url('better-analytics_test', false)), true, 'online'); ">Auto-Configure</a>
+
 ?>
+
 
 <div class="wrap">
 

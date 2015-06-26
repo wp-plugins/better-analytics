@@ -151,6 +151,16 @@ Thank you to all the individuals who have contributed translations for Better Go
 17. Advanced settings allow you to fine tune how the system works with Google Analytics.
 
 == Changelog ==
+= 1.0.5 =
+* Enhancement: Made some changes so that Better Google Analytics Pro can be uploaded manually from the "Upload Plugin" feature of WordPress
+* Added internal framework for future option that allows users to auto-configure their Google Analytics account (waiting for Google Analytics Management API approval from Google before we can roll it out)
+* Enhancement: Added 21 additional Google Analytics metrics for reporting
+* Enhancement: Added 9 additional Google Analytics dimensions for reporting
+* Enhancement: Added 11 additional Google Analytics segments for reporting
+* Enhancement: Replaced deprecated Google Analytics metrics
+* Enhancement: Replaced deprecated Google Analytics dimensions
+* Enhancement: Replaced deprecated Google Analytics segments
+
 = 1.0.4 =
 * Bug: Fixed cosmetic formatting issue on settings page when on very thin screens (responsive mobile)
 * Feature: Added new Google Analytics Custom Dimension tracking option (Publication Year)
