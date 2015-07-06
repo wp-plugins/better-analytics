@@ -13,7 +13,8 @@ Track everything with Google Analytics (clicked links, emails opened, YouTube vi
 == Description ==
 The Better Google Analytics plugin allows you to easily add Google Analytics code to your website and gives you the power to track virtually everything.  Better Google Analytics includes heat maps, reports, charts, events and site issue tracking in your WordPress admin area without the need to log into your Google Analytics account.
 
-> <strong>Super Simple To Setup</strong><br>
+> <strong>Simple To Setup</strong><br>
+>
 > The Better Google Analytics plugin can automatically configure your Google Analytics account to maximize what you can track with the minimum amount of effort.  Can automatically set various options on your Google Analytics account on your behalf as well as create custom dimensions and map them to where they need to go.  If you are setting up a brand new site, this plugin can even create a brand new Web Property within your selected Google Analytics account if you wish.  All with a single click.
 
 Better Google Analytics utilizes all the latest and greatest features of Google Analytics (Universal analytics, user-ID session unification, event tracking, campaign tracking, custom dimensions, server-side tracking, social engagement tracking, remarketing, etc.)
@@ -114,7 +115,7 @@ If you are using Google PageSpeed to combine JavaScript files, you will want to 
 
 == Frequently Asked Questions ==
 = What are the requirements of the Better Google Analytics plugin? =
-You need a WordPress site (of course), running WordPress 3.8 or higher and a Google Analytics account (which is [free over here](http://www.google.com/analytics/) if you don't already have a Google Analytics account).
+You need a WordPress site (of course), running WordPress 3.8 or higher and a Google Analytics account (which is [free over here](https://www.google.com/analytics/) if you don't already have a Google Analytics account).
 
 = Can Better Google Analytics be used with legacy Google Analytics code? =
 No, the Better Google Analytics plugin is for Google Universal Analytics.  You can upgrade any old non-Universal Google Analytics property to support both legacy and Universal under your [Google Analytics Property Settings](https://www.google.com/analytics/web/?#management/Settings/).
