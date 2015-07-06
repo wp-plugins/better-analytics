@@ -13,9 +13,8 @@ Track everything with Google Analytics (clicked links, emails opened, YouTube vi
 == Description ==
 The Better Google Analytics plugin allows you to easily add Google Analytics code to your website and gives you the power to track virtually everything.  Better Google Analytics includes heat maps, reports, charts, events and site issue tracking in your WordPress admin area without the need to log into your Google Analytics account.
 
-= Super Simple To Setup =
-
-The Better Google Analytics plugin can automatically configure your Google Analytics account to maximize what you can track with the minimum amount of effort.  Can automatically set various options on your Google Analytics account on your behalf as well as create custom dimensions and map them to where they need to go.  If you are setting up a brand new site, this plugin can even create a brand new Web Property within your selected Google Analytics account if you wish.  All with a single click.
+> <strong>Super Simple To Setup</strong><br>
+> The Better Google Analytics plugin can automatically configure your Google Analytics account to maximize what you can track with the minimum amount of effort.  Can automatically set various options on your Google Analytics account on your behalf as well as create custom dimensions and map them to where they need to go.  If you are setting up a brand new site, this plugin can even create a brand new Web Property within your selected Google Analytics account if you wish.  All with a single click.
 
 Better Google Analytics utilizes all the latest and greatest features of Google Analytics (Universal analytics, user-ID session unification, event tracking, campaign tracking, custom dimensions, server-side tracking, social engagement tracking, remarketing, etc.)
 
