@@ -6,4 +6,8 @@
 	{
 		readfile('../../better-analytics-pro/js/ba.js');
 	}
+	if (file_exists('../../better-analytics-ecommerce/js/ba.js'))
+	{
+		readfile('../../better-analytics-ecommerce/js/ba.js');
+	}
 	echo 'BetterAnalytics._BA=new BetterAnalytics.BA();';

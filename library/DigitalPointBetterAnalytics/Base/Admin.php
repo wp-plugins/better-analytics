@@ -57,6 +57,16 @@ class DigitalPointBetterAnalytics_Base_Admin
 			add_action('admin_notices', array($this, 'not_configured' ) );
 		}
 
+		if (!get_site_option('ba_site_tokens') && !get_option('ba_tokens'))
+		{
+			add_action('admin_notices', array($this, 'cant_auto_configure' ) );
+		}
+		elseif (!$betterAnalyticsOptions['api']['profile'])
+		{
+			add_action('admin_notices', array($this, 'can_auto_configure' ) );
+
+		}
+
 		if (get_transient('ba_last_error'))
 		{
 			add_action('admin_notices', array($this, 'last_error' ) );
@@ -207,7 +217,23 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 	public function not_configured()
 	{
-		$this->_displayError(sprintf('%1$s<p><a href="%2$s" class="button button-primary">%3$s</a></p>', esc_html__('Google Analytics Web Property ID not selected.', 'better-analytics'), esc_url(menu_page_url('better-analytics', false)), esc_html__('Settings', 'better-analytics')));
+		$this->_displayError(
+			sprintf('%1$s<p><a href="%2$s" class="button button-primary">%3$s</a></p>', esc_html__('Google Analytics Web Property ID not selected.', 'better-analytics'), esc_url(menu_page_url('better-analytics', false)), esc_html__('Settings', 'better-analytics'))
+		);
+	}
+
+	public function cant_auto_configure()
+	{
+		$this->_displayError(
+			sprintf('%1$s<p><a href="%2$s" class="button button-primary">%3$s</a></p>', esc_html__('Google Analytics account not linked for API functions.', 'better-analytics'), esc_url(menu_page_url('better-analytics', false) . '#top#api'), esc_html__('API Settings', 'better-analytics'))
+		);
+	}
+
+	public function can_auto_configure()
+	{
+		$this->_displayError(
+			sprintf('%1$s<p><a href="%2$s" class="button button-primary">%3$s</a></p>', esc_html__('Google Analytics account not yet configured.', 'better-analytics'), esc_url(menu_page_url('better-analytics_test', false)), esc_html__('Test Setup / Auto-Configure', 'better-analytics'))
+		);
 	}
 
 	public function last_error()
@@ -287,6 +313,11 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 			DigitalPointBetterAnalytics_Base_Public::getInstance()->updateTokens($response, is_network_admin());
 			DigitalPointBetterAnalytics_CronEntry_Jobs::hour(true);
+
+			// Checks for access
+			$reportingClass = DigitalPointBetterAnalytics_Helper_Reporting::getInstance();
+			$reportingClass->deleteProfileCache();
+			$reportingClass->getProfiles();
 
 			if (is_network_admin())
 			{
@@ -382,6 +413,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 	public function all_plugins($plugins)
 	{
 		unset($plugins['better-analytics-pro/better-analytics-pro.php']);
+		unset($plugins['better-analytics-ecommerce/better-analytics-ecommerce.php']);
 		return $plugins;
 	}
 

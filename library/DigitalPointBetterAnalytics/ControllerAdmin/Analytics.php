@@ -501,43 +501,44 @@ class DigitalPointBetterAnalytics_ControllerAdmin_Analytics
 
 		$betterAnalyticsOptions = get_option('better_analytics');
 
-		$dimensions['l:ga:date'] = __('Date', 'better-analytics');
+		$dimensions['l:ga:date'] = esc_html__('Date', 'better-analytics');
 
 		if (!empty($betterAnalyticsOptions['dimension']['category']))
 		{
-			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['category']] = __('Categories', 'better-analytics');
+			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['category']] = esc_html__('Categories', 'better-analytics');
 		}
 		if (!empty($betterAnalyticsOptions['dimension']['author']))
 		{
-			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['author']] = __('Authors', 'better-analytics');
+			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['author']] = esc_html__('Authors', 'better-analytics');
 		}
 		if (!empty($betterAnalyticsOptions['dimension']['tag']))
 		{
-			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['tag']] = __('Tags', 'better-analytics');
+			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['tag']] = esc_html__('Tags', 'better-analytics');
 		}
 		if (!empty($betterAnalyticsOptions['dimension']['year']))
 		{
-			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['year']] = __('Publication Year', 'better-analytics');
+			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['year']] = esc_html__('Publication Year', 'better-analytics');
 		}
 		if (!empty($betterAnalyticsOptions['dimension']['role']))
 		{
-			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['role']] = __('User Role', 'better-analytics');
+			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['role']] = esc_html__('User Role', 'better-analytics');
 		}
+		$dimensions['p:ga:browser'] = esc_html__('Browser', 'better-analytics');
+		$dimensions['p:ga:operatingSystem'] = esc_html__('Operating System', 'better-analytics');
+		$dimensions['p:ga:deviceCategory'] = esc_html__('Device Category', 'better-analytics');
+		$dimensions['p:ga:source'] = esc_html__('Source', 'better-analytics');
+		$dimensions['p:ga:fullReferrer'] = esc_html__('Referrer', 'better-analytics');
 
-
-		$dimensions['p:ga:source'] = __('Source', 'better-analytics');
-		$dimensions['p:ga:fullReferrer'] = __('Referrer', 'better-analytics');
-
-		$dimensions['p:ga:medium'] = __('Medium', 'better-analytics');
-		$dimensions['g:ga:country'] = __('Country', 'better-analytics');
-		//$dimensions['g:ga:region'] = __('Region', 'better-analytics');
-		//$dimensions['g:ga:city'] = __('City', 'better-analytics');
+		$dimensions['p:ga:medium'] = esc_html__('Medium', 'better-analytics');
+		$dimensions['g:ga:country'] = esc_html__('Country', 'better-analytics');
+		//$dimensions['g:ga:region'] = esc_html__('Region', 'better-analytics');
+		//$dimensions['g:ga:city'] = esc_html__('City', 'better-analytics');
 
 
 		/*
 		if (!empty($betterAnalyticsOptions['dimension']['user']))
 		{
-			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['user']] = __('Top Registered Users', 'better-analytics');
+			$dimensions['p:ga:dimension' . $betterAnalyticsOptions['dimension']['user']] = esc_html__('Top Registered Users', 'better-analytics');
 		}
 		*/
 		return $dimensions;
@@ -546,11 +547,11 @@ class DigitalPointBetterAnalytics_ControllerAdmin_Analytics
 	static public function getMetricsForCharts()
 	{
 		$metrics = array(
-			'ga:pageviews' => __('Page Views', 'better-analytics'),
-			'ga:sessions' => __('Sessions', 'better-analytics'),
-			'ga:users' => __('Users', 'better-analytics'),
-			'ga:avgSessionDuration' => __('Session Length', 'better-analytics'),
-			'ga:organicSearches' => __('Organic Search', 'better-analytics')
+			'ga:pageviews' => esc_html__('Page Views', 'better-analytics'),
+			'ga:sessions' => esc_html__('Sessions', 'better-analytics'),
+			'ga:users' => esc_html__('Users', 'better-analytics'),
+			'ga:avgSessionDuration' => esc_html__('Session Length', 'better-analytics'),
+			'ga:organicSearches' => esc_html__('Organic Search', 'better-analytics')
 		);
 
 		return $metrics;

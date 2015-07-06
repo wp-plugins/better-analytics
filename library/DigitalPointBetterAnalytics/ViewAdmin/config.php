@@ -381,7 +381,6 @@
 						?></p>
 				</th>
 				<td>
-
 					<fieldset>
 						<div style="display:table">
 							<div style="display:table-row">
@@ -389,7 +388,7 @@
 									<label
 										for="ba_dimension_category"><?php esc_html_e('Categories: ', 'better-analytics');?></label>
 								</div>
-								<div style="display:table-cell">
+								<div style="display:table-cell;width:50%;">
 									<?php
 
 										if ($dimensions)
@@ -421,7 +420,7 @@
 									<label
 										for="ba_dimension_author"><?php esc_html_e('Author: ', 'better-analytics');?></label>
 								</div>
-								<div style="display:table-cell">
+								<div style="display:table-cell;width:50%;">
 
 									<?php
 
@@ -455,7 +454,7 @@
 									<label
 										for="ba_dimension_tags"><?php esc_html_e('Tags: ', 'better-analytics');?></label>
 								</div>
-								<div style="display:table-cell">
+								<div style="display:table-cell;width:50%;">
 
 									<?php
 
@@ -489,7 +488,7 @@
 									<label
 										for="ba_dimension_year"><?php esc_html_e('Publication Year: ', 'better-analytics');?></label>
 								</div>
-								<div style="display:table-cell">
+								<div style="display:table-cell;width:50%;">
 
 									<?php
 
@@ -523,7 +522,7 @@
 									<label
 										for="ba_dimension_role"><?php esc_html_e('User Role: ', 'better-analytics');?></label>
 								</div>
-								<div style="display:table-cell">
+								<div style="display:table-cell;width:50%;">
 
 									<?php
 
@@ -557,7 +556,7 @@
 									<label
 										for="ba_dimension_user"><?php esc_html_e('Registered User: ', 'better-analytics');?></label>
 								</div>
-								<div style="display:table-cell">
+								<div style="display:table-cell;width:50%;">
 
 									<?php
 
@@ -796,6 +795,12 @@
 						else
 						{
 							$multisiteMode = false;
+
+							if (!get_option('ba_tokens'))
+							{
+								echo DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getCreateAccountMessage() . '<br /><br />';
+							}
+
 					?>
 
 					<a id="ba_select_profile" class="button" href="<?php menu_page_url('better-analytics_auth'); ?>"><?php

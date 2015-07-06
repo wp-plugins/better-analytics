@@ -8,10 +8,11 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 	protected static $_dataEndpoint = 'https://www.googleapis.com/analytics/v3/data/ga';
 	protected static $_realtimeEndpoint = 'https://www.googleapis.com/analytics/v3/data/realtime';
 
-	protected static $_webPropertiesEndpoint = 'https://www.googleapis.com/analytics/v3/management/accounts/%s/webproperties/';
+	protected static $_accountsEndpoint = 'https://www.googleapis.com/analytics/v3/management/accounts';
 
-	protected static $_profilesEndpoint = '%s/profiles';
-	protected static $_dimensionsEndpoint = '%s/customDimensions';
+	protected static $_webPropertiesEndpoint = '/%s/webproperties';
+	protected static $_profilesEndpoint = '/%s/profiles';
+	protected static $_dimensionsEndpoint = '/%s/customDimensions';
 
 	protected static $_curlHandles = array();
 
@@ -76,6 +77,8 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 	abstract protected function _throwException();
 
 	abstract protected function _showException($message);
+
+	abstract public function getCreateAccountMessage();
 
 	abstract protected function _getAdminAuthUrl();
 
@@ -187,11 +190,11 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 			{
 				if ($profileId)
 				{
-					$url = sprintf(self::$_webPropertiesEndpoint . self::$_profilesEndpoint, $accountId, $profileId);
+					$url = sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_profilesEndpoint, $accountId, $profileId);
 				}
 				else
 				{
-					$url = sprintf(self::$_webPropertiesEndpoint, $accountId);
+					$url = sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint, $accountId);
 				}
 
 				$this->_initHttp($url);
@@ -201,11 +204,10 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 
 				$profiles = json_decode($response, true);
 
-				if (!empty($profiles['error']['errors']))
+				if ($this->_hasError($profiles))
 				{
-					$this->_showException(@$profiles['error']['errors'][0]['domain'] . ' / ' . @$profiles['error']['errors'][0]['reason'] . ': ' . @$profiles['error']['errors'][0]['message'] . '  ' . @$profiles['error']['errors'][0]['extendedHelp']);
+					$fromCache = true;
 				}
-
 			}
 		}
 		else
@@ -220,41 +222,166 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 		return $profiles;
 	}
 
-	public function patchProfile($accountId, $profileId, $fields = array())
+	public function deleteProfileCache($accountId = '~all', $profileId = '~all')
 	{
-		$fields = json_encode($fields);
+		$cacheKey = 'ba_prof_' . md5($accountId . '-' . $profileId);
+		$this->_cacheDelete($cacheKey);
+	}
 
+
+	public function getAccounts()
+	{
+		$cacheKey = 'ba_accts';
+
+		$accounts = $this->_cacheLoad($cacheKey);
+
+		if (!$accounts)
+		{
+			$fromCache = false;
+
+			if ($tokens = $this->checkAccessToken())
+			{
+				$url = self::$_accountsEndpoint;
+
+				$this->_initHttp($url);
+				$this->_setParamsAction(array('access_token' => $tokens->access_token));
+
+				$response = $this->_execHandlerAction('GET');
+
+				$accounts = json_decode($response, true);
+
+				if ($this->_hasError($accounts))
+				{
+					$fromCache = true;
+				}
+			}
+		}
+		else
+		{
+			$fromCache = true;
+		}
+
+		if (!$fromCache)
+		{
+			$this->_cacheSave($cacheKey, $accounts, 15);
+		}
+		return $accounts;
+	}
+
+	public function insertWebProperty($accountId, $fields = array())
+	{
 		if ($tokens = $this->checkAccessToken())
 		{
-			$url = sprintf(self::$_webPropertiesEndpoint . '%s', $accountId, $profileId);
+			$fields = json_encode($fields);
+
+			$url = sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint, $accountId);
 
 			$this->_initHttp($url);
 			$this->_setParamsAction(array(
 				'access_token' => $tokens->access_token,
 				'body' => $fields
 			));
-			$response = $this->_execHandlerAction('PATCH');
 
-			echo $url;
+			$results = $this->_execHandlerAction('INSERT');
 
-			echo 'RESULTS = ';
-			print_r ($response);
+			$this->_hasError($results);
 
-
-			$profile = json_decode($response, true);
+			return json_decode($results, true);
 		}
-
 	}
 
+	public function patchWebProperty($accountId, $webPropertyId, $fields = array())
+	{
+		if ($tokens = $this->checkAccessToken())
+		{
+			$fields = json_encode($fields);
+
+			$url = sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . '/%s', $accountId, $webPropertyId);
+
+			$this->_initHttp($url);
+			$this->_setParamsAction(array(
+				'access_token' => $tokens->access_token,
+				'body' => $fields
+			));
+
+			$results = $this->_execHandlerAction('PATCH');
+
+			$this->_hasError($results);
+
+			return json_decode($results, true);
+		}
+	}
+
+	public function insertProfile($accountId, $webPropertyId, $fields = array())
+	{
+		if ($tokens = $this->checkAccessToken())
+		{
+			$fields = json_encode($fields);
+
+			$url = sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_profilesEndpoint, $accountId, $webPropertyId);
+
+			$this->_initHttp($url);
+			$this->_setParamsAction(array(
+				'access_token' => $tokens->access_token,
+				'body' => $fields
+			));
+
+			$results = $this->_execHandlerAction('INSERT');
+
+			$this->_hasError($results);
+
+			return json_decode($results, true);
+		}
+	}
+
+	public function patchProfile($accountId, $webPropertyId, $profileId, $fields = array())
+	{
+		if ($tokens = $this->checkAccessToken())
+		{
+			$fields = json_encode($fields);
+			$url = sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_profilesEndpoint . '/%s', $accountId, $webPropertyId, $profileId);
+
+			$this->_initHttp($url);
+			$this->_setParamsAction(array(
+				'access_token' => $tokens->access_token,
+				'body' => $fields
+			));
+
+			$results = $this->_execHandlerAction('PATCH');
+
+			$this->_hasError($results);
+
+			return json_decode($results, true);
+		}
+	}
+
+	public function insertCustomDimension($accountId, $webPropertyId, $fields = array())
+	{
+		if ($tokens = $this->checkAccessToken())
+		{
+			$fields = json_encode($fields);
+
+			$url = sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_dimensionsEndpoint, $accountId, $webPropertyId);
+
+			$this->_initHttp($url);
+			$this->_setParamsAction(array(
+				'access_token' => $tokens->access_token,
+				'body' => $fields
+			));
+
+			$results = $this->_execHandlerAction('INSERT');
+
+			$this->_hasError($results);
+
+			return json_decode($results, true);
+		}
+	}
 
 	public function getDimensions($accountId = '~all', $propertyId = '~all')
 	{
 		$cacheKey = 'ba_dim_' . md5($accountId . '-' . $propertyId);
 
 		$dimensions = $this->_cacheLoad($cacheKey);
-
-		// Not caching dimensions (only 1 minute cache anyway)
-		$dimensions = false;
 
 		if (!$dimensions)
 		{
@@ -264,17 +391,19 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 			{
 				if ($propertyId)
 				{
-					$url = sprintf(self::$_webPropertiesEndpoint . self::$_dimensionsEndpoint, $accountId, $propertyId);
+					$url = sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_dimensionsEndpoint, $accountId, $propertyId);
 				}
 				else
 				{
-					$url = sprintf(self::$_webPropertiesEndpoint, $accountId);
+					$url = sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint, $accountId);
 				}
 
 				$this->_initHttp($url);
 				$this->_setParamsAction(array('access_token' => $tokens->access_token));
 
 				$response = $this->_execHandlerAction('GET');
+
+				$this->_hasError($response);
 
 				$dimensions = json_decode($response, true);
 			}
@@ -291,7 +420,11 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 		return $dimensions;
 	}
 
-
+	public function deleteDimensionCache($accountId = '~all', $propertyId = '~all')
+	{
+		$cacheKey = 'ba_dim_' . md5($accountId . '-' . $propertyId);
+		$this->_cacheDelete($cacheKey);
+	}
 
 
 	public function getDimensionsByPropertyId($accountId, $propertyId, $names)
@@ -316,7 +449,6 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 	}
 
 
-
 	public function getProfileByPropertyId($propertyId)
 	{
 		$profiles = $this->getProfiles();
@@ -336,6 +468,27 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 
 		return $foundProfile;
 	}
+
+	public function getProfileByProfileId($profileId)
+	{
+		$profiles = $this->getProfiles();
+
+		$foundProfile = null;
+		if(!empty($profiles['items']))
+		{
+			foreach ($profiles['items'] as $profile)
+			{
+				if ($profile['id'] == $profileId)
+				{
+					$foundProfile = $profile;
+					break;
+				}
+			}
+		}
+
+		return $foundProfile;
+	}
+
 
 	// this is a little weird... getting profiles with ~all doesn't return industryVertical, but this does.  Bug on their end?
 	public function getPropertyByPropertyId($accountId, $propertyId)
@@ -542,6 +695,34 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 		return $cacheKey;
 	}
 
+	protected function _hasError($results, $deleteTokens = true)
+	{
+		if (!empty($results['error']['errors']))
+		{
+			$extraMessage = '';
+
+			if ($this->checkApiErrorType($results, 'noCredentials'))
+			{
+				if ($deleteTokens)
+				{
+					$this->_deleteTokens();
+				}
+				if ($results['error']['code'] == 403)
+				{
+					$extraMessage = $this->getCreateAccountMessage();
+				}
+			}
+
+			$this->_showException(@$results['error']['errors'][0]['domain'] . ' / ' . @$results['error']['errors'][0]['reason'] . ': ' . @$results['error']['errors'][0]['message'] . '  ' . @$results['error']['errors'][0]['extendedHelp'] . ($extraMessage ? '<br /><br />' . $extraMessage : ''));
+
+			return true;
+		}
+
+		return false;
+	}
+
+
+
 	protected function _canUseCurlMulti()
 	{
 		return false;
@@ -566,6 +747,8 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 	{
 		$this->_currentHandle = $this->_execHandlerAction('GET');
 
+		$this->_hasError($this->_currentHandle);
+
 		self::$_curlHandles[$cacheKey] = $this->_currentHandle;
 	}
 
@@ -574,8 +757,8 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 	public function getResults($cacheKey)
 	{
 		$results = @json_decode(self::$_curlHandles[$cacheKey], true);
-		$this->_cacheSave($cacheKey, $results, 60);
 
+		$this->_cacheSave($cacheKey, $results, 60);
 
 		if (!empty(self::$_cachedResults[$cacheKey]))
 		{
@@ -620,4 +803,46 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 			'TRAVEL'
 		);
 	}
+
+	protected function _getGoogleErrors()
+	{
+		// see:  https://developers.google.com/analytics/devguides/reporting/core/v3/coreErrors
+		return array(
+			'noCredentials' => array(
+				'invalidCredentials' => 401,
+				'insufficientPermissions' => 403,
+			),
+			'noQuota' => array(
+				'dailyLimitExceeded' => 403,
+				'usageLimits.userRateLimitExceededUnreg' => 403,
+				'userRateLimitExceeded' => 403,
+				'quotaExceeded' => 403,
+			),
+			'other' => array(
+				'invalidParameter' => 400,
+				'badRequest' => 400,
+				'backendError' => 503,
+
+			)
+		);
+	}
+
+	public function checkApiErrorType($results, $type)
+	{
+		$errors = $this->_getGoogleErrors();
+
+		if (!empty($results['error']))
+		{
+			if (isset($errors[$type][@$results['error']['errors'][0]['reason']]))
+			{
+				if ($errors[$type][@$results['error']['errors'][0]['reason']] == @$results['error']['code'])
+				{
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
 }

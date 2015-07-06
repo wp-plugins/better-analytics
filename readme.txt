@@ -1,6 +1,6 @@
 === Better Google Analytics ===
 Contributors: digitalpoint
-Tags: analytics, google analytics, universal analytics, statistics, tracking, code, dashboard, analytics dashboard, google analytics dashboard, google analytics plugin, google analytics widget, reports, charts, multisite, api, stats, web stats, visits, javascript, pageviews, marketing, widget, realtime, real time, youtube, outbrain, taboola, adsense, google, digitalpoint
+Tags: analytics, google analytics, universal analytics, statistics, tracking, code, dashboard, analytics dashboard, google analytics dashboard, google analytics plugin, google analytics widget, reports, charts, multisite, api, stats, web stats, visits, javascript, pageviews, marketing, widget, realtime, real time, youtube, outbrain, taboola, adsense, twitter, pinterest, linkedin, facebook, google, digitalpoint
 Donate link: https://marketplace.digitalpoint.com/better-analytics.3354/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin
 Requires at least: 3.8
 Tested up to: 4.2.2
@@ -11,7 +11,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Track everything with Google Analytics (clicked links, emails opened, YouTube videos being watched, etc.). Includes real time Analytics dashboard.
 
 == Description ==
-The Better Google Analytics plugin allows you to easily add Google Analytics code to your website and gives you the power to track virtually everything.  Better Analytics includes heat maps, reports, charts, events and site issue tracking in your WordPress admin area without the need to log into your Google Analytics account.
+The Better Google Analytics plugin allows you to easily add Google Analytics code to your website and gives you the power to track virtually everything.  Better Google Analytics includes heat maps, reports, charts, events and site issue tracking in your WordPress admin area without the need to log into your Google Analytics account.
 
 Better Google Analytics utilizes all the latest and greatest features of Google Analytics (Universal analytics, user-ID session unification, event tracking, campaign tracking, custom dimensions, server-side tracking, social engagement tracking, remarketing, etc.)
 
@@ -95,20 +95,31 @@ Better Google Analytics uses lightweight (and client-side cacheable) JavaScript 
 == Installation ==
 1. Upload `better-analytics` folder to the `/wp-content/plugins/` directory.
 1. Activate the Better Google Analytics plugin through the 'Plugins' menu in the WordPress admin area.
-1. Add your Google Analytics Web Property ID under the 'Settings -> Better Analytics' area of the WordPress admin.
-1. Optional (but probably a good idea so you don't double report your traffic inside Google Analytics) - disable any other Google Analytics code you have enabled.
+1. Link your Google Analytics account under 'Settings -> Better Analytics -> API'.
+1. Pick your Google Analytics Web Property ID under 'Settings -> Better Analytics -> General'.
+
+It's probably a good idea to disable any other Google Analytics plugins/systems you may have installed, unless you are intentionally wanting to feed data into multiple Analytics Web Properties.
+
+= Google PageSpeed =
+If you are using Google PageSpeed to combine JavaScript files, you will want to define an exclusion for the Better Google Analytics JavaScript file with the following directives:
+
+> <strong>Apache</strong><br>
+> ModPagespeedDisallow "*better-analytics/js/loader.php*"
+
+> <strong>Nginx</strong><br>
+> pagespeed Disallow "*better-analytics/js/loader.php*"
 
 == Frequently Asked Questions ==
-= What are the requirements of the Better Analytics plugin? =
-You need a WordPress site (of course) running WordPress 3.8 or higher and a Google Analytics account (which is [free over here](http://www.google.com/analytics/) if you don't already have a Google Analytics account).
+= What are the requirements of the Better Google Analytics plugin? =
+You need a WordPress site (of course), running WordPress 3.8 or higher and a Google Analytics account (which is [free over here](http://www.google.com/analytics/) if you don't already have a Google Analytics account).
 
-= Can Better Analytics be used with legacy Google Analytics code? =
-No, the Better Analytics plugin is for Google Universal Analytics.  You can upgrade any old non-Universal Google Analytics property to support both legacy and Universal under your [Google Analytics Property Settings](https://www.google.com/analytics/web/?#management/Settings/).
+= Can Better Google Analytics be used with legacy Google Analytics code? =
+No, the Better Google Analytics plugin is for Google Universal Analytics.  You can upgrade any old non-Universal Google Analytics property to support both legacy and Universal under your [Google Analytics Property Settings](https://www.google.com/analytics/web/?#management/Settings/).
 
 = Can you add [insert feature here] to Better Google Analytics? =
 If it's possible and it makes sense, then yes.  The best way to put in a feature request for Better Google Analytics would be to create a thread in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).
 
-= I speak a language that isn't supported by Better Analytics, can I help translate it? =
+= I speak a language that isn't supported by Better Google Analytics, can I help translate it? =
 Yes.  Unfortunately we don't speak every language in the world, so if you would like to help with translating the Better Google Analytics plugin, please contact us in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).
 
 = Does Better Google Analytics Support A WordPress Multisite Network? =
@@ -119,6 +130,10 @@ In no way, shape, or form do we have access to your Google Analytics data.
 
 = How can I ensure you don't really have access to my Google Analytics data? =
 The way OAuth2 works with your Google Analytics account, it wouldn't be possible for us to access your Google Analytics data even if we wanted to (which we don't).  If you utilize the default Google Analytics API project credentials, the system will ask you for permission to access your data.  Google will then issue a one-time use code that is exchanged for OAuth2 credentials that are used when making Google Analytics API calls.  <strong>The code is one-time use</strong> (meaning if someone intercepted it and redeemed it for credentials, you wouldn't be able to yourself).  After your site redeems the code, it's no longer valid.  The resulting credentials are stored inside your installation and are never sent anywhere.  That being said, if you are still worried about the security of your Google Analytics data, you are able to utilize your own Google Analytics API project credentials (it's just a little more work for you to set up that Google API project - the only API type that you need to enable under that project is the Google Analytics API).
+
+== Note To Other Google Analytics Plugin Authors ==
+
+Truthfully, there are far too many Google Analytics plugins for WordPress that generally do the same thing (especially the ones that simply add Google Analytics code to WordPress pages).  If any Google Analytics plugin authors are interested in somehow consolidating plugins, let us know (not really sure how that would work to be honest, but something we could brainstorm and figure out the best way to do it that works for everyone).
 
 == CDN ==
 
@@ -136,21 +151,42 @@ Thank you to all the individuals who have contributed translations for Better Go
 2. Google Analytics dashboard showing page views by normalized categories for the last month.
 3. Google Analytics dashboard showing organic search traffic by country for the last 3 months.
 4. Google Analytics dashboard showing sessions by date for the last 3 months.
-5. One of ~1,000 metric/segment combinations for Google Analytics weekly heat maps (showing all sessions for the last 4 weeks).
-6. Stacked area percent charts of your Google Analytics data allow you to see historical changes (browser usage for the last 10 years shows the rise of Chrome and the fall of Internet Explorer).
-7. Better Google Analytics event report shows things like external links being clicked, YouTube video engagement, comments being created, etc.  You are able to correlate that data against any other metrics from your Google Analytics account.  For example maybe you wanted to see what countries users are in that watch YouTube videos.
-8. Better Google Analytics issue monitoring report alerts to you client-side issues with your site.  Things like invalid pages being accessed (404), JavaScript errors, images not loading, embedded YouTube videos that the author removed, etc.
-9. An automated system that is able to check your Google Analytics account and helps you configure your Google Analytics web property settings properly is included.
-10. Better Google Analytics includes an optional front-end widget that shows popular pages/posts being viewed right now (data comes from Google Analytics Real Time API).
-11. Better Google Analytics includes an optional front-end widget that allows you to display your Google Analytics stats based on any metric you wish.
-12. Better Google Analytics General settings allows you to enable/disable all sorts of tracking features in your Google Analytics account.
-13. Google Google Analytics custom dimension tracking allows you to track categories, authors, tags, publication year, user roles and registered users.
-14. Social button engagement allows you to track things like Likes/Unlikes/Tweets/Shares right within your Google Analytics account.
-15. Track clicks on the ads on your site within your Google Analytics account.
-16. Issue monitoring settings allow you to utilize your Google Analytics account to keep on top of client-side issues with your site.
-17. Advanced settings allow you to fine tune how the system works with Google Analytics.
+5. Google Analytics dashboard showing the publication year of posts being viewed by users coming in through organic search for the last month.
+6. Google Analytics dashboard showing page views by normalized tags for the last month.
+7. One of over 2,000 metric/segment combinations for Google Analytics weekly heat maps (showing all sessions for the last 4 weeks).
+8. Stacked area percent charts of your Google Analytics data allow you to see historical changes (browser usage for the last 10 years shows the rise of Chrome and the fall of Internet Explorer).
+9. Better Google Analytics event report shows things like external links being clicked, YouTube video engagement, comments being created, etc.  You are able to correlate that data against any other metrics from your Google Analytics account.  For example maybe you wanted to see what countries users are in that watch YouTube videos.
+10. Better Google Analytics issue monitoring report alerts to you client-side issues with your site.  Things like invalid pages being accessed (404), JavaScript errors, images not loading, embedded YouTube videos that the author removed, etc.
+11. An automated system that is able to check your Google Analytics account and helps you configure your Google Analytics web property settings properly is included.
+12. A built-in auto-configure mode takes the hassle out of setting up your Google Analytics account for all tracking options.
+13. Better Google Analytics includes an optional front-end widget that shows popular pages/posts being viewed right now (data comes from Google Analytics Real Time API).
+14. Better Google Analytics includes an optional front-end widget that allows you to display your Google Analytics stats based on any metric you wish.
+15. Better Google Analytics General settings allows you to enable/disable all sorts of tracking features in your Google Analytics account.
+16. Google Google Analytics custom dimension tracking allows you to track categories, authors, tags, publication year, user roles and registered users.
+18. Social button engagement allows you to track things like Likes/Unlikes/Tweets/Shares right within your Google Analytics account.
+19. Track clicks on the ads on your site within your Google Analytics account.
+19. Issue monitoring settings allow you to utilize your Google Analytics account to keep on top of client-side issues with your site.
+20. Advanced settings allow you to fine tune how the system works with Google Analytics.
 
 == Changelog ==
+= 1.0.6 =
+* Added stubs for Better Google Analytics eCommerce module
+* Bug: Fixed cosmetic issue on "Test Setup" page when you have linked a Google Analytics with multiple profiles that all share the same web property ID
+* Bug: Prevent converting emails to HTML if something else already converted it to HTML beforehand
+* Feature: Auto-Configure (if your Google Analytics account is linked, this option will be available on the "Test Setup" page) - will configure your Google Analytics property and profile via the Google Analytics API (can set industry vertical, site search parameters, Ecommerce tracking options, create custom dimensions and then map those as necessary)
+* Feature: Added option to create a new Web Property & Profile/View under your existing Google Analytics account automatically (useful if you are setting up a new site)
+* Feature: Added better_analytics_metrics WordPress filter to hook into Google Analytics metrics list
+* Feature: Added better_analytics_dimensions WordPress filter to hook into Google Analytics dimensions list
+* Feature: Added better_analytics_segments WordPress filter to hook into Google Analytics segments list
+* Enhancement: If user has already linked a Google account without Google Analytics access, discard the authentication tokens
+* Enhancement: If a user revokes OAuth2 access to their Google Analytics account, discard the authentication tokens
+* Enhancement: Check for Google Analytics account access when user links a new Google account
+* Enhancement: Check if Google Analytics Web Property/Profile would benefit from updating before blindly doing it when requested by site admin
+* Enhancement: Check Google Analytics API quota when using write functions when Auto-Configure function is making changes to Google Analytics account (write operation quota is more tightly controlled by Google)
+* Enhancement: Added 3 additional Google Analytics dimensions for reporting on dashboard widget
+* Usability: Added links to help new users with configuration (link to create new Google Analytics account, link to configure Google Analytics API, link to new Auto-Configuration area, etc.)
+* Security: When requesting Google Analytics API edit permissions (when Auto-Configuration is used), make that permissions request only for a one-time use token (don't store or have long-term tokens that allow write access)
+
 = 1.0.5 =
 * Enhancement: Made some changes so that Better Google Analytics Pro can be uploaded manually from the "Upload Plugin" feature of WordPress
 * Added internal framework for future option that allows users to auto-configure their Google Analytics account (waiting for Google Analytics Management API approval from Google before we can roll it out)

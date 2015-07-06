@@ -67,13 +67,15 @@ class DigitalPointBetterAnalytics_Helper_Reporting extends DigitalPointBetterAna
 
 	protected function _deleteTokens()
 	{
-		DigitalPointBetterAnalytics_Base_Public::getInstance()->deleteTokens();
+		if (!$this->_overrideTokens)
+		{
+			DigitalPointBetterAnalytics_Base_Public::getInstance()->deleteTokens();
+		}
 	}
 
 	protected function _throwException()
 	{
-		$this->_cacheSave('ba_last_error', __('No API tokens to refresh.', 'better-analytics'), 0.15); // 9 seconds
-
+		$this->_cacheSave('ba_last_error', esc_html__('No API tokens to refresh.', 'better-analytics'), 0.15); // 9 seconds
 		return;
 	}
 
@@ -82,6 +84,11 @@ class DigitalPointBetterAnalytics_Helper_Reporting extends DigitalPointBetterAna
 		$this->_cacheSave('ba_last_error', $message, 0.15); // 9 seconds
 		error_log($message);
 		return;
+	}
+
+	public function getCreateAccountMessage()
+	{
+		return sprintf(esc_html__('If you don\'t have a Google Analytics account, you can %1$screate one here%2$s.  "Create an account" is on the upper right of that page.', 'better-analytics'), '<a href="http://www.google.com/analytics/" target="_blank">', '</a>');
 	}
 
 	protected function _getAdminAuthUrl()
@@ -118,6 +125,20 @@ class DigitalPointBetterAnalytics_Helper_Reporting extends DigitalPointBetterAna
 				)
 			);
 		}
+		elseif($action == 'INSERT')
+		{
+			$accessToken = $this->_urlInfo['params']['access_token'];
+			unset($this->_urlInfo['params']['access_token']);
+
+			$response = wp_remote_request($this->_urlInfo['url'] . '?access_token=' . urlencode($accessToken),
+				array(
+					'method' => 'POST',
+					'headers' => array('Content-Type' => 'application/json'),
+					'body' => $this->_urlInfo['params']['body']
+				)
+			);
+		}
+
 		elseif($action == 'PATCH')
 		{
 			$accessToken = $this->_urlInfo['params']['access_token'];
@@ -160,6 +181,10 @@ class DigitalPointBetterAnalytics_Helper_Reporting extends DigitalPointBetterAna
 		elseif (!empty($data['error']['message']))
 		{
 			set_transient('ba_last_error', $data['error']['message'], 10);
+		}
+		else
+		{
+			set_transient($cacheKey, $data, intval($minutes * 60));
 		}
 	}
 

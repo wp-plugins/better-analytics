@@ -4,7 +4,7 @@ class DigitalPointBetterAnalytics_Model_Reporting
 {
 	public static function getMetrics()
 	{
-		return array(
+		$metrics = array(
 			__('User', 'better-analytics') => array(
 				'ga:users' => __('Users', 'better-analytics'),
 				'ga:newUsers' => __('New Users', 'better-analytics'),
@@ -74,7 +74,6 @@ class DigitalPointBetterAnalytics_Model_Reporting
 				'ga:totalEvents|ga:eventCategory==Error;ga:eventAction==AJAX' => __('AJAX Errors', 'better-analytics'),
 				'ga:totalEvents|ga:eventCategory==Error;ga:eventAction==Browser Console' => __('Browser Console Errors', 'better-analytics'),
 				'ga:totalEvents|ga:eventCategory==Error;ga:eventAction=~^YouTube' => __('YouTube Errors', 'better-analytics'),
-
 				'ga:totalEvents|ga:eventCategory==Advertisement;ga:eventAction==Click' => __('Advertisement Clicked', 'better-analytics'),
 
 			),
@@ -108,6 +107,8 @@ class DigitalPointBetterAnalytics_Model_Reporting
 				'ga:adsenseCoverage' => __('Coverage', 'better-analytics'),
 			)
 		);
+
+		return apply_filters('better_analytics_metrics', $metrics);
 	}
 
 	public static function getMetricNameByKey($metric)
@@ -128,7 +129,7 @@ class DigitalPointBetterAnalytics_Model_Reporting
 
 	public static function getSegments()
 	{
-		return array(
+		$segments = array(
 			__('Default Segments', 'better-analytics') => array(
 				'' => __('Everything', 'better-analytics'),
 				'gaid::-1' => __('All Sessions', 'better-analytics'),
@@ -161,11 +162,14 @@ class DigitalPointBetterAnalytics_Model_Reporting
 
 			)
 		);
+
+		return apply_filters('better_analytics_segments', $segments);
+
 	}
 
 	public static function getDimensions()
 	{
-		return array(
+		$dimensions = array(
 			__('User', 'better-analytics') => array(
 				'userType' => __('User Type', 'better-analytics'),
 				'sessionCount' => __('Session Count', 'better-analytics'),
@@ -245,6 +249,9 @@ class DigitalPointBetterAnalytics_Model_Reporting
 				'interestOtherCategory' => __('Interest Other', 'better-analytics'),
 			),
 		);
+
+		return apply_filters('better_analytics_dimensions', $dimensions);
+
 	}
 
 	public static function parseDimensions($dimensions)
@@ -255,6 +262,22 @@ class DigitalPointBetterAnalytics_Model_Reporting
 			foreach($dimensions['items'] as $dimension)
 			{
 				$output[$dimension['index']] = $dimension['name'] . ($dimension['scope'] != 'HIT' ? ' ' . sprintf(esc_html__('(scope set to %s, should be HIT)', 'better-analytics'), $dimension['scope']) : '');
+			}
+		}
+		return $output;
+	}
+
+	public static function parseAccounts($accounts, $editableOnly = false)
+	{
+		$output = array();
+		if (@$accounts['items'])
+		{
+			foreach($accounts['items'] as $account)
+			{
+				if (!$editableOnly || array_search('EDIT', $account['permissions']['effective']) !== false)
+				{
+					$output[$account['id']] = $account['name'];
+				}
 			}
 		}
 		return $output;

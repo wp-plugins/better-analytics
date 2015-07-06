@@ -51,6 +51,13 @@ class DigitalPointBetterAnalytics_Base_Public
 			include($proLocation . $filename);
 			return (class_exists($class, false) || interface_exists($class, false));
 		}
+
+		$ecommerceLocation = substr_replace(BETTER_ANALYTICS_PLUGIN_DIR, '-ecommerce', -1);
+		if (file_exists($ecommerceLocation . $filename))
+		{
+			include($ecommerceLocation . $filename);
+			return (class_exists($class, false) || interface_exists($class, false));
+		}
 		elseif (file_exists(BETTER_ANALYTICS_PLUGIN_DIR . $filename))
 		{
 			include(BETTER_ANALYTICS_PLUGIN_DIR . $filename);
@@ -86,7 +93,7 @@ class DigitalPointBetterAnalytics_Base_Public
 
 		add_action('wp_insert_comment', array($this, 'insert_comment'), 10, 2);
 
-		add_filter('wp_mail', array($this, 'filter_mail' ));
+		add_filter('wp_mail', array($this, 'filter_mail' ), 100);
 		add_filter('the_permalink_rss', array($this, 'fiter_rss_links' ));
 		add_filter('the_content_feed', array($this, 'filter_rss_content' ));
 
@@ -413,8 +420,32 @@ class DigitalPointBetterAnalytics_Base_Public
 		{
 			$analyticsClientId = uniqid();
 
-			$atts['message'] = '<html><body>' . nl2br(htmlentities($atts['message'])) . '<img src="https://www.google-analytics.com/collect?v=1&tid=' . urlencode($betterAnalyticsOptions['property_id']) . '&cid=' . $analyticsClientId . '&t=event&ec=Email&ea=Open&el=' . urlencode($atts['subject']) . '&cm=email&z=' . uniqid() . '" /></body></html>';
-			$atts['headers']['content_type'] = 'Content-Type: text/html; charset=UTF-8';
+			$convertToHtml = false;
+			if (is_string($atts['headers']))
+			{
+				if (stripos($atts['headers'], 'text/html') === false)
+				{
+					$convertToHtml = true;
+					$atts['headers'] = preg_replace('#content-type:.*#i', 'Content-Type: text/html; charset=UTF-8', $atts['headers']);
+
+					if (stripos($atts['headers'], 'text/html') === false)
+					{
+						$atts['headers'] = "Content-Type: text/html; charset=UTF-8\r\n" . $atts['headers'];
+					}
+				}
+			}
+			elseif (stripos($atts['headers']['content_type'], 'text/html') === false)
+			{
+				$convertToHtml = true;
+				$atts['headers']['content_type'] = 'Content-Type: text/html; charset=UTF-8';
+			}
+
+			if ($convertToHtml)
+			{
+				$atts['message'] = '<html><body>' . nl2br(htmlentities($atts['message'])) . '</body></html>';
+			}
+
+			$atts['message']  = str_ireplace('</body>', '<img src="https://www.google-analytics.com/collect?v=1&tid=' . urlencode($betterAnalyticsOptions['property_id']) . '&cid=' . $analyticsClientId . '&t=event&ec=Email&ea=Open&el=' . urlencode($atts['subject']) . '&cm=email&z=' . uniqid() . '" />' . '</body>', $atts['message']);
 
 			DigitalPointBetterAnalytics_Helper_Analytics::getInstance()->event(
 				$betterAnalyticsOptions['property_id'],
