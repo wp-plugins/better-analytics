@@ -83,6 +83,7 @@ Better Google Analytics uses lightweight (and client-side cacheable) JavaScript 
 * Statistics based on selectable Analytics metric
 
 > <strong>Better Analytics Pro</strong><br>
+>
 > If you would like additional advanced functions for Google Analytics, we offer a Pro version.
 >
 > * Additional ad networks for ad click tracking
@@ -108,10 +109,10 @@ It's probably a good idea to disable any other Google Analytics plugins/systems 
 If you are using Google PageSpeed to combine JavaScript files, you will want to define an exclusion for the Better Google Analytics JavaScript file with the following directives:
 
 > <strong>Apache</strong><br>
-> ModPagespeedDisallow "*better-analytics/js/loader.php*"
+> ModPagespeedDisallow "\*better-analytics/js/loader.php\*"
 
 > <strong>Nginx</strong><br>
-> pagespeed Disallow "*better-analytics/js/loader.php*"
+> pagespeed Disallow "\*better-analytics/js/loader.php\*"
 
 == Frequently Asked Questions ==
 = What are the requirements of the Better Google Analytics plugin? =
@@ -173,6 +174,9 @@ Thank you to all the individuals who have contributed translations for Better Go
 20. Advanced settings allow you to fine tune how the system works with Google Analytics.
 
 == Changelog ==
+= 1.0.7 =
+* Feature: Added support for tracking RevContent ad clicks
+
 = 1.0.6 =
 * Added stubs for Better Google Analytics eCommerce module
 * Bug: Fixed cosmetic issue on "Test Setup" page when you have linked a Google Analytics with multiple profiles that all share the same web property ID
