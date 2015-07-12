@@ -17,6 +17,13 @@ The Better Google Analytics plugin allows you to easily add Google Analytics cod
 >
 > The Better Google Analytics plugin can automatically configure your Google Analytics account to maximize what you can track with the minimum amount of effort.  Can automatically set various options on your Google Analytics account on your behalf as well as create custom dimensions and map them to where they need to go.  If you are setting up a brand new site, this plugin can even create a brand new Web Property within your selected Google Analytics account if you wish.  All with a single click.
 
+> <strong>Google Analytics Account Management</strong><br>
+>
+> * The Better Google Analytics plugin can create a new web property/profile on your Google Analytics account if needed (if it's a new site)
+> * Auto-Configure system will set certain options automatically on your Google Analytics account if needed
+> * Auto-Configure system can create custom dimensions for your Google Analytics Web Property and map them to the appropriate Better Google Analytics settings
+> * Google Analytics Goal Management system allows you to create, edit, activate and disable Google Analytics Goals from within your WordPress admin area
+
 Better Google Analytics utilizes all the latest and greatest features of Google Analytics (Universal analytics, user-ID session unification, event tracking, campaign tracking, custom dimensions, server-side tracking, social engagement tracking, remarketing, etc.)
 
 If you link your Google Analytics account, the Better Google Analytics plugin is able to make extensive use of the Google Analytics API to give you a plethora of reporting options (both historical and realtime).  Google Analytics API calls are cached to make them as fast as possible.
@@ -166,16 +173,24 @@ Thank you to all the individuals who have contributed translations for Better Go
 12. A built-in auto-configure mode takes the hassle out of setting up your Google Analytics account for all tracking options.
 13. Better Google Analytics includes an optional front-end widget that shows popular pages/posts being viewed right now (data comes from Google Analytics Real Time API).
 14. Better Google Analytics includes an optional front-end widget that allows you to display your Google Analytics stats based on any metric you wish.
-15. Better Google Analytics General settings allows you to enable/disable all sorts of tracking features in your Google Analytics account.
-16. Google Google Analytics custom dimension tracking allows you to track categories, authors, tags, publication year, user roles and registered users.
-18. Social button engagement allows you to track things like Likes/Unlikes/Tweets/Shares right within your Google Analytics account.
-19. Track clicks on the ads on your site within your Google Analytics account.
-19. Issue monitoring settings allow you to utilize your Google Analytics account to keep on top of client-side issues with your site.
-20. Advanced settings allow you to fine tune how the system works with Google Analytics.
+15. Better Google Analytics has a full-blown goal management system that allows you to create and edit all the goals on your Google Analytics profile.
+16. You have the ability to edit/create your Google Analytics Goals from within the WordPress admin area.  Includes advanced Google Analytics Goal functions such as funnels.
+17. Better Google Analytics General settings allows you to enable/disable all sorts of tracking features in your Google Analytics account.
+18. Google Google Analytics custom dimension tracking allows you to track categories, authors, tags, publication year, user roles and registered users.
+19. Social button engagement allows you to track things like Likes/Unlikes/Tweets/Shares right within your Google Analytics account.
+20. Track clicks on the ads on your site within your Google Analytics account.
+21. Issue monitoring settings allow you to utilize your Google Analytics account to keep on top of client-side issues with your site.
+22. Advanced settings allow you to fine tune how the system works with Google Analytics.
 
 == Changelog ==
 = 1.0.7 =
 * Feature: Added support for tracking RevContent ad clicks
+* Feature: Manage Google Analytics Goals from within WordPress admin area (create, edit, enable, disable, etc.)
+* Feature: Google Analytics Goal management includes all four types of goals (destination URL [including optional funnels], session duration, page views per session, events)
+* Change: Google Analytics Goal management requires different Google Analytics API credentials (needs edit access)
+* Change: Option to Auto-Configure Google Analytics account no longer requires a separate permissions request since the base Google Analytics account permissions now include edit access
+* Note: You can authenticate for the new Google Analytics permissions under Analytics -> Settings -> API -> Link/Authenticate A Different Google Analytics Account
+* Note: If you do not authenticate your Google Analytics account for new permissions, all existing features you have always had will continue to work just fine (it's only needed when trying to edit/add new Google Analytics Goals from within the WordPress admin)
 
 = 1.0.6 =
 * Added stubs for Better Google Analytics eCommerce module

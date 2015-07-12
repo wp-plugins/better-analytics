@@ -97,8 +97,11 @@ class DigitalPointBetterAnalytics_Base_Admin
 			add_submenu_page( 'better-analytics_heatmaps', esc_html__('Events', 'better-analytics'), esc_html__('Events', 'better-analytics'), 'read', 'better-analytics_events', array($this, 'display_page') );
 		}
 
+		add_submenu_page( 'better-analytics_heatmaps', esc_html__('Goals', 'better-analytics'), esc_html__('Goals', 'better-analytics'), 'manage_options', 'better-analytics_goals', array($this, 'display_page') );
+		//add_submenu_page( 'better-analytics_heatmaps', esc_html__('A/B Testing', 'better-analytics'), esc_html__('A/B Testing', 'better-analytics'), 'manage_options', 'better-analytics_experiments', array($this, 'display_page') );
 		add_submenu_page( 'better-analytics_heatmaps', esc_html__('Settings', 'better-analytics'), esc_html__('Settings', 'better-analytics'), 'manage_options', 'options-general.php' . '?page=better-analytics' );
 		add_submenu_page( 'better-analytics_heatmaps', esc_html__('Test Setup', 'better-analytics'), esc_html__('Test Setup', 'better-analytics'), 'manage_options', 'tools.php' . '?page=better-analytics_test' );
+
 
 		$hook = add_options_page( esc_html__('Better Analytics', 'better-analytics'), esc_html__('Better Analytics', 'better-analytics'), 'manage_options', 'better-analytics', array($this, 'display_configuration_page'));
 		add_action( "load-$hook", array($this, 'admin_help'));
@@ -338,7 +341,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 			$url = str_replace('wp-admin/settings.php', 'wp-admin/network/settings.php', $url);
 		}
 
-		wp_redirect(DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getAuthenticationUrl($url), 302);
+		wp_redirect(DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getAuthenticationUrl($url, true), 302);
 	}
 
 

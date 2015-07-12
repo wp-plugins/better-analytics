@@ -137,7 +137,8 @@ $jsonOptions['a'] =
 	(@$betterAnalyticsOptions['ads']['adsense'] ? 2 : 0) +
 	(@$betterAnalyticsOptions['ads']['outbrain'] ? 4 : 0) +
 	(@$betterAnalyticsOptions['ads']['taboola'] ? 8 : 0) +
-	(@$betterAnalyticsOptions['ads']['digitalpoint'] ? 16 : 0)
+	(@$betterAnalyticsOptions['ads']['digitalpoint'] ? 16 : 0) +
+	(@$betterAnalyticsOptions['ads']['revcontent'] ? 32 : 0)
 ;
 
 if (!empty($betterAnalyticsOptions['dimension']['category']) && $baCategories)

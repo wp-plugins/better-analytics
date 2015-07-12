@@ -32,7 +32,7 @@
 
 	$checks['licensed'] = DigitalPointBetterAnalytics_Helper_Api::check(true);
 
-	if ($code = sanitize_text_field(@$_REQUEST['code']))
+	if (@$_REQUEST['action'] == 'config')
 	{
 		if (!$hasTokens)
 		{
@@ -71,8 +71,8 @@
 			{
 				echo '<div class="error"><p>' . esc_html__('Only use this option if you are sure you want to auto-configure everything.', 'better-analytics') . '</p></div>';
 
-				echo '<form action="' . esc_url(menu_page_url('better-analytics_test', false)) . '" method="POST" style="padding:15px">
-					<input type="hidden" name="code" value="' . htmlentities($_REQUEST['code']) . '">';
+				echo '<form action="' . esc_url(menu_page_url('better-analytics_test', false)) . '" method="POST" style="padding:15px">';
+				echo '<input type="hidden" name="action" value="config">';
 
 				if ($accounts)
 				{
@@ -131,10 +131,6 @@
 			$vertical = sanitize_text_field($_REQUEST['vertical']);
 			$accountId = absint(@$_REQUEST['account_id']);
 
-			$tokens = $reportingClass->exchangeCodeForToken($code);
-
-			$reportingClass->overrideTokens($tokens);
-
 			$overQuota = false;
 
 			if ($accountId = absint(@$_REQUEST['account_id']))
@@ -174,8 +170,6 @@
 						$betterAnalyticsOptions['property_id'] = $profile['webPropertyId'];
 						$betterAnalyticsOptions['api']['profile'] = $profile['id'];
 					}
-
-
 
 					// Really seems like an Analytics bug because the enhancedECommerceTracking option doesn't take upon insert, so for now, PATCHing after the fact.
 					// See:  https://code.google.com/p/analytics-issues/issues/detail?id=688
@@ -252,8 +246,6 @@
 			{
 				set_transient('ba_last_error', esc_html__('Google API Quota Exceeded (you will need to configure your Google Analytics account manually).'), 10);
 			}
-
-			$reportingClass->overrideTokens(null);
 
 			$reportingClass->deleteProfileCache();
 			$reportingClass->deleteProfileCache($property['accountId'], null);
@@ -351,7 +343,7 @@
 					<tr>
 						<td colspan="3" style="text-align:center">
 							<?php esc_html_e('Items highlighted in yellow can be auto-configured via the Google Analytics API if you wish.', 'better-analytics'); ?>
-							<br/><br/><a class="button button-primary" href="<?php echo $reportingClass->getAuthenticationUrl(esc_url(menu_page_url('better-analytics_test', false)), true, 'online'); ?>"><?php esc_html_e('Auto-Configure', 'better-analytics');?></a>
+							<br/><br/><a class="button button-primary" href="<?php echo add_query_arg(array('action' => 'config'), esc_url(menu_page_url('better-analytics_test', false))); ?>"><?php esc_html_e('Auto-Configure', 'better-analytics');?></a>
 						</td>
 					</tr>
 				<?php

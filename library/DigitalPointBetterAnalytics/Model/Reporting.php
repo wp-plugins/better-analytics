@@ -282,4 +282,46 @@ class DigitalPointBetterAnalytics_Model_Reporting
 		}
 		return $output;
 	}
+
+	public static function filterGoalsByProfile($goals, $webPropertyId, $profileId, &$totals)
+	{
+		$output = array();
+		if (@$goals['items'])
+		{
+			foreach($goals['items'] as $goal)
+			{
+				if ($goal['webPropertyId'] == $webPropertyId && $goal['profileId'] == $profileId)
+				{
+					$output[$goal['id']] = $goal;
+					@$totals['all']++;
+					if ($goal['active'])
+					{
+						@$totals['active']++;
+					}
+					else
+					{
+						@$totals['inactive']++;
+					}
+				}
+			}
+		}
+		return $output;
+	}
+
+	public static function getGoalByGoalId($goals, $webPropertyId, $profileId, $goalId)
+	{
+		$goal = null;
+		if (@$goals['items'])
+		{
+			foreach($goals['items'] as $goal)
+			{
+				if ($goal['webPropertyId'] == $webPropertyId && $goal['profileId'] == $profileId && $goal['id'] == $goalId)
+				{
+					break;
+				}
+			}
+		}
+		return $goal;
+	}
+
 }

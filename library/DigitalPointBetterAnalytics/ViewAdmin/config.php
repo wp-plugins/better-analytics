@@ -642,6 +642,11 @@
 							<?php esc_html_e('Outbrain', 'better-analytics');?></label>
 						<br />
 
+						<label for="ba_ads_revcontent"<?php echo (!intval(@$betterAnalyticsInternal['v']) ? ' class="pro"' : ''); ?>>
+							<input name="better_analytics[ads][revcontent]" type="checkbox" id="ba_ads_revcontent" value="1" <?php checked('1', @$betterAnalyticsOptions['ads']['revcontent'] ); disabled(0, intval(@$betterAnalyticsInternal['v'])); ?>>
+							<?php esc_html_e('RevContent', 'better-analytics');?></label>
+						<br />
+
 						<label for="ba_ads_taboola"<?php echo (!intval(@$betterAnalyticsInternal['v']) ? ' class="pro"' : ''); ?>>
 							<input name="better_analytics[ads][taboola]" type="checkbox" id="ba_ads_taboola" value="1" <?php checked('1', @$betterAnalyticsOptions['ads']['taboola'] ); disabled(0, intval(@$betterAnalyticsInternal['v'])); ?>>
 							<?php esc_html_e('Taboola', 'better-analytics');?></label>

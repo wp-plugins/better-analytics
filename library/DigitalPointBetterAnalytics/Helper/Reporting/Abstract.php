@@ -13,6 +13,8 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 	protected static $_webPropertiesEndpoint = '/%s/webproperties';
 	protected static $_profilesEndpoint = '/%s/profiles';
 	protected static $_dimensionsEndpoint = '/%s/customDimensions';
+	protected static $_goalsEndpoint = '/%s/goals';
+	protected static $_experimentsEndpoint = '/%s/experiments';
 
 	protected static $_curlHandles = array();
 
@@ -98,7 +100,7 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 
 	public function getAuthenticationUrl($state = null, $includeEditScope = false, $accessType = 'offline')
 	{
-		return self::$_oAuthEndpoint . 'auth?redirect_uri=' . urlencode($this->_getAdminAuthUrl()) . ($state ? '&state=' . urlencode($state) : '') . '&response_type=code&client_id=' . urlencode($this->_getOption('apiClientId')) . '&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fanalytics' . ($includeEditScope ? '.edit' : '') . '&approval_prompt=force&access_type=' . urlencode($accessType);
+		return self::$_oAuthEndpoint . 'auth?redirect_uri=' . urlencode($this->_getAdminAuthUrl()) . ($state ? '&state=' . urlencode($state) : '') . '&response_type=code&client_id=' . urlencode($this->_getOption('apiClientId')) . '&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fanalytics' . ($includeEditScope ? '+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fanalytics.edit' : '') . '&approval_prompt=force&access_type=' . urlencode($accessType);
 	}
 
 	public function exchangeCodeForToken($code)
@@ -510,6 +512,97 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 
 		return $foundProfile;
 	}
+
+	public function getGoals($accountId, $webPropertyId, $profileId, $goalId = null)
+	{
+		return $this->_makeApiCall(
+			sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_profilesEndpoint . self::$_goalsEndpoint . ($goalId ? '/%s' : ''), $accountId, $webPropertyId, $profileId, $goalId),
+			'ba_goals_' . md5($accountId . '-' . $webPropertyId . '-' . $profileId . '-' . $goalId),
+			'GET',
+			60
+		);
+	}
+
+	public function insertGoal($accountId, $webPropertyId, $profileId, $fields = array())
+	{
+		return $this->_makeApiCall(
+			sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_profilesEndpoint . self::$_goalsEndpoint, $accountId, $webPropertyId, $profileId),
+			null,
+			'INSERT',
+			0,
+			$fields
+		);
+	}
+
+	public function patchGoal($accountId, $webPropertyId, $profileId, $goalId, $fields = array())
+	{
+		return $this->_makeApiCall(
+			sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_profilesEndpoint . self::$_goalsEndpoint . ($goalId ? '/%s' : ''), $accountId, $webPropertyId, $profileId, $goalId),
+			null,
+			'PATCH',
+			0,
+			$fields
+		);
+	}
+
+	public function deleteGoalCache($accountId = '~all', $webPropertyId = '~all', $profileId = '~all', $goalId = null)
+	{
+		$cacheKey = 'ba_goals_' . md5($accountId . '-' . $webPropertyId . '-' . $profileId . '-' . $goalId);
+		$this->_cacheDelete($cacheKey);
+	}
+
+
+	public function getExperiments($accountId, $webPropertyId, $profileId)
+	{
+		return $this->_makeApiCall(
+			sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_profilesEndpoint . self::$_experimentsEndpoint, $accountId, $webPropertyId, $profileId),
+			'ba_exp_' . md5($accountId . '-' . $webPropertyId . '-' . $profileId),
+			'GET',
+			60
+		);
+	}
+
+	protected function _makeApiCall($endpoint, $cacheKey = null, $method = 'GET', $cacheMinutes = 60, $fields = array())
+	{
+		if (empty($cacheKey) || !$results = $this->_cacheLoad($cacheKey))
+		{
+			$fromCache = false;
+
+			if ($tokens = $this->checkAccessToken())
+			{
+				$this->_initHttp($endpoint);
+
+				$params = array('access_token' => $tokens->access_token);
+				if ($fields)
+				{
+					$params['body'] = json_encode($fields);
+				}
+
+				$this->_setParamsAction($params);
+
+				$response = $this->_execHandlerAction($method);
+
+				$results = json_decode($response, true);
+
+				if ($this->_hasError($results))
+				{
+					$fromCache = true;
+				}
+			}
+		}
+		else
+		{
+			$fromCache = true;
+		}
+
+		if ($cacheKey && !$fromCache)
+		{
+			$this->_cacheSave($cacheKey, $results, $cacheMinutes);
+		}
+		return $results;
+
+	}
+
 
 
 

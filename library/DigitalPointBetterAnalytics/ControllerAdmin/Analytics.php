@@ -464,6 +464,86 @@ class DigitalPointBetterAnalytics_ControllerAdmin_Analytics
 		$this->_view('reports/events', array('type' => 'events'));
 	}
 
+	public function actionGoals()
+	{
+		if (!$this->_assertLinkedAccount())
+		{
+			return;
+		}
+
+		$betterAnalyticsOptions = get_option('better_analytics');
+		$reportingClass = DigitalPointBetterAnalytics_Helper_Reporting::getInstance();
+
+		if (@$_REQUEST['action'] == 'activate' || @$_REQUEST['action'] == 'deactivate')
+		{
+			if ($goalId = absint(@$_REQUEST['id']))
+			{
+				check_admin_referer($_REQUEST['action'] . '-goal');
+
+				if ($profile = $reportingClass->getProfileByProfileId($betterAnalyticsOptions['api']['profile']))
+				{
+					$goal = $reportingClass->patchGoal($profile['accountId'], $profile['webPropertyId'], $profile['id'], $goalId, array(
+						'active' => ($_REQUEST['action'] == 'activate' ? true : false),
+					));
+
+					$reportingClass->deleteGoalCache();
+				}
+			}
+		}
+		elseif (@$_REQUEST['action'] == 'activate-selected' || @$_REQUEST['action'] == 'deactivate-selected')
+		{
+			if (!empty($_REQUEST['checked']) && is_array($_REQUEST['checked']))
+			{
+				$checkIds = array();
+				foreach ($_REQUEST['checked'] as $check)
+				{
+					if ($id = absint($check))
+					{
+						$checkIds[] = absint($check);
+					}
+				}
+
+				if ($checkIds)
+				{
+					check_admin_referer('bulk-goals');
+
+					if ($profile = $reportingClass->getProfileByProfileId($betterAnalyticsOptions['api']['profile']))
+					{
+						foreach ($checkIds as $id)
+						{
+							$goal = $reportingClass->patchGoal($profile['accountId'], $profile['webPropertyId'], $profile['id'], $id, array(
+								'active' => ($_REQUEST['action'] == 'activate-selected' ? true : false),
+							));
+						}
+
+						$reportingClass->deleteGoalCache();
+					}
+				}
+			}
+		}
+
+		global $totals;
+		$totals = array();
+
+		$goals = $reportingClass->getGoals('~all', '~all', '~all');
+		$goals = DigitalPointBetterAnalytics_Model_Reporting::filterGoalsByProfile($goals, @$betterAnalyticsOptions['property_id'], @$betterAnalyticsOptions['api']['profile'], $totals);
+
+
+		$this->_view('goals', array('goals' => $goals));
+
+	}
+
+
+	public function actionExperiments()
+	{
+		if (!$this->_assertLinkedAccount())
+		{
+			return;
+		}
+
+		exit;
+	}
+
 
 
 
