@@ -17,14 +17,14 @@ The Better Google Analytics plugin allows you to easily add Google Analytics cod
 >
 > The Better Google Analytics plugin can automatically configure your Google Analytics account to maximize what you can track with the minimum amount of effort.  Can automatically set various options on your Google Analytics account on your behalf as well as create custom dimensions and map them to where they need to go.  If you are setting up a brand new site, this plugin can even create a brand new Web Property within your selected Google Analytics account if you wish.  All with a single click.
 
+Better Google Analytics utilizes all the latest and greatest features of Google Analytics (Universal analytics, user-ID session unification, event tracking, campaign tracking, custom dimensions, server-side tracking, social engagement tracking, remarketing, etc.)
+
 > <strong>Google Analytics Account Management</strong><br>
 >
 > * The Better Google Analytics plugin can create a new web property/profile on your Google Analytics account if needed (if it's a new site)
 > * Auto-Configure system will set certain options automatically on your Google Analytics account if needed
 > * Auto-Configure system can create custom dimensions for your Google Analytics Web Property and map them to the appropriate Better Google Analytics settings
 > * Google Analytics Goal Management system allows you to create, edit, activate and disable Google Analytics Goals from within your WordPress admin area
-
-Better Google Analytics utilizes all the latest and greatest features of Google Analytics (Universal analytics, user-ID session unification, event tracking, campaign tracking, custom dimensions, server-side tracking, social engagement tracking, remarketing, etc.)
 
 If you link your Google Analytics account, the Better Google Analytics plugin is able to make extensive use of the Google Analytics API to give you a plethora of reporting options (both historical and realtime).  Google Analytics API calls are cached to make them as fast as possible.
 
