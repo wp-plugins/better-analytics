@@ -7,7 +7,7 @@
 Plugin Name: Better Analytics
 Plugin URI: https://marketplace.digitalpoint.com/better-analytics.3354/item
 Description: Adds Google Universal Analytics code to your WordPress site.  Options to track most everything (social button interactions, advertising clicks, emails sent/opened, YouTube video engagement, custom dimension tracking of authors/categories, etc.)  Integrates with API for reports/charts on dashboard, heat maps and real-time traffic tracking.
-Version: 1.0.7
+Version: 1.0.8
 Author: Digital Point
 Author URI: https://www.digitalpoint.com/
 License: GPLv2
@@ -23,7 +23,7 @@ if (!function_exists('add_action'))
 	exit;
 }
 
-define('BETTER_ANALYTICS_VERSION', '1.0.7');
+define('BETTER_ANALYTICS_VERSION', '1.0.8');
 define('BETTER_ANALYTICS_MINIMUM_WP_VERSION', '3.8');  // Dashicons: https://codex.wordpress.org/Function_Reference/add_menu_page
 define('BETTER_ANALYTICS_PRODUCT_URL', 'https://marketplace.digitalpoint.com/better-analytics.3354/item');
 define('BETTER_ANALYTICS_PRO_PRODUCT_URL', 'https://marketplace.digitalpoint.com/better-analytics-pro.3355/item');
