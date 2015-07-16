@@ -525,7 +525,7 @@ class DigitalPointBetterAnalytics_ControllerAdmin_Analytics
 		global $totals;
 		$totals = array();
 
-		$goals = $reportingClass->getGoals('~all', '~all', '~all');
+		$goals = $reportingClass->getGoals();
 		$goals = DigitalPointBetterAnalytics_Model_Reporting::filterGoalsByProfile($goals, @$betterAnalyticsOptions['property_id'], @$betterAnalyticsOptions['api']['profile'], $totals);
 
 
@@ -541,7 +541,17 @@ class DigitalPointBetterAnalytics_ControllerAdmin_Analytics
 			return;
 		}
 
-		exit;
+		$betterAnalyticsOptions = get_option('better_analytics');
+		$reportingClass = DigitalPointBetterAnalytics_Helper_Reporting::getInstance();
+
+		$experiments = array();
+
+		if ($profile = $reportingClass->getProfileByProfileId($betterAnalyticsOptions['api']['profile']))
+		{
+			$experiments = $reportingClass->getExperiments($profile['accountId'], $profile['webPropertyId'], $profile['id']);
+		}
+
+		$this->_view('experiments', array('experiments' => $experiments));
 	}
 
 

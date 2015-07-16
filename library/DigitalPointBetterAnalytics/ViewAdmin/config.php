@@ -905,6 +905,13 @@
 							}
 						?>
 					</select>
+
+					<fieldset style="padding-top:3px;">
+						<label for="ba_author_view_reports">
+							<input name="better_analytics[author_view_reports]" type="checkbox" id="ba_author_view_reports" value="1" <?php checked('1', @$betterAnalyticsOptions['author_view_reports'] ); ?>>
+							<?php esc_html_e('Author Can View Page Analytics', 'better-analytics');?></label>
+					</fieldset>
+
 				</td>
 			</tr>
 

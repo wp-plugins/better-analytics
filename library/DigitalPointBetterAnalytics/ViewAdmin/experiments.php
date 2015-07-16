@@ -11,7 +11,11 @@ $noticeAtTop = '';
 
 if (@$_REQUEST['action'] == 'create_edit')
 {
-	$goalId = absint(@$_REQUEST['id']);
+	$experimentId = sanitize_text_field(@$_REQUEST['id']);
+
+
+	// not refactoered after here
+
 
 	$goalsAll = DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getGoals();
 
@@ -28,7 +32,7 @@ if (@$_REQUEST['action'] == 'create_edit')
 				<form method="post" action="' . esc_url(menu_page_url('better-analytics_goals', false)) . '">
 					<input type="hidden" name="page" value="better-analytics_goals"/>
 					<input type="hidden" name="action" value="create_edit"/>';
-					wp_nonce_field('create_edit-goal' . $nOnceSalt);
+		wp_nonce_field('create_edit-goal' . $nOnceSalt);
 
 		?>
 
@@ -74,15 +78,15 @@ if (@$_REQUEST['action'] == 'create_edit')
 				<td>
 
 					<?php
-						echo '<select name="type" data-placeholder="' . esc_html__('Pick type', 'better-analytics') . '" id="ba_type" class="chosen-select">';
+					echo '<select name="type" data-placeholder="' . esc_html__('Pick type', 'better-analytics') . '" id="ba_type" class="chosen-select">';
 
-						$types = DigitalPointBetterAnalytics_Model_Goals::getTypes();
+					$types = DigitalPointBetterAnalytics_Model_Goals::getTypes();
 
-						foreach ($types as $key => $type)
-						{
-							echo '<option value="' . $key . '"' . ($key == @$goal['type'] ? ' selected="selected"' : '') . '>' . htmlentities($type) . '</option>';
-						}
-						echo '</select>';
+					foreach ($types as $key => $type)
+					{
+						echo '<option value="' . $key . '"' . ($key == @$goal['type'] ? ' selected="selected"' : '') . '>' . htmlentities($type) . '</option>';
+					}
+					echo '</select>';
 					?>
 
 				</td>
@@ -111,15 +115,15 @@ if (@$_REQUEST['action'] == 'create_edit')
 				<td>
 
 					<?php
-						echo '<select name="destination_match_type" data-placeholder="' . esc_html__('Pick type', 'better-analytics') . '" id="ba_destination_match_type" class="chosen-select">';
+					echo '<select name="destination_match_type" data-placeholder="' . esc_html__('Pick type', 'better-analytics') . '" id="ba_destination_match_type" class="chosen-select">';
 
-						$types = DigitalPointBetterAnalytics_Model_Goals::getMatchTypes();
+					$types = DigitalPointBetterAnalytics_Model_Goals::getMatchTypes();
 
-						foreach ($types as $key => $type)
-						{
-							echo '<option value="' . $key . '"' . ($key == @$goal['urlDestinationDetails']['matchType'] ? ' selected="selected"' : '') . '>' . htmlentities($type) . '</option>';
-						}
-						echo '</select>';
+					foreach ($types as $key => $type)
+					{
+						echo '<option value="' . $key . '"' . ($key == @$goal['urlDestinationDetails']['matchType'] ? ' selected="selected"' : '') . '>' . htmlentities($type) . '</option>';
+					}
+					echo '</select>';
 					?>
 
 					<input type="text" name="destination_url" class="regular-text" id="ba_destination_url" placeholder="<?php echo esc_attr(esc_html__('URL', 'better-analytics'));?>" value="<?php echo esc_attr( @$goal['urlDestinationDetails']['url'] ); ?>" />
@@ -162,7 +166,7 @@ if (@$_REQUEST['action'] == 'create_edit')
 											esc_html__('Required', 'better-analytics') . '</label>';
 									}
 
-										echo '</li>';
+									echo '</li>';
 									$i++;
 								}
 							}
@@ -177,7 +181,7 @@ if (@$_REQUEST['action'] == 'create_edit')
 				<th scope="row"><?php esc_html_e('Session Duration', 'better-analytics');?></th>
 				<td>
 					<?php
-						$durations = explode(":", gmdate('j:H:i:s', @$goal['visitTimeOnSiteDetails']['comparisonValue']));
+					$durations = explode(":", gmdate('j:H:i:s', @$goal['visitTimeOnSiteDetails']['comparisonValue']));
 					?>
 					<div>
 						<div>
@@ -300,8 +304,8 @@ if (@$_REQUEST['action'] == 'create_edit')
 
 
 		<?php
-			submit_button();
-			echo '</form>
+		submit_button();
+		echo '</form>
 		</div>';
 	}
 	else
@@ -475,38 +479,38 @@ if (@$_REQUEST['action'] != 'create_edit' || @$_SERVER['REQUEST_METHOD'] == 'POS
 	}
 	else
 	{
-		echo '<div class="wrap goals">
-				<h2>' . esc_html__('Goals', 'better-analytics') .
-			' <a href="' . add_query_arg(array('action' => 'create_edit'), esc_url(menu_page_url('better-analytics_goals', false))) . '" class="add-new-h2">' . esc_html__('Add New', 'better-analytics') . '</a>' .
+		echo '<div class="wrap experiments">
+				<h2>' . esc_html__('Experiments', 'better-analytics') .
+			' <a href="' . add_query_arg(array('action' => 'create_edit'), esc_url(menu_page_url('better-analytics_experiments', false))) . '" class="add-new-h2">' . esc_html__('Add New', 'better-analytics') . '</a>' .
 			'</h2>
 
-		<form method="post" action="' . esc_url(menu_page_url('better-analytics_goals', false)) . '">
-			<input type="hidden" name="page" value="better-analytics_goals"/>';
+		<form method="post" action="' . esc_url(menu_page_url('better-analytics_experiments', false)) . '">
+			<input type="hidden" name="page" value="better-analytics_experiments"/>';
 
 		echo $noticeAtTop;
 
 		if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'activate')
 		{
 			/* translators: %1$s = <strong>, %2$s = </strong> */
-			echo '<div id="message" class="updated notice is-dismissible"><p>' . sprintf(esc_html__('Goal %1$sactivated%2$s.'), '<strong>', '</strong>') . '</p></div>';
+			echo '<div id="message" class="updated notice is-dismissible"><p>' . sprintf(esc_html__('Experiment %1$sactivated%2$s.'), '<strong>', '</strong>') . '</p></div>';
 		}
 		elseif (isset($_REQUEST['action']) && $_REQUEST['action'] == 'activate-selected')
 		{
 			/* translators: %1$s = <strong>, %2$s = </strong> */
-			echo '<div id="message" class="updated notice is-dismissible"><p>' . sprintf(esc_html__('Selected goals %1$sactivated%2$s.'), '<strong>', '</strong>') . '</p></div>';
+			echo '<div id="message" class="updated notice is-dismissible"><p>' . sprintf(esc_html__('Selected experiments %1$sactivated%2$s.'), '<strong>', '</strong>') . '</p></div>';
 		}
 		elseif (isset($_REQUEST['action']) && $_REQUEST['action'] == 'deactivate')
 		{
 			/* translators: %1$s = <strong>, %2$s = </strong> */
-			echo '<div id="message" class="updated notice is-dismissible"><p>' . sprintf(esc_html__('Goal %1$sdeactivated%2$s.'), '<strong>', '</strong>') . '</p></div>';
+			echo '<div id="message" class="updated notice is-dismissible"><p>' . sprintf(esc_html__('Experiment %1$sdeactivated%2$s.'), '<strong>', '</strong>') . '</p></div>';
 		}
 		elseif (isset($_REQUEST['action']) && $_REQUEST['action'] == 'deactivate-selected')
 		{
 			/* translators: %1$s = <strong>, %2$s = </strong> */
-			echo '<div id="message" class="updated notice is-dismissible"><p>' . sprintf(esc_html__('Selected goals %1$sdeactivated%2$s.'), '<strong>', '</strong>') . '</p></div>';
+			echo '<div id="message" class="updated notice is-dismissible"><p>' . sprintf(esc_html__('Selected experiments %1$sdeactivated%2$s.'), '<strong>', '</strong>') . '</p></div>';
 		}
 
-		$goalTable = new DigitalPointBetterAnalytics_Formatting_GoalTable(array('plural' => 'goals', 'goals' => $goals));
+		$goalTable = new DigitalPointBetterAnalytics_Formatting_ExperimentTable(array('plural' => 'experiments', 'experiments' => $experiments));
 
 		$goalTable->prepare_items();
 		$goalTable->views();

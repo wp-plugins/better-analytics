@@ -138,7 +138,18 @@ class DigitalPointBetterAnalytics_Helper_Reporting extends DigitalPointBetterAna
 				)
 			);
 		}
+		elseif($action == 'DELETE')
+		{
+			$accessToken = $this->_urlInfo['params']['access_token'];
+			unset($this->_urlInfo['params']['access_token']);
 
+			$response = wp_remote_request($this->_urlInfo['url'] . '?access_token=' . urlencode($accessToken),
+				array(
+					'method' => 'DELETE',
+					'headers' => array('Content-Type' => 'application/json')
+				)
+			);
+		}
 		elseif($action == 'PATCH')
 		{
 			$accessToken = $this->_urlInfo['params']['access_token'];

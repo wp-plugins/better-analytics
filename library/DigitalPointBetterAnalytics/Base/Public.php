@@ -113,11 +113,29 @@ class DigitalPointBetterAnalytics_Base_Public
 		}
 		else
 		{
+			if (@$betterAnalyticsOptions['author_view_reports'] && is_single() && $post = get_post())
+			{
+				if ($post->post_author == $currentUser->ID)
+				{
+					return true;
+				}
+			}
+			elseif(@$betterAnalyticsOptions['author_view_reports'] && !empty($_REQUEST['page_path']))
+			{
+				if ($postId = absint(url_to_postid($_REQUEST['page_path'])))
+				{
+					if ($post = get_post($postId))
+					{
+						if ($post->post_author == $currentUser->ID)
+						{
+							return true;
+						}
+					}
+				}
+			}
 			return false;
 		}
 	}
-
-
 
 	/**
 	 * Do something on activation?

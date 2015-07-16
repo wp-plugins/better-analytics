@@ -295,14 +295,6 @@
 				</tr>
 
 				<tr valign="top">
-					<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#general', esc_html__('Web Property ID Defined', 'better-analytics'));?></th>
-					<?php
-						echo ($betterAnalyticsOptions['property_id'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
-					?>
-					<td></td>
-				</tr>
-
-				<tr valign="top">
 
 					<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', 'https://php.net/manual/en/curl.installation.php', esc_html__('cURL Installed', 'better-analytics'));?></th>
 
@@ -351,15 +343,23 @@
 				?>
 
 				<tr valign="top"<?php echo $hasTokens ? ' class="can_auto_config"' : ''?>>
+					<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#general', esc_html__('Web Property ID Defined', 'better-analytics'));?></th>
+					<?php
+					echo ($betterAnalyticsOptions['property_id'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
+					?>
+					<td class="description" rowspan="2">
+						<?php
+						esc_html_e('If you would like the Auto-Configure system to create a new Web Property and profile on your Google Analytics account, don\'t select an existing Web Property.', 'better-analytics');
+						?>
+					</td>
+				</tr>
+
+				<tr valign="top"<?php echo $hasTokens ? ' class="can_auto_config"' : ''?>>
 					<th scope="row"><?php printf('<a href="%1$s" target="_blank">%2$s</a>:', menu_page_url('better-analytics', false) . '#top#api', esc_html__('Analytics Profile Selected', 'better-analytics'));?></th>
 					<?php
 						echo ($betterAnalyticsOptions['api']['profile'] ? '<td class="good">✓</td>' : '<td class="bad">✗</td>');
 					?>
-					<td class="description">
-						<?php
-							esc_html_e('If you would like the Auto-Configure system to create a new Web Property on your Google Analytics account, don\'t select an existing profile.', 'better-analytics');
-						?>
-					</td>
+
 				</tr>
 
 				<tr valign="top"<?php echo $hasTokens ? ' class="can_auto_config"' : ''?>>

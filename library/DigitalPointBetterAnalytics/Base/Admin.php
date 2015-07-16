@@ -98,7 +98,7 @@ class DigitalPointBetterAnalytics_Base_Admin
 		}
 
 		add_submenu_page( 'better-analytics_heatmaps', esc_html__('Goals', 'better-analytics'), esc_html__('Goals', 'better-analytics'), 'manage_options', 'better-analytics_goals', array($this, 'display_page') );
-		//add_submenu_page( 'better-analytics_heatmaps', esc_html__('A/B Testing', 'better-analytics'), esc_html__('A/B Testing', 'better-analytics'), 'manage_options', 'better-analytics_experiments', array($this, 'display_page') );
+		// add_submenu_page( 'better-analytics_heatmaps', esc_html__('A/B Testing', 'better-analytics'), esc_html__('A/B Testing', 'better-analytics'), 'manage_options', 'better-analytics_experiments', array($this, 'display_page') );
 		add_submenu_page( 'better-analytics_heatmaps', esc_html__('Settings', 'better-analytics'), esc_html__('Settings', 'better-analytics'), 'manage_options', 'options-general.php' . '?page=better-analytics' );
 		add_submenu_page( 'better-analytics_heatmaps', esc_html__('Test Setup', 'better-analytics'), esc_html__('Test Setup', 'better-analytics'), 'manage_options', 'tools.php' . '?page=better-analytics_test' );
 

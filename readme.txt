@@ -183,6 +183,13 @@ Thank you to all the individuals who have contributed translations for Better Go
 22. Advanced settings allow you to fine tune how the system works with Google Analytics.
 
 == Changelog ==
+= 1.0.8 =
+* Made a few minor cosmetic changes to Google Analytics Goal list view (including responsive)
+* Moved Web Property ID slot on Test Setup tool to make it clear a new Web Property can be automatically created if needed (new site)
+* Changed how settings are passed to JavaScript code to make plugin more compatible with systems that attempt to alter/consolidate JavaScript files (Google PageSpeed and WordPress caching systems)
+* Feature: Advanced setting that allows the author of a post to view Page Analytics regardless of role
+* Added stubs and API calls for Google Analytics Experiments management
+
 = 1.0.7 =
 * Feature: Added support for tracking RevContent ad clicks
 * Feature: Manage Google Analytics Goals from within WordPress admin area (create, edit, enable, disable, etc.)

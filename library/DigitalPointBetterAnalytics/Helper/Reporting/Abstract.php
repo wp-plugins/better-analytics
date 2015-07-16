@@ -219,7 +219,7 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 
 		if (!$fromCache)
 		{
-			$this->_cacheSave($cacheKey, $profiles, 1);
+			$this->_cacheSave($cacheKey, $profiles, 5);
 		}
 		return $profiles;
 	}
@@ -513,7 +513,7 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 		return $foundProfile;
 	}
 
-	public function getGoals($accountId, $webPropertyId, $profileId, $goalId = null)
+	public function getGoals($accountId = '~all', $webPropertyId = '~all', $profileId = '~all', $goalId = null)
 	{
 		return $this->_makeApiCall(
 			sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_profilesEndpoint . self::$_goalsEndpoint . ($goalId ? '/%s' : ''), $accountId, $webPropertyId, $profileId, $goalId),
@@ -552,15 +552,56 @@ abstract class DigitalPointBetterAnalytics_Helper_Reporting_Abstract
 	}
 
 
-	public function getExperiments($accountId, $webPropertyId, $profileId)
+	public function getExperiments($accountId = '~all', $webPropertyId = '~all', $profileId = '~all', $experimentId = null)
 	{
 		return $this->_makeApiCall(
-			sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_profilesEndpoint . self::$_experimentsEndpoint, $accountId, $webPropertyId, $profileId),
-			'ba_exp_' . md5($accountId . '-' . $webPropertyId . '-' . $profileId),
+			sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_profilesEndpoint . self::$_experimentsEndpoint . ($experimentId ? '/%s' : ''), $accountId, $webPropertyId, $profileId, $experimentId),
+			'ba_exp_' . md5($accountId . '-' . $webPropertyId . '-' . $profileId . '-' . $experimentId),
 			'GET',
 			60
 		);
 	}
+
+	public function insertExperiment($accountId, $webPropertyId, $profileId, $fields = array())
+	{
+		return $this->_makeApiCall(
+			sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_profilesEndpoint . self::$_experimentsEndpoint, $accountId, $webPropertyId, $profileId),
+			null,
+			'INSERT',
+			0,
+			$fields
+		);
+	}
+
+	public function deleteExperiment($accountId, $webPropertyId, $profileId, $experimentId)
+	{
+		return $this->_makeApiCall(
+			sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_profilesEndpoint . self::$_experimentsEndpoint . ($experimentId ? '/%s' : ''), $accountId, $webPropertyId, $profileId, $experimentId),
+			null,
+			'DELETE',
+			0
+		);
+	}
+
+
+	public function patchExperiment($accountId, $webPropertyId, $profileId, $experimentId, $fields = array())
+	{
+		return $this->_makeApiCall(
+			sprintf(self::$_accountsEndpoint . self::$_webPropertiesEndpoint . self::$_profilesEndpoint . self::$_experimentsEndpoint . ($experimentId ? '/%s' : ''), $accountId, $webPropertyId, $profileId, $experimentId),
+			null,
+			'PATCH',
+			0,
+			$fields
+		);
+	}
+
+	public function deleteExperimentCache($accountId = '~all', $webPropertyId = '~all', $profileId = '~all', $experimentId = null)
+	{
+		$cacheKey = 'ba_exp_' . md5($accountId . '-' . $webPropertyId . '-' . $profileId . '-' . $experimentId);
+		$this->_cacheDelete($cacheKey);
+	}
+
+
 
 	protected function _makeApiCall($endpoint, $cacheKey = null, $method = 'GET', $cacheMinutes = 60, $fields = array())
 	{
