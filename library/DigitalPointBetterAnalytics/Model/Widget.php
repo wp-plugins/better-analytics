@@ -78,28 +78,65 @@ class DigitalPointBetterAnalytics_Model_Widget
 
 			foreach ($settings as $setting)
 			{
-				$split = explode('|', $setting['metric']);
+				if (empty($setting['this_page_only']))
+				{
+					$cacheKeys[] = self::getStatsWidgetStart($setting);
+				}
 
-				$cacheKeys[] = DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getData(
-					absint($setting['days']) . 'daysAgo',
-					'yesterday',
-					$split[0], // metric
-					'', // dimensions
-					'', // sort
-					@$split[1] // filters
-				);
 			}
 
-			foreach ($cacheKeys as $cacheKey)
+			if ($cacheKeys)
 			{
-				$results = DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getResults($cacheKey);
-
-				set_transient(
-					'ba_stats_' . md5(@$setting['metric'] . @$setting['days']),
-					intval(@$results['rows'][0][0]),
-					21600 // 6 hour cache
-				);
+				foreach ($cacheKeys as $cacheKey)
+				{
+					self::getStatsWidgetEnd($setting, $cacheKey);
+				}
 			}
 		}
 	}
+
+	public static function getStatsWidgetStart($setting, $uri = '')
+	{
+		if (!$uri)
+		{
+			$uri = $_SERVER['REQUEST_URI'];
+		}
+
+		$split = explode('|', $setting['metric']);
+
+		if (!empty($setting['this_page_only']))
+		{
+			@$split[1] .= (empty($split[1]) ? '' : ';') . 'ga:pagePath==' . $uri;
+		}
+
+		return DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getData(
+			absint($setting['days']) . 'daysAgo',
+			'yesterday',
+			$split[0], // metric
+			'', // dimensions
+			'', // sort
+			@$split[1] // filters
+		);
+	}
+
+	public static function getStatsWidgetEnd($setting, $cacheKey, $uri = '')
+	{
+		if (!$uri)
+		{
+			$uri = $_SERVER['REQUEST_URI'];
+		}
+
+		$results = DigitalPointBetterAnalytics_Helper_Reporting::getInstance()->getResults($cacheKey);
+
+		$value = intval(@$results['rows'][0][0]);
+
+		set_transient(
+			'ba_stats_' . md5(@$setting['metric'] . '-' . @$setting['days'] . '-' . (@$setting['this_page_only'] ? $uri : '')),
+			$value,
+			21600 // 6 hour cache
+		);
+
+		return $value;
+	}
+
 }

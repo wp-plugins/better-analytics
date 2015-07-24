@@ -60,6 +60,7 @@ else
 
 
 	$chartDays = array(
+		'1' => esc_html__('1 Day', 'better-analytics'),
 		'7' => esc_html__('7 Days', 'better-analytics'),
 		'14' => esc_html__('14 Days', 'better-analytics'),
 		'30' => esc_html__('1 Month', 'better-analytics'),

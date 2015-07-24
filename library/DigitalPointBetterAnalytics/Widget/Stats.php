@@ -44,6 +44,8 @@ class DigitalPointBetterAnalytics_Widget_Stats extends WP_Widget {
 		$metric = isset($instance['metric']) ? $instance['metric'] : 'ga:sessions';
 		$days = isset($instance['days']) ? absint( $instance['days'] ) : 1;
 		$format = isset($instance['format']) ? $instance['format'] : '%1$s: <strong>%2$s</strong>';
+		$thisPageOnly = (isset($instance['this_page_only']) ? $instance['this_page_only'] : '');
+		$private = (isset($instance['private']) ? $instance['private'] : '');
 
 		$betterAnalyticsOptions = get_option('better_analytics');
 
@@ -94,9 +96,19 @@ class DigitalPointBetterAnalytics_Widget_Stats extends WP_Widget {
 		<p><label for="<?php echo $this->get_field_id('format'); ?>"><?php esc_html_e('HTML Format For Widget:', 'better-analytics'); ?></label>
 			<textarea id="<?php echo $this->get_field_id('format'); ?>" name="<?php echo $this->get_field_name('format'); ?>" type="text" style="display:block;width:100%"><?php echo esc_textarea($format); ?></textarea>
 			<span class="description"><?php esc_html_e('You can add HTML formatting here if you wish.  %1$s = metric name, %2$s = value', 'better-analytics'); ?></span>
-
 		</p>
 
+		<p>
+			<label for="<?php echo $this->get_field_id('this_page_only'); ?>">
+				<input id="<?php echo $this->get_field_id('this_page_only'); ?>" name="<?php echo $this->get_field_name( 'this_page_only' ); ?>" type="checkbox" value="1" <?php checked('1', $thisPageOnly ); ?>>
+				<?php esc_html_e('Stats for current page only', 'better-analytics');?></label>
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('private'); ?>">
+				<input id="<?php echo $this->get_field_id('private'); ?>" name="<?php echo $this->get_field_name( 'private' ); ?>" type="checkbox" value="1" <?php checked('1', $private ); ?>>
+				<?php esc_html_e('Private (adheres to role/author permissions)', 'better-analytics');?></label>
+		</p>
 
 	<?php
 	}
@@ -107,6 +119,8 @@ class DigitalPointBetterAnalytics_Widget_Stats extends WP_Widget {
 		$instance['days'] = absint($new_instance['days']);
 		$instance['format'] = $new_instance['format'];
 		$instance['metric'] = $new_instance['metric'];
+		$instance['this_page_only'] = $new_instance['this_page_only'];
+		$instance['private'] = $new_instance['private'];
 
 		if (!DigitalPointBetterAnalytics_Model_Reporting::getMetricNameByKey($instance['metric']))
 		{
@@ -122,7 +136,21 @@ class DigitalPointBetterAnalytics_Widget_Stats extends WP_Widget {
 
 	function widget($args, $instance)
 	{
-		$stats = get_transient('ba_stats_' . md5(@$instance['metric'] . @$instance['days']));
+		if (!empty($instance['private']))
+		{
+			if (!DigitalPointBetterAnalytics_Base_Public::getInstance()->canViewReports())
+			{
+				return;
+			}
+		}
+
+		$stats = get_transient('ba_stats_' . md5(@$instance['metric'] . '-' . @$instance['days'] . '-' . (@$instance['this_page_only'] ? $_SERVER['REQUEST_URI'] : '')));
+
+		if (@$stats === false && !empty($instance['this_page_only']))
+		{
+			$cacheKey = DigitalPointBetterAnalytics_Model_Widget::getStatsWidgetStart($instance);
+			$stats = DigitalPointBetterAnalytics_Model_Widget::getStatsWidgetEnd($instance, $cacheKey);
+		}
 
 		if (!empty($stats))
 		{
@@ -137,9 +165,7 @@ class DigitalPointBetterAnalytics_Widget_Stats extends WP_Widget {
 			}
 			printf($instance['format'], $metricTitle, number_format_i18n($stats));
 			echo $args['after_widget'];
-
 		}
-
 	}
 
 	static function register_widget()

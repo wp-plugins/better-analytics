@@ -3,7 +3,7 @@ Contributors: digitalpoint
 Tags: analytics, google analytics, universal analytics, statistics, tracking, code, dashboard, analytics dashboard, google analytics dashboard, google analytics plugin, google analytics widget, reports, charts, multisite, api, stats, web stats, visits, javascript, pageviews, marketing, widget, realtime, real time, youtube, outbrain, taboola, adsense, twitter, pinterest, linkedin, facebook, google, digitalpoint
 Donate link: https://marketplace.digitalpoint.com/better-analytics.3354/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin
 Requires at least: 3.8
-Tested up to: 4.2.2
+Tested up to: 4.2.3
 Stable tag: 1.0.8
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -183,6 +183,12 @@ Thank you to all the individuals who have contributed translations for Better Go
 22. Advanced settings allow you to fine tune how the system works with Google Analytics.
 
 == Changelog ==
+= 1.0.9 =
+* Google Analytics Stats Widget has two new options that allows you to show stats on a per page basis if you want as well as making the widget private (only viewable to certain roles)
+* Disallow PHP auto_append_file directive within the JavaScript loader
+* Added a 1 Day option for the Google Analytics dashboard widget
+* Works with WordPress 4.2.3
+
 = 1.0.8 =
 * Made a few minor cosmetic changes to Google Analytics Goal list view (including responsive)
 * Moved Web Property ID slot on Test Setup tool to make it clear a new Web Property can be automatically created if needed (new site)

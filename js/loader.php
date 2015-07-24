@@ -11,3 +11,4 @@
 		readfile('../../better-analytics-ecommerce/js/ba.js');
 	}
 	echo 'BetterAnalytics._BA=new BetterAnalytics.BA();';
+	exit;
