@@ -4,7 +4,7 @@ Tags: analytics, google analytics, universal analytics, statistics, tracking, co
 Donate link: https://marketplace.digitalpoint.com/better-analytics.3354/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin
 Requires at least: 3.8
 Tested up to: 4.2.3
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 

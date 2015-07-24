@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Better Analytics package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Better Analytics 1.0.7\n"
+"Project-Id-Version: Better Analytics 1.0.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/better-analytics\n"
-"POT-Creation-Date: 2015-07-16 15:26:19+00:00\n"
+"POT-Creation-Date: 2015-07-24 16:30:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -68,7 +68,7 @@ msgstr ""
 msgid "Test Setup"
 msgstr ""
 
-#. #-#-#-#-#  plugin.pot (Better Analytics 1.0.7)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (Better Analytics 1.0.8)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: library/DigitalPointBetterAnalytics/Base/Admin.php:106
 #: library/DigitalPointBetterAnalytics/Base/Admin.php:199
@@ -266,7 +266,7 @@ msgid "Visitors"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/ControllerAdmin/Analytics.php:54
-#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:81
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:82
 msgid "Real-time"
 msgstr ""
 
@@ -1593,7 +1593,7 @@ msgstr ""
 msgid "Taboola"
 msgstr ""
 
-#. #-#-#-#-#  plugin.pot (Better Analytics 1.0.7)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (Better Analytics 1.0.8)  #-#-#-#-#
 #. Author of the plugin/theme
 #: library/DigitalPointBetterAnalytics/ViewAdmin/config.php:657
 msgid "Digital Point"
@@ -1913,38 +1913,42 @@ msgid "for last"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:63
-msgid "7 Days"
+msgid "1 Day"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:64
-msgid "14 Days"
+msgid "7 Days"
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:65
+msgid "14 Days"
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:66
 #: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:57
 msgid "1 Month"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:66
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:67
 msgid "3 Months"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:67
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:68
 #: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:58
 msgid "1 Year"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:68
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:69
 #: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:60
 msgid "5 Years"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:69
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:70
 #: library/DigitalPointBetterAnalytics/ViewAdmin/reports/area_charts.php:61
 msgid "10 Years"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:86
+#: library/DigitalPointBetterAnalytics/ViewAdmin/dashboard.php:87
 msgid "active users"
 msgstr ""
 
@@ -2557,14 +2561,14 @@ msgid "Display the most popular content right now."
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/Widget/PopularPosts.php:48
-#: library/DigitalPointBetterAnalytics/Widget/Stats.php:52
+#: library/DigitalPointBetterAnalytics/Widget/Stats.php:54
 msgid ""
 "No Linked Google Analytics Account (API access required for this widget).  "
 "You can link one in the %1$sBetter Analytics API settings%2$s."
 msgstr ""
 
 #: library/DigitalPointBetterAnalytics/Widget/PopularPosts.php:53
-#: library/DigitalPointBetterAnalytics/Widget/Stats.php:57
+#: library/DigitalPointBetterAnalytics/Widget/Stats.php:59
 msgid "Title:"
 msgstr ""
 
@@ -2580,18 +2584,26 @@ msgstr ""
 msgid "Display your Analytics stats publicly."
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Widget/Stats.php:91
+#: library/DigitalPointBetterAnalytics/Widget/Stats.php:93
 msgid "Number of days to show:"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Widget/Stats.php:94
+#: library/DigitalPointBetterAnalytics/Widget/Stats.php:96
 msgid "HTML Format For Widget:"
 msgstr ""
 
-#: library/DigitalPointBetterAnalytics/Widget/Stats.php:96
+#: library/DigitalPointBetterAnalytics/Widget/Stats.php:98
 msgid ""
 "You can add HTML formatting here if you wish.  %1$s = metric name, %2$s = "
 "value"
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/Widget/Stats.php:104
+msgid "Stats for current page only"
+msgstr ""
+
+#: library/DigitalPointBetterAnalytics/Widget/Stats.php:110
+msgid "Private (adheres to role/author permissions)"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
