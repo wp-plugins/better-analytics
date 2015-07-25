@@ -193,5 +193,5 @@ if (!array_intersect((array)$currentUser->roles, (array)@$betterAnalyticsOptions
 {
 	echo "<!-- This site uses the Better Analytics plugin.  " . BETTER_ANALYTICS_PRODUCT_URL . " -->
 <meta id='ba_s' data-o=\"" . htmlentities(json_encode($jsonOptions)) . "\" />
-<script async=\"async\" type='text/javascript' src='" . plugins_url('better-analytics/js/loader.php') . "?ver=" . BETTER_ANALYTICS_VERSION . ".js' ></script>";
+<script type='text/javascript' src='" . plugins_url('better-analytics/js/loader.php') . "?ver=" . BETTER_ANALYTICS_VERSION . ".js' ></script>";
 }
